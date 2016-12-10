@@ -1,0 +1,118 @@
+
+*[hidden]{display:none}
+
+html,body{
+	margin:0;
+	padding:0;
+	font:message-box;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+#feedHeaderContainer{
+	margin:0 20px;
+	padding:2px;
+	border:2px solid;
+	border-radius:0 0 9px 9px;
+	border-top:0;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+#feedHeader{
+	padding:4px;
+	background:url(chrome://browser/skin/feeds/feedIcon.png) 0 0 no-repeat transparent}
+#feedHeader[dir="rtl"]{background-position: 100% 0}
+#feedHeader.videoPodcastBackground{background-image:url(chrome://browser/skin/feeds/videoFeedIcon.png)}
+#feedHeader.audioPodcastBackground{background-image:url(chrome://browser/skin/feeds/audioFeedIcon.png)}
+
+#feedIntroText{
+	-moz-margin-start:40px;
+	margin-bottom:1em}
+#feedHeader:not([firstrun="true"]) #feedIntroText{display:none}
+
+#feedSubscribeLine{
+	-moz-margin-start:40px}
+#feedSubscribeLine>vbox{-moz-box-orient:horizontal}
+
+#feedSubscribeHandler{
+	border:1px solid #B26F00;
+	border-radius:0.2em;
+	padding:3px}
+
+#feedSubscribeHandleText,
+#feedSubscribeLink{
+	background:url(chrome://browser/skin/page-livemarks.png) left 0 no-repeat;
+	padding-left:18px}
+
+#feedSubscribeLink{
+	font-weight:bold;
+	-moz-margin-end:.4em}
+
+#handlersMenuPopup>menuitem>.menu-iconic-left{display:-moz-box!important}
+#liveBookmarksMenuItem{
+	list-style-image:url(chrome://browser/skin/page-livemarks.png)}
+#selectedAppMenuItem{
+	list-style-image:url(chrome://global/skin/icons/applications.png);
+	-moz-image-region:rect(0 32px 16px 16px)}
+#chooseApplicationMenuItem{
+	list-style-image:url(chrome://global/skin/icons/applications.png);
+	-moz-image-region:rect(0 16px 16px 0)}
+
+#feedChangeSubscribeOptions{-moz-margin-start:.4em}
+
+#feedSubscribeDoneChangingOptions{font-weight:bold}
+
+#feedBody,#feedError{
+	margin:20px;
+	padding:8px;
+	border-radius:18px;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	box-shadow:5px 5px 5px #893B00;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+
+.entry{
+	clear:both;
+	margin-top:4px;
+	border-top:1px solid #B26F00}
+
+h1{
+	font-size:160%;
+	margin:0 0 .2em 0}
+
+h2{
+	color:#893B00;
+	font-size:120%;
+	font-weight:normal;
+	margin:0 0 .6em 0}
+
+h3,
+p{margin:.2em 0!important}
+
+#feedTitleLink{float:right;margin:0 0 0 .6em}
+
+.styleLessBorderLess,
+a[href] img{border:none}
+
+#feedTitleContainer{margin:0 .6em 0 0}
+
+#feedTitleImage{margin:0 0 0 .6em}
+
+.feedEntryContent{font-size:110%}
+
+@media print{#feedHeaderContainer{display:none}}
+																																				 
+.lastUpdated{
+	font-size:85%;
+	font-weight:normal;
+	margin-bottom:.2em}
+
+.type-icon{vertical-align:bottom;height:16px;width:16px}
+.enclosures{margin-bottom:1em}
+.enclosure{vertical-align:middle;margin-left:2px}

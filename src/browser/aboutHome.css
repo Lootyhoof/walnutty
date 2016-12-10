@@ -1,0 +1,239 @@
+html{
+	height:100%;
+	margin:0;
+	font-family:sans-serif;
+	box-shadow:0 0 3px #B26F00 inset;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+body{
+	display:inline-block;
+	position:relative;
+	margin:0;
+	width:100%;
+	height:100%;
+	background:transparent url(chrome://global/skin/gecko.png) right 90% no-repeat}
+
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+
+#brandStart{
+	text-align:center;
+	height:19%;
+	max-height:256px;
+	min-height:92px}
+
+#brandStartSpacer{
+	height:6.5%}
+
+#brandStartLogo{
+	height:100%}
+
+#searchContainer{
+	height:15%;
+	min-height:90px}
+
+@media all and (max-height:700px){#searchContainer{height:20%}}
+@media all and (max-height:450px){#searchContainer{height:30%}}
+
+#searchContainer::before{
+	content:" ";
+	display:block;
+	height:23%}
+
+#searchForm{
+	display:table;
+	width:100%;
+	max-width:1830px;
+	margin:0 auto}
+
+#searchLogoContainer{
+	display:table-cell;
+	width:30%;
+	text-align:end}
+
+#searchEngineLogo{
+	-moz-margin-end:8px;
+	vertical-align:middle}
+
+#searchInputContainer{
+	display:table-cell;
+	width:38%;
+	max-width:700px;
+	min-width:150px}
+
+#searchText{
+	width:100%;
+	height:24px;
+	padding:2px 6px;
+	border-radius:9px 0 0 9px;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #893B00;
+	-moz-border-left-colors:#B26F00 #893B00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	box-shadow:inset 1px 1px 1px #B26F00;
+	font-size:1.2em;
+	background:url(chrome://global/skin/backarea.png)}
+
+body[dir=rtl] #searchText{
+	border-radius:0 9px 9px 0}
+
+#searchButtons{
+	display:table-cell;
+	width:31%;
+	-moz-padding-start:13px;
+	vertical-align:top}
+
+@media all and (max-width:470px){
+	#searchLogoContainer{width:10%}
+	#searchButtons{width:11%}
+	#searchInputContainer{width:40%}
+}
+
+@media all and (min-width:470px) and (max-width:600px){
+	#searchLogoContainer{width:15%}
+	#searchButtons{width:16%; white-space:nowrap}
+	#searchInputContainer{width:45%}
+}
+
+@media all and (min-width:600px) and (max-width:850px){
+	#searchLogoContainer{width:20%}
+	#searchButtons{width:21%; white-space:nowrap}
+	#searchInputContainer{width:49%}
+}
+
+#searchSubmit{
+	padding:4px 8px;
+	height:32px;
+	cursor:pointer;
+	font-size:1em;
+	font-weight:bold;
+	border-radius:0 9px 9px 0}
+
+body[dir=rtl] #searchSubmit{
+	border-radius:9px 0 0 9px}
+
+#contentContainer{height:30%}
+@media all and (max-height:400px){#contentContainer{height:20%}}
+
+#snippetContainer{
+	position:relative;
+	top:-24px;
+	text-align:center}
+
+#snippets{
+	display:inline-block;
+	padding:14px;
+	width:30%;
+	max-width:600px;
+	border-radius:9px;
+	border:2px solid;
+	border-radius:18px;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	background:url(chrome://global/skin/backarea.png);
+	box-shadow:5px 5px 5px #893B00;
+	font-size:.85em;
+	cursor:pointer}
+
+@media all and (max-width:470px){#snippets{width:65%}}
+@media all and (min-width:470px) and (max-width:850px){#snippets{width:45%}}
+
+#snippets:hover{
+	background:url(chrome://global/skin/hout-hover.png);
+	color:black}
+
+#snippets:hover:active{
+	margin:3px -3px -3px 3px;
+	box-shadow:2px 2px 2px #893B00;
+	background:url(chrome://global/skin/hout-active.png);
+	color:white}
+
+#sessionRestoreContainer{
+	padding-top:1.5%;
+	text-align:center}
+
+@media all and (max-height:370px){
+	#sessionRestoreContainer{
+		position:relative;
+		top:-5px;
+		padding-top:0;
+	}
+}
+
+#restorePreviousSession{
+	padding:10px;
+	font-weight:bold;
+	font-size:1em;
+	cursor:pointer;
+	border-radius:9px}
+	
+#restorePreviousSession::before{
+	display:inline-block;
+	content:url(chrome://browser/content/aboutHome-restore-icon.png);
+	-moz-margin-end:10px;
+	vertical-align:middle;
+	height:66px}
+
+body[dir=rtl] #restorePreviousSession::before{
+	-moz-transform:scaleX(-1)}
+
+@media all and (max-height:500px){
+	#restorePreviousSession::before{
+		content:url("chrome://browser/content/aboutHome-restore-icon-small.png");
+		height:41px}}
+
+#restorePreviousSession:disabled{
+	display:none}
+
+#searchSubmit,
+#restorePreviousSession{
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+#searchSubmit:hover,
+#restorePreviousSession:hover{
+	box-shadow:2px 2px 2px #893B00;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	background:url(chrome://global/skin/hout-hover.png);
+	color:black}
+
+#searchSubmit:hover:active,
+#restorePreviousSession:hover:active{
+	box-shadow:2px 2px 2px #EED4A2;
+	-moz-border-top-colors:#893B00 #B26F00;
+	-moz-border-left-colors:#893B00 #B26F00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	background:url(chrome://global/skin/hout-active.png);
+	color:white}
+
+#bottomSection{
+	position:absolute;
+	color:#893B00;
+	width:100%;
+	text-align:center;
+	bottom:2%}
+
+a:link{
+	color:darkblue;
+	padding:1px 2px;
+	border-radius:3px}
+a:hover{
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:black}
+a:active{
+	background-image:url(chrome://global/skin/hout-active.png)!important;
+	color:white!important}
+a:focus{
+	-moz-outline-radius:4px;
+	outline:1px solid #B26F00}

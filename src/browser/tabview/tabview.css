@@ -1,0 +1,382 @@
+body{
+	font:message-box;
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:black}
+
+.undo,.thumb,.groupItem{
+	border-radius:6px;
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	box-shadow:1px 1px 2px #B26F00;
+	background:url(chrome://global/skin/hout.png);
+	color:black}
+.activeGroupItem{
+	box-shadow:1px 1px 8px #893B00!important}
+
+.tab{
+	cursor:pointer;
+	margin:8px}
+.thumb{background-color:white}
+
+.thumb>canvas,
+.cached-thumb{
+	border-radius:6px}
+
+.favicon{
+	top:2px!important;
+	padding:1px!important;
+	line-height:1px;
+	border-radius:3px;
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	box-shadow:1px 1px 1px #B26F00!important;
+	background:url(chrome://global/skin/hout.png)}
+.favicon:-moz-locale-dir(ltr){left:2px!important}
+.favicon:-moz-locale-dir(rtl){right:2px!important}
+
+.favicon>img{
+	width:16px;
+	height:16px}
+
+.tab-title{
+	text-align:center;
+	width:100%;
+	font-size:80%}
+
+.stacked{padding:0}
+.stacked>.thumb{box-shadow:#893B00 1px 1px 6px}
+.stacked>.favicon:-moz-locale-dir(ltr){top:0!important;left:0!important}
+.stacked>.favicon:-moz-locale-dir(rtl){top:0!important;right:0!important}
+.stack-trayed>.tab-title{
+	color:white;
+	text-shadow:#893B00 1px 1px 2px;
+	font-size:11px}
+
+.stack-trayed>.thumb{box-shadow:none!important}
+
+.tab.onTop{box-shadow:0 0 4px black!important}
+.focus>.thumb{box-shadow:0 0 4px 2px #893B00!important}
+
+#bg,
+.title-shield,
+.front .tab-title,
+.front .close,
+.front .favicon,
+.front .expander,
+.front .thumb-shadow{
+	display:none}
+
+.front .thumb,
+.front.focus{
+	border:none;
+	box-shadow:none!important}
+
+.groupItem{
+	cursor:move}
+
+.tabInGroupItem{
+	box-shadow:none;
+	background-color:-moz-Dialog}
+
+.overlay{
+	background:url(chrome://global/skin/hout-active.png)!important;
+	box-shadow:3px 3px 8px #B26F00;
+	border-radius:4px}
+
+.info-item{
+	cursor:move;
+	margin-top:30px;
+	border:1px solid #b36F00;
+	background:url(chrome://global/skin/backarea.png);
+	color:black;
+	border-radius:4px;
+	box-shadow:#B26F00 1px 1px 4px}
+
+.intro{margin:4px}
+.intro>h1{margin:4px 0}
+
+.guideTrench{
+	opacity:.8;
+	border:1px dashed #B26F00;
+	border-bottom:0;
+	border-right:0;
+	box-shadow:1px 1px 1px #EED4A2}
+.visibleTrench{opacity:.05}
+.activeVisibleTrench{opacity:0}
+.activeVisibleTrench.activeTrench{opacity:.45}
+
+.visibleTrench.border,
+.activeVisibleTrench.border{
+	background-color:red}
+
+.visibleTrench.guide,
+.activeVisibleTrench.guide{
+	background-color:blue}
+
+.active{box-shadow:5px 5px 4px #893B00}
+.acceptsDrop{box-shadow:2px 2px 10px -1px #893B00}
+
+.title-container{
+	max-width:-moz-calc(100% - 26px);
+	cursor:move}
+
+input.name{
+	margin:3px 0 0 3px;
+	padding:1px;
+	border-radius:5px;
+	border:1px solid transparent;
+	background-color:transparent;
+	color:black!important}
+
+.title-container:hover input.name,
+.title-container input.name:focus{
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	background:url(chrome://global/skin/backarea.png) repeat;
+	color:black!important}
+
+.title-container:hover input.name-locked{
+	border-color:transparent!important;
+	cursor:default}
+
+input.name:-moz-placeholder{
+	font-style:italic!important;
+	background:-moz-image-rect(url(chrome://browser/skin/tabview/panorama.png),0,96,16,80) no-repeat;
+	-moz-padding-start:20px}
+input.name::-moz-placeholder{
+	opacity:0!important;
+	font-style:italic!important}
+.groupItem:hover>.titlebar>.title-container>input.name::-moz-placeholder{
+	opacity:.6!important}
+input.name:-moz-locale-dir(rtl){
+	background-position:right top}
+
+.transparentBorder{
+	border:1px solid transparent!important}
+
+.stackExpander{
+	cursor:pointer;
+	opacity:0!important;
+	bottom:8px;
+	background-image:url(chrome://browser/skin/tabview/stack-expander.png);
+	width:24px;
+	height:24px}
+
+.iq-resizable-se{
+	opacity:0;
+	background:url(chrome://global/skin/widgets.png) -89px -84px no-repeat;
+	cursor:se-resize;
+	width:12px;
+	height:12px;
+	padding-right:1px;
+	padding-bottom:1px;
+	right:-1px;
+	bottom:-1px}
+
+.close,
+.newTabButton{
+	cursor:default;
+	width:20px;
+	height:20px;
+	border-radius:5px;
+	border:1px solid transparent}
+
+.newTabButton{
+	bottom:2px;
+	left:2px;
+	background:-moz-image-rect(url(chrome://global/skin/global.png),48,16,64,0) center center no-repeat}
+.newTabButton:-moz-locale-dir(rtl){
+	left:auto;
+	right:2px}
+
+.close{
+	opacity:0!important;
+	top:2px;
+	right:2px;
+	background:-moz-image-rect(url(chrome://global/skin/global.png),16,16,32,0) center center no-repeat}
+.close:-moz-locale-dir(rtl){
+	right:auto;
+	left:2px}
+
+.expander{
+	bottom:2px;
+	right:2px;
+	width:14px;
+	height:14px;
+	background:-moz-image-rect(url(chrome://global/skin/widgets.png),87,82,101,96) center center no-repeat}
+.expander:-moz-locale-dir(rtl){
+	right:auto;
+	left:2px;
+	-moz-transform:scaleX(-1)}
+
+#searchshade{
+	border-radius:6px;
+	background-color:rgba(128,128,128,.5);
+	width:100%;
+	height:100%}
+#search{
+	width:100%;
+	height:100%}
+
+#searchbox{
+	top:0;right:0;
+	width:270px;
+	max-width:-moz-available;
+	padding:3px;
+	border-radius:5px;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	box-shadow:1px 1px 1px #B26F00 inset;
+	background:url(chrome://global/skin/backarea.png);
+	color:black}
+
+#actions{
+	top:0;right:0;
+	border-radius:6px;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	box-shadow:1px 1px 1px #EED4A2 inset,-1px -1px #B26F00 inset;
+	background-image:url(chrome://global/skin/hout.png)}
+
+#exit-button,
+#searchbutton{
+	width:22px;
+	height:22px;
+	border-radius:5px;
+	border:1px solid transparent;
+	background:transparent -moz-image-rect(url(chrome://global/skin/global.png),64,16,80,0) center center no-repeat}
+#exit-button{background-image:-moz-image-rect(url(chrome://browser/skin/tabview/panorama.png),0,80,16,64)}
+#exit-button[groups="0"]{background-image:-moz-image-rect(url(chrome://browser/skin/tabview/panorama.png),0,16,16,0)}
+#exit-button[groups="1"]{background-image:-moz-image-rect(url(chrome://browser/skin/tabview/panorama.png),0,32,16,16)}
+#exit-button[groups="2"]{background-image:-moz-image-rect(url(chrome://browser/skin/tabview/panorama.png),0,48,16,32)}
+#exit-button[groups="3"]{background-image:-moz-image-rect(url(chrome://browser/skin/tabview/panorama.png),0,64,16,48)}
+
+.appTabTrayContainer{
+	top:34px;
+	right:1px;
+	-moz-border-start:1px solid #B26F00;
+	padding:0 2px;
+	overflow:-moz-hidden-unscrollable;
+	text-align:center;
+	line-height:0}
+.appTabTrayContainer:-moz-locale-dir(rtl){
+	right:auto;
+	left:1px}
+.appTabTray{
+	display:inline-block;
+	-moz-column-width:16px;
+	-moz-column-gap:5px}
+.appTabTrayContainerTruncated{
+	padding-bottom:4px}
+.appTabTrayContainerTruncated:after{
+	content:"...";
+	position:absolute;
+	bottom:2px;
+	left:0;
+	display:block;
+	width:100%;
+	height:15px;
+	line-height:15px;
+	text-align:center;
+	font-size:15px}
+
+.appTabIcon{
+	width:16px;
+	height:16px;
+	padding:2px;
+	cursor:pointer;
+	border:1px solid transparent;
+	border-radius:5px}
+
+#otherresults{
+	left:0;
+	bottom:0;
+	width:100%;
+	height:30px;
+	box-shadow:0 0 1px #EED4A2;
+	background-image:url(chrome://global/skin/hout-active.png)}
+#otherresults:-moz-locale-dir(rtl){
+	left:auto;
+	right:0}
+
+#otherresults .label{
+	color:white;
+	line-height:32px;
+	margin-left:5px;
+	margin-right:5px}
+
+.notMainMatch{opacity:.7}
+
+.inlineMatch{
+	cursor:pointer;
+	height:20px;
+	padding:0 3px;
+	margin-right:5px}
+
+.inlineMatch>img{
+	width:16px;
+	height:16px;
+	margin-right:5px;
+	position:relative;
+	top:2px}
+
+.inlineMatch>span{
+	max-width:200px;
+	height:14px}
+
+.undo{
+	-moz-user-select:none;
+	cursor:default;
+	line-height:25px;
+	padding:2px;
+	box-shadow:0 0 2px #893B00;
+	-moz-padding-start:20px;
+	-moz-padding-end:30px;
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),496,32,512,16),url(chrome://global/skin/hout.png);
+	background-position:2px center;
+	background-repeat:no-repeat,repeat}
+.undo:hover{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),496,32,512,16),url(chrome://global/skin/hout-hover.png)}
+.undo:hover:active{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),496,32,512,16),url(chrome://global/skin/hout-active.png)}
+
+.undo>.close{
+	top:3px;
+	right:3px}
+.undo>.close:-moz-locale-dir(rtl){
+	right:auto;
+	left:4px}
+
+.undo:hover,
+#searchbutton:hover,
+#exit-button:hover,
+.inlineMatch:hover,
+.appTabIcon:hover,
+.close:hover,
+.newTabButton:hover{
+	background-color:#B26F00;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	box-shadow:0 0 2px #893B00}
+
+.undo:hover:active,
+#searchbutton:hover:active,
+#exit-button:hover:active,
+.inlineMatch:hover:active,
+.appTabIcon:hover:active,
+.close:hover:active,
+.newTabButton:hover:active{
+	background-color:#893B00;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	box-shadow:1px 1px 1px #893B00 inset}
+
+.inlineMatch:hover,
+#searchbutton:hover,
+#exit-button:hover,
+.expander:hover,
+.newTabButton:hover,
+.groupItem:hover>.close,
+.undo:hover>.close,
+.tab:hover>.close,
+.groupItem:hover>.iq-resizable-se,
+.groupItem:hover>.stackExpander,
+.groupItem:hover>input.name{
+	opacity:1!important}

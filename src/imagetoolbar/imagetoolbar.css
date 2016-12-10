@@ -1,0 +1,52 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+#imagetoolbar-toolbar{
+	font:message-box!important;
+	border:1px solid!important;
+	border-radius:6px!important;
+	box-shadow:1px 1px 3px #893B00!important;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2!important;
+	background-image:url(chrome://global/skin/hout.png)!important;
+	color:black!important}
+
+.mozilla-image-toolbar{
+	margin:0!important;
+	padding:1px!important;
+	min-width:1px!important;
+	-moz-box-orient:vertical!important}
+.toolbarbutton-text{
+	font:message-box!important;
+	color:inherit!important;
+	width:auto!important}
+toolbar[mode="icons"]>.mozilla-image-toolbar>.toolbarbutton-text{
+	display:none!important}
+
+#imagetoolbar_save{
+	list-style-image:url(chrome://global/skin/small.png);
+	-moz-image-region:rect(72px,48px,96px,24px)}
+#imagetoolbar_copy{
+	list-style-image:url(chrome://global/skin/small.png);
+	-moz-image-region:rect(216px 24px 240px 0)}
+#imagetoolbar_print{
+	list-style-image:url(chrome://global/skin/small.png);
+	-moz-image-region:rect(120px 24px 144px 0)}
+toolbar #imagetoolbar_folder{
+	list-style-image:url(chrome://global/skin/small.png);
+	-moz-image-region:rect(336px 48px 360px 24px)}
+#imagetoolbar_info{
+	list-style-image:url(chrome://global/skin/icons/information-large.png)}
+
+toolbar[iconsize="small"]>#imagetoolbar_save{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(368px,16px,384px,0)}
+toolbar[iconsize="small"]>#imagetoolbar_copy{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(336px 16px 352px 0)}
+toolbar[iconsize="small"]>#imagetoolbar_print{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(304px 16px 320px 0)}
+toolbar[iconsize="small"]>#imagetoolbar_folder{
+	list-style-image:url(chrome://global/skin/widgets.png);
+	-moz-image-region:rect(57px 53px 73px 37px)}
+toolbar[iconsize="small"]>#imagetoolbar_info{
+	list-style-image:url(chrome://global/skin/icons/information-16.png)}

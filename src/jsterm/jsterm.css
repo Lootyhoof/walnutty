@@ -1,0 +1,24 @@
+window{
+ 	font:message-box;
+	font-family:Menlo,Andale Mono,Consolas,monospace;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+#editors-container{
+	overflow-y:auto;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #893B00;
+	border-left-width:0;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+
+#output-container{margin-left:10px}
+#prompt{width:10px;font-weight:bold}
+.multiline>#prompt{border-right:1px solid black}
+.chrome>#prompt{color:darkred}
+
+#completion-candidates{
+	margin-left:16px;
+	color:#893B00}

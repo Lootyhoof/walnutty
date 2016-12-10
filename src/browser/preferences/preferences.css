@@ -1,0 +1,183 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@namespace html url(http://www.w3.org/1999/xhtml);
+
+radio[pane="paneMain"],radio[pane="paneGeneral"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(0 24px 24px 0)}
+radio[pane="paneSecurity"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(24px 24px 48px 0)}
+radio[pane="paneContent"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(48px 24px 72px 0)}
+radio[pane="paneAdvanced"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(96px 24px 120px 0)}
+radio[pane="paneTabs"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(120px 24px 144px 0)}
+radio[pane="panePrivacy"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(144px 24px 168px 0)}
+radio[pane="paneApplications"],
+radio[pane="paneFeeds"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(192px 24px 216px 0)}
+radio[pane="paneSync"]{
+	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
+	-moz-image-region:rect(216px 24px 240px 0)}
+radio[label="Weave"]>.paneButtonIcon{margin:-4px 0!important}
+
+prefpane>tabbox{border-width:0!important}
+prefpane>tabbox>tabpanels{
+	border-right:1px solid #B26F00!important;
+	border-bottom:1px solid #B26F00!important}
+
+#cookiesChildren::-moz-tree-image(domainCol){
+	width:16px;height:16px;margin:0 2px;
+	list-style-image:url(chrome://global/skin/widgets.png);
+	-moz-image-region:rect(41px 54px 57px 38px)}
+#cookiesChildren::-moz-tree-image(domainCol,container){
+	-moz-image-region:rect(57px 54px 73px 38px)}
+#cookiesChildren::-moz-tree-image(domainCol,container,open){
+	-moz-image-region:rect(57px 70px 73px 54px)}
+#cookieInfoBox{
+	margin:2px 0;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #893B00;
+	-moz-border-left-colors:#B26F00 #893B00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00}
+#backgroundBox,#cookieInfoGrid{background-image:url(chrome://global/skin/backarea.png)}
+
+#removeCookie,#removeCookies{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(272px 16px 288px 0)}
+
+filefield{
+	margin:2px;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #893B00;
+	-moz-border-left-colors:#B26F00 #893B00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00}
+.fileFieldIcon{
+	width:16px;
+	height:16px;
+	margin:1px;
+	-moz-margin-end:3px}
+filefield[disabled="true"] .fileFieldIcon{
+	opacity:.7;
+	filter:url(chrome://global/skin/greyscale.svg#greyscale)}
+
+.fileFieldLabel{
+	background:none;
+	border:0;
+	margin:0}
+
+#saveToRow{-moz-box-align:center}
+#downloadFolder,#chooseFolder{margin:0}
+
+#fileExtension{width:5em}
+#extensionChildren::-moz-tree-image(fileExtension){margin:0 5px 0 0}
+#typeField{font-weight:bold}
+#typeIcon{width:32px;height:32px;-moz-margin-end:3px}
+
+#typeField{
+	font-weight:bold;
+	background-color:transparent;
+	margin:1px!important;
+	-moz-margin-start:3px!important;
+	-moz-margin-end:2px!important}
+
+#extensionField{
+	color:#893B00;
+	font-weight:bold}
+
+#sync-settings-group,
+#sync-clients-group,
+#sync-addons-group{
+	margin:0!important;
+	border-width:0!important}
+
+#linksOpenInBox,#tabPrefsBox{
+	margin:4px}
+
+html|a.inline-link{
+	display:inline-block}
+
+.text-link[onclick^="gSyncPane.startOver"],
+#syncAddDeviceLabel,
+html|a.inline-link{
+	text-decoration:none!important;
+	border-radius:3px;
+	-moz-outline-radius:5px;
+	padding:1px!important;
+	margin:2px!important;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+.text-link[onclick^="gSyncPane.startOver"]:hover,
+#syncAddDeviceLabel:hover,
+html|a.inline-link:hover{
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:black}
+.text-link[onclick^="gSyncPane.startOver"]:hover:active,
+#syncAddDeviceLabel:hover:active,
+html|a.inline-link:hover:active{
+	-moz-border-bottom-colors:#B26F00 transparent;
+	-moz-border-right-colors:#B26F00 transparent;
+	-moz-border-left-colors:#893B00 #B26F00;
+	-moz-border-top-colors:#893B00 #B26F00;
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:white}
+.text-link[onclick^="gSyncPane.startOver"]:focus,
+#syncAddDeviceLabel:focus:not(:active),
+html|a.inline-link:focus:not(:active){
+	outline:1px solid #893B00}
+
+#currentUser image{list-style-image:url(chrome://mozapps/skin/profile/profileicon.png)}
+
+#connectThrobber{
+	list-style-image:url(chrome://global/skin/icons/loading_16.png)}
+
+#currentAccount,#connectButton{
+	margin:0 2px}
+
+#manageAccountControls>.indent{
+	border-radius:6px 6px 0 0;
+	margin:0 2px;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00}
+	
+.indent>.text-link{
+	text-decoration:none}
+.indent>.text-link:not(:hover):not(:active){
+	color:-moz-DialogText}
+	
+#syncEnginesList{
+	background-image:none}
+#syncEnginesList>richlistitem{
+	padding:0!important;
+	border-width:0!important;
+	background:none!important;
+	color:inherit!important}
+#syncEnginesList>richlistitem>checkbox{
+	-moz-box-flex:1;
+	margin:0}
+
+setting{-moz-box-align:start}
+.preferences-alignment{
+	min-height:30px;
+	-moz-box-align:center}
+.preferences-description:empty{
+	display:none}
+	
+#downloadmgrOptions>.paneDeckContainer{margin:0;border-width:0}
+#dmtPrefs{margin:0!important;padding:0!important}
+
+#defaultFont>menupopup{max-width:20em}

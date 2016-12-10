@@ -1,0 +1,76 @@
+#tabs-display{
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	background-image:url(chrome://global/skin/gecko.png),url(chrome://global/skin/hout.png);
+	background-repeat:no-repeat,repeat;
+	background-position:right 90%,left top;
+	background-attachment:fixed,fixed;
+	color:black}
+
+#tabsList{
+	margin:10px 0;
+	border-radius:18px!important;
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #EED4A2!important;
+	-moz-border-left-colors:#B26F00 #EED4A2!important;
+	-moz-border-right-colors:#893B00 #B26F00!important;
+	-moz-border-bottom-colors:#893B00 #B26F00!important;
+	box-shadow:5px 5px 5px #893B00;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+
+#headers{
+	max-width:50em;
+	border-radius:16px 16px 0 0;
+	border-bottom:1px solid #B26F00;
+	padding:8px;
+	background-image:-moz-image-rect(url(chrome://browser/skin/preferences/preferences.png),216,24,240,0),url(chrome://global/skin/hout.png);
+	background-repeat:no-repeat,repeat;
+	background-position:left center,left top;
+	background-origin:content-box,padding-box}
+#headers:-moz-locale-dir(rtl){
+	background-position:top right}
+
+#tabsListHeading{
+	font-size:140%;
+	font-weight:bold;
+	-moz-margin-start:28px}
+
+richlistitem[type="tab"]{
+	margin:2px 4px;
+	border-radius:6px;
+	box-shadow:1px 1px 1px #B26F00}
+
+richlistitem[type="tab"][selected="true"]{
+	background-image:url(chrome://global/skin/hout-active.png);
+	color:white}
+
+richlistitem[type="client"]{
+	margin:2px 4px;
+	text-shadow:none;
+	-moz-user-focus:ignore!important;
+	max-width:50em;
+	font-weight:600;
+	list-style-image:url(chrome://browser/skin/icons.png);
+	-moz-image-region:rect(0,32px,16px,16px);
+	border-width:0!important;
+	background:none!important;
+	color:inherit!important}
+richlistitem.desktop[type="client"]{
+	-moz-image-region:rect(0,48px,16px,32px)}
+
+.title,
+.clientName{
+	font-size:110%}
+
+.url{
+	color:darkblue;
+	font-size:95%}
+
+.title[selected="true"],
+.url[selected="true"]{
+	color:inherit}
+
+.tabIcon{
+	-moz-padding-start:2px;
+	padding-top:2px}

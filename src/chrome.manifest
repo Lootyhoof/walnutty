@@ -1,0 +1,27 @@
+skin	communicator	walnutty	communicator/
+skin	global		walnutty	global/
+skin	browser		walnutty	browser/
+skin	inspector	walnutty	inspector/
+skin	mozapps		walnutty	mozapps/
+skin	help		walnutty	help/
+skin	downbar		walnutty	downbar/
+skin	reporter	walnutty	reporter/
+skin	offline		walnutty	offline/
+skin	quicknote	walnutty	quicknote/
+skin	tabprefs	walnutty	tabprefs/
+skin	dataman		walnutty	dataman/
+skin	dlman		walnutty	dlman/
+skin	desktop		walnutty	desktop/
+skin	locationbar2	walnutty	locationbar2/
+skin	downloadmgr	walnutty	downloadmgr/
+skin	favres		walnutty	favres/
+skin	adblockplus	walnutty	adblockplus/
+skin	os		walnutty	os-linux/
+skin	os		walnutty	os-darwin/	os=Darwin
+skin	os		walnutty	os-winnt/	os=WINNT
+skin    graphical-timeline walnutty	gt/
+skin    imagetoolbar	walnutty	imagetoolbar/
+skin    abouthome	walnutty	abouthome/
+skin    jsterm		walnutty	jsterm/
+skin    printedit	walnutty	printedit/
+skin    speeddial	walnutty	speeddial/

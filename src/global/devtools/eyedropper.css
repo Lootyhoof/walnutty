@@ -1,0 +1,24 @@
+window{font:message-box}
+#canvas-overflow{
+	overflow:hidden;
+	width:96px;
+	height:96px}
+#canvas{
+	image-rendering:-moz-crisp-edges;
+	cursor:none;
+	border:3px solid #EED4A2;
+	box-shadow:1px 1px 1px 1px #B26F00,1px 1px 1px #893B00;
+	border-radius:50%}
+
+#color-value-box{
+	width:120px;
+	border-radius:3px;
+	border:1px solid;border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	box-shadow:1px 1px 2px #B26F00;
+	background:white url(chrome://global/skin/backarea.png)}
+#color-preview{
+	margin:2px;
+	width:16px;
+	height:16px;
+	border:1px solid;border-color:#B26F00 #EED4A2 #EED4A2 #B26F00}
+#color-value{padding:2px}

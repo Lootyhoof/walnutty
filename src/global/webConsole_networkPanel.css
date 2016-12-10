@@ -1,0 +1,62 @@
+body{
+	margin:0;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black;
+	font:message-box}
+
+#header{
+	width:100%;
+	padding:4px;
+	overflow-x:auto;
+	display:block}
+
+h1{
+	font-size:110%;
+	padding:2px 4px;
+	margin:0;
+	border-radius:2px;
+	background-image:url(chrome://global/skin/hout-active.png);
+	color:white;
+	text-shadow:0 1px 1px #893B00}
+
+h1 .info{
+	font-size:85%;
+	float:right;
+	color:#893B00;
+	padding-right:3px}
+
+.property-table{
+	width:100%;
+	overflow-x:auto;
+	display:block}
+ 
+.property-header{
+	padding:2px 4px;
+	white-space:pre-wrap}
+
+.property-name{
+	text-align:right;
+	white-space:nowrap;
+	vertical-align:top;
+	font-weight:bold;
+	padding-right:4px;
+	color:black;
+	width:10%}
+
+.property-value{
+	word-wrap:break-word;
+	padding-right:4px;
+	font-size:90%;
+	width:90%}
+
+div.group,
+#header{
+	border:0;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+
+img#responseImageNode{
+	max-width:100%}
+
+#responseImageNodeDiv{
+	padding:4px}

@@ -1,0 +1,51 @@
+#downloadManager{
+	-moz-box-orient:vertical}
+
+#dmtDownloadInfoBar{padding:2px}
+
+.DMT_icon_small,
+.DMT_icon_big{
+	-moz-user-focus:ignore}
+
+#dmtLaunchButton,#dmtLaunchButton2{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(0,16px,16px,0)}
+#dmtLaunchButton[disabled="true"],#dmtLaunchButton2[disabled="true"]{
+	-moz-image-region:rect(0,32px,16px,16px)}
+
+#dmtReloadButton,#dmtReloadButton2{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(128px 16px 144px 0)}
+#dmtReloadButton[disabled="true"],#dmtReloadButton2[disabled="true"]{
+	-moz-image-region:rect(128px 32px 144px 16px)}
+
+#dmtShowButton,#dmtShowButton2{
+	list-style-image:url(chrome://global/skin/widgets.png);
+	-moz-image-region:rect(57px 53px 73px 38px)}
+#dmtShowButton[disabled="true"],#dmtShowButton2[disabled="true"]>.button-icon{
+	opacity:0.5}
+
+#dmtCleanUpButton,#dmtCleanUpButton2{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(224px 32px 240px 16px)}
+#dmtCleanUpButton[disabled="true"],#dmtCleanUpButton2[disabled="true"]{
+	-moz-image-region:rect(176px 32px 192px 16px)}
+
+#dmtDeleteFileButton,#dmtDeleteFileButton2{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(272px 16px 288px 0)}
+#dmtDeleteFileButton[disabled="true"],#dmtDeleteFileButton2[disabled="true"]{
+	-moz-image-region:rect(272px 32px 288px 16px)}
+
+#dmtOptionsButton,#dmtOptionsButton2{
+	list-style-image:url(chrome://global/skin/global.png)!important;
+	-moz-image-region:rect(96px 16px 112px 0)!important}
+#dmtOptionsButton[disabled="true"],#dmtOptionsButton2[disabled="true"]{}
+
+#dmtDownloadFrom,#dmtDownloadTo,#dmtDownloadDate,
+#dmtDownloadFrom2,#dmtDownloadTo2,#dmtDownloadDate2{
+	border-width:0;
+	padding:0;
+	margin:0}
+
+.commandBarSeparator{margin-left:10px}

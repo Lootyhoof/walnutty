@@ -1,0 +1,29 @@
+.paneDeckContainer{border:0!important}
+#SanitizeDialogPane{padding:2px}
+#itemList[collapsed="true"],
+#sanitizeDurationSuffixLabel[value=""]{display:none}
+
+#sanitizeEverythingWarningBox{
+	padding:2px;
+	border-radius:5px;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+
+#sanitizeEverythingWarningIcon{
+	list-style-image:url(chrome://global/skin/icons/warning-large.png);
+	margin:2px}
+
+#detailsExpanderWrapper{
+	margin:4px 0}
+
+.expander-up,
+.expander-down{
+	padding:3px;
+	border-radius:10000px;
+	-moz-outline-radius:10000px;
+	list-style-image:url(chrome://global/skin/widgets.png);
+	-moz-image-region:rect(40px 36px 48px 28px)}
+.expander-down{
+	-moz-image-region:rect(32px 36px 40px 28px)}

@@ -1,0 +1,32 @@
+/* These lines are parsed by theme.js, so must have space following : and must be # or rgb/rgba format */
+:root{
+	--theme-body-background: #FFFFFF;
+	--theme-body-color: #000000;
+	--theme-body-color-alt: #B26F00;
+	--theme-sidebar-background: #FFFFFF;
+	--theme-tab-toolbar-background: #FFFFFF;
+	--theme-toolbar-background: #FFFFFF;
+	--theme-contrast-background: #893B00;
+	--theme-selection-background: #893B00;
+	--theme-selection-background-semitransparent: rgba(137, 59, 0, .23);
+	--theme-selection-color: #FFFFFF;
+	--theme-splitter-color: #FFFFFF;
+	--theme-comment: #B26F00;
+	--theme-content-color1: #292e33;
+	--theme-content-color2: #8fa1b2;
+	--theme-content-color3: #667380;
+	--theme-highlight-green: #2cbb0f;
+	--theme-highlight-blue: #0088cc;
+	--theme-highlight-bluegrey: #5f88b0;
+	--theme-highlight-purple: #5b5fff;
+	--theme-highlight-lightorange: #d97e00;
+	--theme-highlight-orange: #f13c00;
+	--theme-highlight-red: #ed2655;
+	--theme-highlight-pink: #b82ee5;
+	--theme-graphs-green: #70bf53;
+	--theme-graphs-blue: #46afe3;
+	--theme-graphs-purple: #df80ff;
+	--theme-graphs-yellow: #d99b28;
+	--theme-graphs-red: #eb5368;
+	--theme-graphs-grey: #757873;
+}

@@ -1,0 +1,46 @@
+@import url(chrome://global/skin/htmlbutton.css);
+
+html{
+	height:100%;
+	font:message-box;
+	margin:0;
+	background-image:url(chrome://global/skin/gecko.png),url(chrome://global/skin/hout.png)!important;
+	background-repeat:no-repeat,repeat;
+	background-position:right 90%,left top;
+	background-attachment:fixed,fixed;
+	color:-moz-DialogText}
+
+#errorPageContainer{
+	width:630px;
+	margin:4em auto;
+	padding:17px;
+	border:3px solid #FFBD09;
+	border-radius:2em;
+	background:-moz-Field url(chrome://global/skin/icons/sslWarning.png) no-repeat left 0;
+	-moz-background-origin:content;
+	background-origin:content-box;
+	box-shadow:5px 5px 5px #893B00;
+	color:-moz-FieldText}
+body[dir="rtl"] #errorPageContainer{background-position:right 0}
+
+h1{
+	margin:0;
+	font-size:160%}
+
+#errorTitle,
+#errorLongContent,
+#errorTryAgain{-moz-margin-start:80px}
+
+.expander>button{
+	-moz-padding-start:16px;
+	background-image:url(chrome://global/skin/hout.png),-moz-image-rect(url(chrome://global/skin/widgets.png),0,25,12,13);
+	background-position:top left,3px center;
+	background-repeat:repeat,no-repeat}
+.expander>button:-moz-locale-dir(rtl)>button{
+	background-position:right center}
+.expander[collapsed]>button{
+	background-image:url(chrome://global/skin/hout.png),-moz-image-rect(url(chrome://global/skin/widgets.png),0,12,12,0)}
+.expander>button:hover{background-image:url(chrome://global/skin/hout-hover.png),-moz-image-rect(url(chrome://global/skin/widgets.png),0,25,12,13)}
+.expander>button:hover[collapsed]{background-image:url(chrome://global/skin/hout-hover.png),-moz-image-rect(url(chrome://global/skin/widgets.png),0,12,12,0)}
+.expander>button:hover:active{background-image:url(chrome://global/skin/hout-active.png),-moz-image-rect(url(chrome://global/skin/widgets.png),0,25,12,13)}
+.expander>button:hover:active[collapsed]{background-image:url(chrome://global/skin/hout-active.png),-moz-image-rect(url(chrome://global/skin/widgets.png),0,12,12,0)}

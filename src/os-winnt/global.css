@@ -1,0 +1,347 @@
+@import url(chrome://global/skin/cutemenu.css);
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+#main-window[tabsontop=true]:after{display:none!important}
+
+#titlebar-content:-moz-window-inactive,
+:root>#appmenu-button-container:-moz-window-inactive,
+toolbox:-moz-window-inactive{
+	color:#451701}
+
+#titlebar{
+	box-shadow:inset 0 1px 1px #EED4A2;
+	background-image:url(chrome://global/skin/hout-hover.png)}
+:root[tabsontop="true"]>#tab-view-deck{
+	background-image:url(chrome://global/skin/hout-hover.png);
+	background-repeat:repeat-x}
+:root[tabsontop="false"]>#titlebar,
+#navigator-toolbox[tabsontop="true"]>toolbar:not(#TabsToolbar):not(#toolbar-menubar),
+#navigator-toolbox[tabsontop="true"]>#toolbar-menubar[autohide="true"]{
+	background-image:url(chrome://global/skin/hout.png)}
+
+:root[chromemargin] toolbar:not([autohide="true"]){
+	-moz-binding:url(chrome://global/content/bindings/toolbar.xml#toolbar-drag)}
+
+:root[chromemargin][tabsontop="true"]>#titlebar{margin-bottom:-27px!important}
+
+:root[chromemargin][tabsontop="true"]>#tab-view-deck{background-position:left 27px}
+:root[chromemargin][tabsontop="true"]>#tab-view-deck[selectedIndex="1"]{margin-top:26px}
+:root[chromemargin][tabsontop="false"]>#tab-view-deck[selectedIndex="1"]{border-top:2px solid #B26F00}
+
+:root[tabsontop="true"] #titlebar-buttonbox>toolbarbutton:hover,
+#titlebar[hidden="true"]+#tab-view-deck #navigator-toolbox[tabsontop="true"]>#toolbar-menubar>toolbaritem>menubar>menu:hover:not(:active),
+#titlebar[hidden="true"]+#tab-view-deck #navigator-toolbox[tabsontop="true"]>#toolbar-menubar>#forecastfox-toolbar>ffpanel:hover:not(:active){
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+:root[chromemargin] #TabsToolbar[tabsontop="true"]:not([inFullscreen="true"]),
+:root[chromemargin][chromehidden~="toolbar"][tabsontop="true"] #navigator-toolbox{
+	-moz-padding-start:100px;
+	-moz-padding-end:72px}
+
+:root[chromemargin] #TabsToolbar[collapsed="true"][tabsontop="true"]{
+	visibility:visible}
+	
+:root[chromemargin] #TabsToolbar[tabsontop="true"]:not([inFullscreen="true"]){
+	background-image:none;
+	-moz-box-ordinal-group:1!important}
+
+/* Make sure that nav-bar and PersonalBar are always above the other toolbars */
+#nav-bar{-moz-box-ordinal-group:40!important}
+#navigator-toolbox[tabsontop="false"]>#PersonalToolbar,
+#navigator-toolbox[tabsontop="false"]>#PersonalToolbar[collapsed="true"]+toolbar+#stumbleupon,
+#PersonalToolbar[collapsed="true"]{
+	-moz-box-ordinal-group:45!important}
+
+@media (min-width:500px){
+/* winxp: 18px (but no easy to detect winxp); classic: 20px; basic: 22px; compositor/glass: 22px; win8 (compositor, but not glass): 20px */
+/* Try to move menubar in window frame */
+#navigator-toolbox[tabsontop="false"]:not([inFullscreen="true"])>#toolbar-menubar[autohide="true"]:not([inactive="true"]){
+	margin-top:-22px;
+	-moz-padding-start:90px!important;
+	-moz-padding-end:72px!important;
+	background-image:none}
+
+/* For classic or Windows 8 */
+#navigator-toolbox[tabsontop="false"]:not([inFullscreen="true"])>#toolbar-menubar[autohide="true"]:not([inactive="true"]):-moz-system-metric(windows-classic),
+#navigator-toolbox[tabsontop="false"]:not([inFullscreen="true"])>#toolbar-menubar[autohide="true"]:not([inactive="true"]):-moz-system-metric(windows-compositor):not(:-moz-system-metric(windows-glass)){
+	margin-top:-20px}
+
+/* For compositor */
+#navigator-toolbox[tabsontop="false"]:not([inFullscreen="true"])>#toolbar-menubar[autohide="true"]:not([inactive="true"]):-moz-system-metric(windows-compositor){
+	-moz-border-end-width:0!important;
+	-moz-padding-end:120px!important}
+}
+
+/* ::::: titlebar ::::: */
+
+@media (-moz-windows-classic) {
+  #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
+    margin-top: 4px;
+  }
+}
+
+#titlebar-buttonbox {
+  -moz-appearance: -moz-window-button-box;
+}
+
+#main-window[sizemode="maximized"] #titlebar-buttonbox {
+  -moz-appearance: -moz-window-button-box-maximized;
+}
+
+.titlebar-placeholder[type="appmenu-button"] {
+  margin-left: 4px;
+}
+
+.titlebar-placeholder[type="caption-buttons"] {
+  margin-left: 22px; /* additional space for Aero Snap */
+}
+
+/* titlebar command buttons */
+
+#titlebar-min {
+  -moz-appearance: -moz-window-button-minimize;
+}
+
+#titlebar-max {
+  -moz-appearance: -moz-window-button-maximize;
+}
+
+#main-window[sizemode="maximized"] #titlebar-max {
+  -moz-appearance: -moz-window-button-restore;
+}
+
+#titlebar-close {
+  -moz-appearance: -moz-window-button-close;
+}
+
+@media not all and (-moz-windows-classic) {
+  #titlebar-min {
+    -moz-margin-end: 2px;
+  }
+}
+
+@media (-moz-windows-compositor) {
+  /* Fix borders because of Vista/7 versus 8/10+ */
+  #main-window:not([inFullscreen="true"]):not([windowtype="devtools:scratchpad"]) {
+    -moz-appearance: -moz-win-glass;
+  }
+  
+  /* On win 10, if we don't set this on the entire browser container, including
+  * the sidebar, then the accent color bleeds through in the titlebar
+  * if the sidebar is open. */
+  #browser {
+    -moz-appearance: -moz-win-exclude-glass;
+  }
+  
+  @media (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7),
+         (-moz-os-version: windows-win8) {
+    /* Make sure the native margins are correct on Win Vista/7/8.
+     * We can't use -moz-win-glass there because the border sizing would
+     * not be correct. */
+    #main-window:not([inFullscreen="true"]):not([windowtype="devtools:scratchpad"]) {
+      -moz-appearance: -moz-win-borderless-glass;
+	  background: transparent;
+    }
+	
+	/* These should be hidden w/ glass enabled. Windows draws its own buttons. */
+    .titlebar-button {
+      display: none;
+    }
+  
+  /* The borders on the glass frame are ours, and inside #browser, and on
+  * vista and win7 we want to make sure they are "glassy", so we can't use
+  * #browser as the exclude-glass container. We use #appcontent instead. */
+    #browser {
+      -moz-appearance: none;
+    }
+  
+    #appcontent {
+      -moz-appearance: -moz-win-exclude-glass;
+    }
+  }
+  
+  @media (-moz-os-version: windows-win10) {
+    #main-window:not(:-moz-lwtheme):after {
+      color: black !important;
+    }
+  }
+    
+  #main-window[sizemode="maximized"] #titlebar-buttonbox {
+    -moz-margin-end: 3px;
+  }
+}
+
+@media not all and (-moz-windows-glass) {
+	@media not all and (-moz-os-version: windows-win8) {
+		.titlebar-button {
+			-moz-appearance: none !important;
+		}
+	}
+}
+
+:root[tabsontop="true"] #aero-titlebar-stack{
+	visibility:hidden}
+
+:root[tabsontop="true"] #appmenu-button-container{
+	position:relative;
+	width:8em;
+	margin-bottom:4px}
+
+:root[tabsontop="true"] #titlebar-spacer{
+	position:relative;
+	z-index:-1}
+
+#titlebar-buttonbox{-moz-appearance:none!important}
+#titlebar-buttonbox-container{
+	display:-moz-box!important;
+	position:fixed!important;
+	top:0;
+	right:0;
+	-moz-box-orient:horizontal;
+}
+
+#main-window[sizemode="maximized"] #titlebar-buttonbox {
+	margin-top: 6px !important}
+
+#appmenu-button{
+	position:relative;
+	margin:-1px 0 5px 0!important;
+	padding:0 3px;
+	font-weight:bold;
+	font-size:105%;
+	border-radius:0 0 5px 5px;
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	text-shadow:1px 1px 1px #EED4A2;
+	box-shadow:0 0 3px #893b00}
+#appmenu-button:hover,
+#appmenu-button[open="true"]{
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2}
+#appmenu-button:active{
+	text-shadow:-1px -1px black}
+
+#tabbrowser-tabs[tabsontop="true"]{position:relative}
+
+@media not all and (-moz-windows-compositor) {
+	#main-window[tabsontop=false]:not(:-moz-lwtheme):after {
+		color: black !important;
+		text-shadow: none !important;
+		position: fixed !important;
+		top: -13px !important;
+	}
+	#titlebar{
+		margin-bottom:-21px!important;
+		border-width:0!important}
+	:root[sizemode="maximized"]>#titlebar{margin-bottom:-23px!important}
+	:root[tabsontop="false"]>#titlebar{margin-bottom:3px!important}
+	#main-window[sizemode="maximized"] #titlebar-buttonbox-container {
+		margin-top: 2px !important}
+	#main-window[sizemode="maximized"] #titlebar-buttonbox {
+			margin-top: -1px !important}
+	
+	@media (-moz-windows-theme: aero) {
+		#main-window[sizemode="maximized"] #titlebar {
+			margin-top: 4px !important}
+		#main-window[sizemode="maximized"] #titlebar-buttonbox {
+			margin-top: 3px !important}
+		#main-window[sizemode="maximized"][tabsontop=false]:after {
+			margin-top: 5px !important}
+	}
+	@media (-moz-windows-classic) {
+		#main-window[sizemode="maximized"] #titlebar {
+			margin-top: 7px !important}
+		#main-window[sizemode="normal"] #titlebar-buttonbox {
+			margin-top: -1px !important}
+		#main-window[sizemode="normal"] #appmenu-button {
+			margin-top: -3px !important}
+		#main-window[sizemode="maximized"] #appmenu-button-container {
+			margin-top: -1px !important}
+		#main-window[sizemode="maximized"] #appmenu-button {
+			margin-top: 0px !important}
+	}
+}
+
+:root[chromemargin][sizemode="maximized"] #appmenu-button{margin-top:2px;margin-bottom:4px}
+:root[chromemargin][sizemode="maximized"]{margin-top:2px!important}
+@media (-moz-windows-classic){
+:root[chromemargin][sizemode="maximized"]{margin-top:-2px!important}
+}
+@media (-moz-windows-compositor){
+:root[chromemargin]:-moz-system-metric(windows-glass) #appmenu-button{margin-top:2px!important}
+:root[chromemargin][sizemode="maximized"]{margin-top:5px!important}
+  
+#appmenu-button-container{-moz-box-align:stretch!important}
+#titlebar{
+	margin-bottom:-21px!important;
+	border-width:0!important;
+	box-shadow:none!important;
+	background:none!important}
+:root[sizemode="maximized"]>#titlebar{margin-bottom:-25px!important}
+:root[tabsontop="false"]>#titlebar{margin-bottom:-4px!important}
+
+:root[chromemargin][tabsontop="true"]>#tab-view-deck[selectedIndex="1"]{margin-top:19px}
+:root[chromemargin][sizemode="maximized"][tabsontop="true"]>#tab-view-deck[selectedIndex="1"]{margin-top:22px}
+
+@media (-moz-os-version: windows-vista),          
+  (-moz-os-version: windows-win7),          
+  (-moz-os-version: windows-win8) {
+	:root[chromemargin] #TabsToolbar[tabsontop="true"]:not([inFullscreen="true"]){
+		border-width:0!important;
+		-moz-padding-start:100px!important;
+		-moz-padding-end:120px!important}
+
+	:root[chromemargin][sizemode="normal"] #navigator-toolbox>toolbar,
+	:root[chromemargin][sizemode="normal"] #appcontent{
+		-moz-border-start:1px inset #B26F00;
+		-moz-border-end:1px inset #B26F00}
+	:root[chromemargin][sizemode="normal"] #sidebar-box{
+		-moz-border-start:1px inset #B26F00}
+}
+
+#tab-view-deck{margin-bottom:1px}
+
+:root[chromemargin][tabsontop="true"]>#titlebar:not(:-moz-system-metric(windows-glass)){
+	margin-bottom:-30px!important}
+:root[chromemargin][tabsontop="true"]>#tab-view-deck:not(:-moz-system-metric(windows-glass))[selectedIndex="1"]{
+	margin-top:25px}
+
+#printPageSetupDialog>tabbox,
+#certmanagertabs[flex]{
+	margin:0!important;
+	padding:0!important;
+	border-radius:0!important;
+	border-width:0!important}
+
+prefwindow[type="child"]>.paneDeckContainer{
+	border-width:0!important}
+
+#aboutDialog #extensionDetailsBox{
+	margin:0!important;
+	border-width:1px 0 0 0!important}
+
+#printedit-toolbar,#print-preview-toolbar,
+#navigator-toolbox[tabsontop="false"],
+#browser{
+	background-image:url(chrome://global/skin/hout.png)}
+
+#printPageSetupDialog>tabbox,
+prefwindow[type="child"]>.paneDeckContainer{
+	border-radius:0}
+
+#browser-bottombox{
+	border-radius:0 0 5px 5px;
+	background-image:url(chrome://global/skin/hout.png)!important}
+
+#sync-notifications>notification{
+	border-width:0!important;
+	background:transparent none!important;
+	color:inherit!important}
+
+#inspector-toolbar,
+#inspector-tree-iframe{
+	border-left-width:0!important;
+	border-right-width:0!important}
+} /* Aero End */
+
