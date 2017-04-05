@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.0.2
+- fix about:home branding
+
 ### 1.0.1
 - add background to progress meters
 
