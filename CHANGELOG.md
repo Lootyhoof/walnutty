@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.0.3
+- fix learn more links in popup notifications
+- add imagedocument.png for when viewing standalone images
+
 ### 1.0.2
 - fix about:home branding
 
