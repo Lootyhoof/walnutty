@@ -1,12 +1,49 @@
+#permissions-pagetitle {
+  display:none}
 #permissions-page{
-	background-image:url(chrome://global/skin/hout.png)}
-#sites-box{width:25em}
-#sites-filter{margin:6px}
+	font:message-box;
+	background-image:url(chrome://global/skin/gecko.png),url(chrome://global/skin/hout.png);
+	background-repeat:no-repeat,repeat;
+	background-position:right 90%,left top;
+	background-attachment:fixed,fixed;
+	color:black}
+#permissions-content{-moz-box-align:start}
+#sites-box{
+	width:25em;
+	padding:4px;
+	-moz-margin-end:2px}
+#sites-filter{margin:0 0 4px 0}
 #all-sites-item>.site-container>.site-favicon{list-style-image:none}
-#permissions-box{overflow:auto}
-#header-deck{padding:4px}
+#permissions-box{
+	overflow-y:auto;
+	margin:4px;
+	box-shadow:2px 2px 7px #893B00;
+	border-radius:9px;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	max-width:800px;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+#header-deck{
+	padding:2px}
+
+#permissions-list{
+	margin:0 4px 4px 4px;
+	overflow-y:auto;
+	border-width:2px;
+	border-style:solid;
+	-moz-border-top-colors:#B26F00 #893B00;
+	-moz-border-left-colors:#B26F00 #893B00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
 #defaults-description,
-#site-description{font-size:120%;-moz-margin-start:6px}
+#site-description,#site-visit-count{font-size:120%;-moz-margin-start:6px}
 #defaults-description{font-weight:bold}
 #site-label{font-weight:bold;padding:0 4px}
 .site-domain{max-width:200px}
@@ -19,22 +56,21 @@
 	-moz-image-region:rect(144px 16px 160px 0)}
 
 .pref-item[align="top"]{
-	margin:4px 6px;
-	padding:4px 4px 8px 4px;
-	border-radius:5px;
-	border:1px solid;
-	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
-	box-shadow:inset 1px 1px 3px #B26F00;
-	background-image:url(chrome://global/skin/backarea.png)}
-
+	margin:0;
+	padding:4px}
 .pref-icon{
 	width:32px;
 	height:32px;
-	margin:6px}
+	margin:4px}
+.pref-title{margin:0 2px;font-weight:bold}
+.pref-menulist{min-width:15em}
 
-.pref-icon[type="password"]{list-style-image:url(chrome://browser/skin/key-64.png)}
-.pref-icon[type="geo"]{list-style-image:url(chrome://browser/skin/geo_64.png)}
-.pref-icon[type="indexedDB"]{list-style-image:url(chrome://browser/skin/indexedDB-64.png)}
+.pref-icon[type="password"]{
+	list-style-image:url(chrome://browser/skin/key-64.png)}
+.pref-icon[type="geo"]{
+	list-style-image:url(chrome://browser/skin/geo_64.png)}
+.pref-icon[type="indexedDB"]{
+	list-style-image:url(chrome://browser/skin/indexedDB-64.png)}
 .pref-icon[type="install"]{
 	list-style-image:url(chrome://mozapps/skin/extensions/addons.png);
 	-moz-image-region:rect(0,32px,32px,0)}
@@ -42,27 +78,22 @@
 	list-style-image:url(chrome://mozapps/skin/extensions/addons.png);
 	-moz-image-region:rect(0,64px,32px,32px)}
 .pref-icon[type="popup"]{
-	list-style-image: url(chrome://browser/skin/preferences/permissions.png);
+	list-style-image:url(chrome://browser/skin/preferences/permissions.png);
 	-moz-image-region:rect(0,96px,32px,64px)}
 .pref-icon[type="cookie"]{
-	list-style-image: url(chrome://browser/skin/preferences/permissions.png);
+	list-style-image:url(chrome://browser/skin/preferences/permissions.png);
 	-moz-image-region:rect(0,32px,32px,0)}
+.pref-icon[type="desktop-notification"] {
+  list-style-image: url(chrome://global/skin/icons/notification-large.png)}
 .pref-icon[type="plugins"]{
 	list-style-image:url(chrome://mozapps/skin/extensions/addons.png);
 	-moz-image-region:rect(0 128px 32px 96px)}
 .pref-icon[type="fullscreen"]{
-	list-style-image: url(chrome://browser/skin/preferences/permissions.png);
+	list-style-image:url(chrome://browser/skin/preferences/permissions.png);
 	-moz-image-region:rect(0,64px,32px,32px)}
+.pref-icon[type="pointerLock"] {
+  list-style-image: url(chrome://browser/skin/pointerLock-64.png)}
 
-.pref-title{
-	margin:4px;
-	font-weight:bold}
-
-.pref-menulist{
-	margin-left:6px;
-	margin-right:6px;
-	min-width:10em}
-	
 #forget-site-button{
 	border-radius:5px;
 	-moz-outline-radius:7px;
