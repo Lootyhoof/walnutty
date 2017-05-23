@@ -2,9 +2,10 @@
 
 #BMB_subscribeToPageMenupopup{
 	-moz-binding:url(chrome://browser/content/urlbarBindings.xml#menuitem-iconic-tooltip)}
-#appmenu_fileAttachmentMenu,#appmenu_downloads,#appmenu_savePage,#menu_SaveCmd,#appmenu_fullScreen,
-#appmenu_newMessage>.splitmenu-menuitem,#appmenu_newTab>.splitmenu-menuitem,
-#appmenu_customize>.splitmenu-menuitem,#appmenu_help>.splitmenu-menuitem{
+#appmenu_fileAttachmentMenu,#appmenu_downloads,#appmenu_permissions,#appmenu_savePage,
+#menu_SaveCmd,#appmenu_fullScreen,#appmenu_newMessage>.splitmenu-menuitem,
+#appmenu_newTab>.splitmenu-menuitem,#appmenu_customize>.splitmenu-menuitem,
+#appmenu_help>.splitmenu-menuitem{
 	-moz-binding:url(chrome://global/content/bindings/menu.xml#menuitem-iconic)}
 
 #aboutName{list-style-image:url(chrome://branding/content/icon16.png)}
@@ -273,6 +274,9 @@ menuitem[anonid="context-enable"]{
 #context-media-unmute,#mailContext-media-unmute{
 	list-style-image:url(chrome://global/skin/media/video.png);
 	-moz-image-region:rect(16px,16px,32px,0)}
+
+#appmenu_permissions,#menu_openPermissions{
+  list-style-image:url(chrome://browser/skin/preferences/permissions.svg)!important}
 
 #menu_newPrivateWindow,
 #placesContext_open\:newprivatewindow,
