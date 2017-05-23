@@ -1,21 +1,54 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+groupbox:not([hidden="true"]):not([collapsed="true"]){
+	display:-moz-box;
+	-moz-box-orient:vertical}
 groupbox{
-	margin:4px;
-	border-radius:8px;
-	border:1px solid;
-	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
-	background-image:url(chrome://global/skin/hout.png)}
-.groupbox-body{
-	margin:4px}
+	margin:18px 8px 8px;
+	border-radius:7px;
+	box-shadow:1px 1px #EED4A2,.5px .5px 2px 1px #B26F00 inset,1px 1px 1px #B26F00 inset;
+	background-image:url(chrome://global/skin/backarea.png)}
+groupbox.collapsable[closed="true"]{box-shadow:none}
+groupbox[orient="horizontal"]{position:relative}
+.groupbox-body{margin:6px}
+.groupbox-body[orient="horizontal"]{margin-top:20px}
 caption{
-	margin:2px 0;
+	margin:0;
 	padding:2px 5px!important;
-	border-radius:8px;
+	font-weight:bold;
+	border-radius:7px;
 	border:1px solid;
 	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
-	background-image:url(chrome://global/skin/hout.png);
-	font-weight:bold;
-	box-shadow:1px 1px 2px #B26F00}
+	box-shadow:1px 1px 2px #B26F00;
+	background-image:url(chrome://global/skin/hout.png)}
+groupbox>caption{margin-top:-12px}
+[orient="horizontal"]>.groupbox-title{-moz-box-orient:vertical}
+[orient="horizontal"]>caption{position:absolute;top:0;left:0}
 .caption-text{padding:0 4px}
 caption.rounded{
-	background-color:transparent!important}
+	background-image:url(chrome://global/skin/hout.png)!important}
+	
+.collapsable>.groupbox-title>caption:hover{
+	border:2px solid;
+	padding:1px 4px!important;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:black}
+.collapsable>.groupbox-title>caption:hover:active{
+	-moz-border-top-colors:#B26F00 #B26F00;
+	-moz-border-left-colors:#B26F00 #B26F00;
+	-moz-border-right-colors:#893B00 #EED4A2;
+	-moz-border-bottom-colors:#893B00 #EED4A2;
+	background-image:url(chrome://global/skin/hout-active.png);
+	color:white}
+.collapsable>.groupbox-title>caption>.caption-icon{
+	margin:2px 0 0 0;
+	min-height:12px;
+	max-height:12px;
+	padding:2px;
+	list-style-image:url(chrome://global/skin/widgets.png);
+	-moz-image-region:rect(40px 36px 48px 28px)}
+.collapsable[closed="true"]>.groupbox-title>caption>.caption-icon{
+	-moz-image-region:rect(32px 36px 40px 28px)}

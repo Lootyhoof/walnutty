@@ -1,68 +1,147 @@
 @import url(chrome://global/skin/htmlbutton.css);
+@namespace html "http://www.w3.org/1999/xhtml";
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-html{
-	height:100%;
-	margin:0;
+:root{
 	font:message-box;
+	-moz-user-select:-moz-none;
+	cursor:default;
+	height:100%;
+	margin:0!important;
+	min-width:1px!important;
+	max-width:none!important;
 	background-image:url(chrome://global/skin/gecko.png),url(chrome://global/skin/hout.png);
 	background-repeat:no-repeat,repeat;
 	background-position:right 90%,left top;
 	background-attachment:fixed,fixed;
 	color:black}
+:root.blacklist{background:#333}
+@media(max-width:600px){:root{background-position:470px 90%, left top}}
+@media print{:root{background:none!important}}
 
-@media print{
-html{
-	background:transparent url(chrome://global/skin/gecko.png) no-repeat right bottom!important}
+body{
+	display:block!important;
+	font:message-box!important;
+	position:relative;
+	animation:all 150ms;
+	box-sizing:content-box;
+	min-width:350px!important;
+	max-width:50%!important;
+	min-height:70px!important;
+	margin:4em auto 0!important;
+	padding:16px!important;
+	-moz-padding-start:70px!important;
+	border-radius:18px;
+	box-shadow:2px 2px 7px #893B00;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	background-image:url(chrome://global/skin/icons/warning-large.png),url(chrome://global/skin/backarea.png);
+	background-repeat:no-repeat,repeat;
+	background-position:16px 16px,top left;
+	color:black}
+body:-moz-locale-dir(rtl){
+	background-position:calc(100% - 16px) 16px}
+body.normal{
+	display:block;
+	background-image:url(chrome://global/skin/icons/question-large.png),url(chrome://global/skin/backarea.png)!important}
+body.private{
+	display:block;
+	background-image:url(chrome://global/skin/icons/Privacy-48.png),url(chrome://global/skin/backarea.png)!important}
+.blacklist>body{
+	box-shadow:2px 2px 7px black;
+	background-color:#722;
+	background-image:url(chrome://global/skin/icons/blacklist_large.png)!important;
+	background-size:48px;
+	color:white}
+
+@media(max-width:600px){
+body{
+	background-image:url(chrome://global/skin/icons/warning-24.png);
+	background-size:24px,auto!important;
+	padding:8px!important;
+	-moz-padding-start:46px!important;
+	border-radius:9px}
+body.normal{background-image:url(chrome://global/skin/icons/question-24.png),url(chrome://global/skin/backarea.png)!important}
+body.private{background-image:-moz-image-rect(url(chrome://browser/skin/preferences/preferences.png),144,24,168,0),url(chrome://global/skin/backarea.png)!important}
+}
+@media(max-width:456px){
+body{
+	min-width:1px!important;
+	max-width:65%!important}
+}
+@media(max-width:380px){
+#returnButton,#advancedButton,#errorTryAgain{
+	position:unset!important}
+}
+@media(max-width:250px){
+body{
+	height:100%;
+	max-width:none!important;
+	box-sizing:border-box;
+	margin:0!important;
+	padding:2px!important;
+	-moz-padding-start:26px!important;
+	background-position:2px 2px!important;
+	border-width:0!important;
+	border-radius:0;
+	box-shadow:none}
 }
 
-#errorPageContainer{
-	position:relative;
-	min-width:13em;
-	max-width:52em;
-	margin:4em auto;
-	padding:17px;
-	border:3px solid red;
-	border-radius:18px;
-	background:-moz-Field url(chrome://global/skin/icons/warning-large.png) no-repeat scroll left 0;
-	background-origin:content-box;
-	box-shadow:5px 5px 5px #893B00;
-	color:-moz-FieldText}
-body[dir="rtl"] #errorPageContainer{background-position:right 0}
+body[onload="go()"],
+body[onload="populateReportList()"]{
+	max-width:none!important;
+	margin:2em 4em!important;
+	background-image:none,url(chrome://global/skin/backarea.png)!important;
+	-moz-padding-start:16px!important}
+body[onload="populateReportList()"]{
+	-moz-padding-start:46px!important;
+	background-image:url(chrome://global/skin/icons/information-24.png),url(chrome://global/skin/backarea.png)!important}
 
+/* For about:robots */
 #errorPageContainer:before{
-	position:relative!important;
-	float:left}
+	top:4px;
+	left:4px}
 
 h1{
-	margin:0;
-	font-size:150%}
-
-#errorTitle,
-#errorLongContent,
-#errorTryAgain{
-	-moz-margin-start:34px}
+	margin:4px 0;
+	font-size:140%}
+h1:first-child{
+	margin-top:0;
+	display:flex;
+	align-content:center}
+.title,
+#errorTitle{
+	color:darkred}
+.subtitleText{
+	font-weight:bold}
+p{
+	margin:4px 0}
+ul,ol{
+	margin:4px 0;
+	padding:0;
+	-moz-margin-start:16px}
+ul>li,
+ol>li{
+	margin-bottom:4px}
+body.normal>p.showNormal{
+	font-size:140%;
+	font-weight:bold;
+	margin-bottom:1em}
 
 #errorShortDesc{
-	border-bottom:1px solid red;
+	font-weight:600;
 	margin-bottom:4px;
-	font-size:125%}
+	font-size:120%;
+	color:darkred}
 
-#errorLongDesc{font-size:110%}
-p,ul{margin:4px 0}
-ul{-moz-padding-start:16px;list-style:square}
-ul>li,ol>li{margin-bottom:4px}
-
-#errorTryAgain{margin-top:1em}
-#errorContainer{display:none}
-
-:root.blacklist{background:#333}
-:root.blacklist #errorPageContainer{
-	background-color:#722;
-	background-image:url(chrome://global/skin/icons/blacklist_large.png);
-	color:white}
+:root.blacklist .title,
 :root.blacklist #errorTitle,
-:root.blacklist #errorLongContent,
-:root.blacklist #errorTryAgain{-moz-margin-start:70px}
+:root.blacklist #errorShortDesc{
+	text-shadow:1px 1px 2px black;
+	color:red}
 :root.blacklist a{color:white}
 :root.blacklist #errorTryAgain{display:none}
 
@@ -82,14 +161,244 @@ ul>li,ol>li{margin-bottom:4px}
 	left:auto!important;
 	font-size:inherit!important}
 #ignoreWarningButton:focus{
-	outline:1px solid #B26F00}
-
-#errorPageContainer.certerror{
-	background-image:url(chrome://global/skin/icons/sslWarning.png)}
-
-#errorPageContainer.certerror>#errorTitle,
-#errorPageContainer.certerror>#errorLongContent,
-#errorPageContainer.certerror>#errorTryAgain{-moz-margin-start:37px}
+	box-shadow:0 0 0 2px #CCCCFF;
+	outline:none}
 
 #url-fixer-section{margin-left:24px!important}
 #url-fixer-section>p:first-of-type{font-size:110%!important}
+
+.private .title,
+.private .titleText,
+.private #errorTitle,
+.private #errorShortDesc{
+	border-color:rgb(129,29,187);
+	color:rgb(129,29,187)}
+
+button.showNormal,
+#startPrivateBrowsing{list-style-image:url(chrome://browser/skin/Privacy-16.png)}
+
+#tpStartTour>#startTour,
+#moreInfoLink,
+#learnMore{
+	width:auto!important;
+	position:relative;
+	padding:4px!important;
+	text-decoration:underline;
+	border-radius:5px;
+	-moz-padding-start:20px!important;
+	font-weight:600!important;
+	line-height:inherit!important;
+	color:darkblue}
+#tpStartTour>#startTour::before,
+#moreInfoLink::before,
+#learnMore::before{
+	position:absolute;
+	content:"";
+	left:2px;
+	width:16px;
+	height:100%;
+	background:-moz-image-rect(url(chrome://global/skin/global.png),32,16,48,0) no-repeat top center}
+
+html|a{
+	color:darkblue;
+	text-decoration:underline;
+	border-radius:3px;
+	padding:0 2px!important;
+	cursor:pointer}
+#tpStartTour>#startTour:hover,
+#learnMore:hover,
+#moreInfoLink:hover,
+html|a:hover{
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:var(--hover-color)!important}
+#tpStartTour>#startTour:hover:active,
+#learnMore:active,
+#moreInfoLink:active,
+html|a:active{
+	background-image:url(chrome://global/skin/hout-active.png);
+	color:white!important}
+#tpStartTour>#startTour:-moz-focusring,
+#learnMore:focus,
+#moreInfoLink:focus,
+html|a:focus,
+html|a:-moz-focusring{
+	outline-width:0!important;
+	box-shadow:0 0 0 2px #B26F00}
+
+#errorTryAgain{
+	margin-top:1em;
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(128px 16px 144px 0)}
+#errorCancel,
+button[oncommand="window.close();"]{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(16px 16px 32px 0)}
+button[oncommand="restoreSession();"]{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(0 16px 16px 0)}
+button[oncommand^="openHelp"]{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(32px 16px 48px 0)}
+
+body.private{
+	max-width:none!important;
+	width:53.5em!important}
+#main.showPrivate{
+	width:53.5em!important;
+	justify-content:flex-start!important;
+	-moz-padding-start:0!important}
+#bar{
+	font:message-box!important;
+	font-size:150%!important;
+	font-weight:bold!important;
+	line-height:50px!important;
+	-moz-padding-start:0!important;
+	background:none!important;
+	color:#8D20AE!important}
+#privateBrowsingSection,#trackingProtectionSection{
+	width:24em!important;
+	margin:0 0 2em 0!important;
+	padding:0!important}
+.sectionHeader{font-size:150%!important}
+#trackingProtectionSection{
+	-moz-margin-start:2em!important;
+	margin-top:-3em!important;
+	margin-bottom:2em!important;
+	padding:1em!important;
+	box-shadow:2px 2px 7px #893B00!important;
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #EED4A2!important;
+	-moz-border-left-colors:#B26F00 #EED4A2!important;
+	-moz-border-right-colors:#893B00 #B26F00!important;
+	-moz-border-bottom-colors:#893B00 #B26F00!important;
+	background-image:url(chrome://global/skin/hout.png)}
+#list-area{padding:10px}
+#forgotten,#kept{
+	-moz-margin-start:0!important;
+	-moz-padding-start:0!important}
+
+.list-row:nth-child(2)>ul>li,
+#forgotten>li{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0)!important;
+	line-height:16px!important}
+.list-row:nth-child(4)>ul>li,
+#kept>li{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),32,32,48,16)!important;
+	line-height:16px!important}
+	
+#enableTrackingProtection,
+#disableTrackingProtection{
+	font-size:inherit!important;
+	text-decoration:none!important;
+	padding:2px!important}
+
+#reportList>table{width:100%!important}
+#reportList td{word-break:break-all}
+
+a.more{margin:0 2ch}
+a.more+br{display:none}
+
+
+/* aboutNetError/aboutCertError */
+#errorPageContainer{position:relative;padding-bottom:30px}
+@media(min-width:380px){
+#errorPageContainer{
+	position:relative;
+	padding-bottom:30px}
+}
+#returnButton,#advancedButton,#errorTryAgain{position:absolute;bottom:0}
+#errorTryAgain{left:calc(50% - 50px)}
+#advancedButton{right:0}
+
+#certificateErrorReporting,
+#weakCryptoAdvanced{
+	margin-top:4px}
+
+#errorShortDescText_phishing,
+#hostname,
+.hostname{
+	font-weight:bold;
+	font-size:120%}
+
+#weakCryptoAdvancedDescription>#errorLongDesc{
+	font-weight:bold;
+	margin:4px 0}
+#overrideWeakCrypto{
+	background-size:contain}
+
+#certificateErrorReporting>p{
+	display:flex;
+	flex:1}
+
+#errorStatePanel,
+#overrideWeakCryptoPanel{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-content:space-between;
+	align-items:flex-start}
+
+#badCertAdvancedPanel,
+#certificateErrorDebugInformation,
+#weakCryptoAdvancedPanel,
+#advancedPanel{
+	position:absolute;
+	top:calc(100% + 4px);
+	width:450px;
+	right:2px;
+	padding:4px 8px;
+	border-radius:9px;
+	box-shadow:2px 2px 7px #893B00!important;
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #EED4A2!important;
+	-moz-border-left-colors:#B26F00 #EED4A2!important;
+	-moz-border-right-colors:#893B00 #B26F00!important;
+	-moz-border-bottom-colors:#893B00 #B26F00!important;
+	background-image:url(chrome://global/skin/hout.png)}
+#certificateErrorDebugInformation{
+	top:calc(100% + 130px);
+	right:50%;
+	width:40vw;
+	max-width:80vw;
+	min-width:340px}
+#badCertTechnicalInfo{
+	overflow:auto;
+	white-space:pre-wrap}
+
+#advancedPanel::before,
+#badCertAdvancedPanel::before,
+#certificateErrorDebugInformation::before,
+#weakCryptoAdvancedPanel::before{
+	content:'';
+	position:absolute;
+	top:-20px;
+	right:2px;
+	width:24px;
+	height:24px;
+	background:-moz-image-rect(url(chrome://global/skin/small.png),600,24,624,0) no-repeat center}
+
+#errorCode{
+	color:-moz-dialogtext;
+	cursor:text;
+	text-decoration:none}
+
+#certificateErrorText{
+	font-family:Menlo,Consolas,Lucida Console,monospace;
+	white-space:pre-wrap;
+	overflow:auto;
+	max-height:40vh;
+	border:1px solid;border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	background:url(chrome://global/skin/backarea.png);
+	color:black}
+
+#errorContainer,
+#copyToClipboard,
+#learnMoreContainer,
+#reportCertificateErrorRetry,
+#certificateErrorReporting,
+#certificateErrorDebugInformation,
+#badCertAdvancedPanel{
+	display:none}
+
+button:disabled{cursor:pointer}

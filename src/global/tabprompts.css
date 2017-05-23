@@ -4,6 +4,7 @@ tabmodalprompt{
 
 .mainContainer{
 	padding:8px;
+	min-height:8em!important;
 	border-radius:8px;
 	border:2px solid;
 	-moz-border-top-colors:#B26F00 #EED4A2;

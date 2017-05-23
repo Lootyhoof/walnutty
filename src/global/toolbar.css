@@ -12,29 +12,27 @@ toolbar[mode="text"]{
 toolbarspacer{width:13px}
 
 toolbarseparator{
-	width:5px;
-	height:14px;
-	margin:2px 1px;
+	width:4px;
+	height:12px;
+	margin:5px 1px;
 	border-radius:8px;
 	box-shadow:inset 1px 1px 1px #B26F00;
 	border:1px solid;
 	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00}
 toolbar[orient="vertical"] toolbarseparator{
 	width:14px;
-	height:5px}
+	height:4px}
 
 toolbarpaletteitem{cursor:-moz-grab}
+toolbarpaletteitem[mousedown]{
+	cursor:-moz-grabbing;
+	box-shadow:1px 1px 2px #B26F00,2px 2px 4px #B26F00}
 toolbarpaletteitem:hover{
 	box-shadow:1px 1px 2px #B26F00;
 	background-image:url(chrome://global/skin/hout-hover.png)}
 
-toolbarpaletteitem[place="toolbar"]{
-	margin-left:-2px;
-	margin-right:-2px;
-	border-left:2px solid transparent;
-	border-right:2px solid transparent}
-toolbarpaletteitem[dragover="left"]{border-left-color:#893B00}
-toolbarpaletteitem[dragover="right"]{border-right-color:#893B00}
+toolbarpaletteitem[dragover="left"]{margin-left:-2px;border-left:2px solid #893B00}
+toolbarpaletteitem[dragover="right"]{margin-right:-2px;border-right:2px solid #893B00}
 
 .toolbarpaletteitem-box{
 	-moz-box-align:center;
@@ -47,12 +45,9 @@ toolbarpaletteitem[dragover="right"]{border-right-color:#893B00}
 #palette-box>toolbarpaletteitem:hover{
 	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2}
 
-toolbarpaletteitem>toolbarseparator{
-	box-shadow:0 0 0 4px #893B00;
-	margin:2px 4px}
 toolbarpaletteitem>toolbarspring,
 toolbarpaletteitem>toolbarspacer{
-	height:20px;
+	height:18px;
 	min-width:13px;
 	max-width:13px;
 	border:1px dotted #893B00}
@@ -60,3 +55,19 @@ toolbarpaletteitem>toolbarspring{
 	min-width:32px;
 	max-width:none;
 	background:url(chrome://global/skin/icons/spring.png) no-repeat center}
+
+/* For SM */
+.collapsed-tray-holder{height:8px}
+.toolbar-box{-moz-box-align:stretch}
+.toolbar-holder{-moz-box-align:center}
+toolbargrippy{
+	border-radius:5px 5px 0 0;
+	background:url(chrome://global/skin/toolbar-grippy.png) top center no-repeat;
+	width:12px}
+toolbargrippy[tbgrippy-collapsed="true"]{
+	border-radius:5px 0 0 5px;
+	background:url(chrome://global/skin/toolbar-grippy-collapsed.png) center left no-repeat;
+	height:8px;
+	width:24px}
+toolbargrippy:hover{background-color:#B26F00}
+toolbargrippy:hover:active{background-color:#EED4A2}

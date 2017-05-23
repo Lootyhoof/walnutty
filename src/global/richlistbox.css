@@ -1,6 +1,6 @@
 richlistbox{
 	-moz-appearance:none!important;
-	border:2px solid!important;
+	border:2px solid;
 	-moz-border-top-colors:#B26F00 #893B00!important;
 	-moz-border-left-colors:#B26F00 #893B00!important;
 	-moz-border-right-colors:#EED4A2 #B26F00!important;
@@ -13,8 +13,8 @@ richlistbox[disabled="true"]{
 
 richlistitem{
 	padding:2px;
-	border:1px solid!important;
-	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2!important;
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
 	background-image:url(chrome://global/skin/hout.png);
 	color:black}
 richlistitem:first-child{border-radius:3px 3px 0 0}
@@ -24,7 +24,7 @@ richlistitem:hover,
 richlistitem[selected="true"]{
 	border-color:#EED4A2 #893B00 #893B00 #EED4A2!important;
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:black!important}
+	color:var(--hover-color)!important}
 richlistbox:focus>richlistitem[current="true"]{
 	border-color:#EED4A2 #893B00 #893B00 #EED4A2!important;
 	background-image:url(chrome://global/skin/hout-active.png)!important;

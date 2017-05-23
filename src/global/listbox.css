@@ -14,12 +14,12 @@ listbox[disabled="true"]{
 
 listitem{
 	border:1px solid transparent;
-	outline-offset:-1px;
+	outline-width:0;
 	padding:1px 0}
 listitem:hover,
 listitem[selected="true"]{
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:black}
+	color:var(--hover-color)}
 listbox:focus>listitem[selected="true"]{
 	background-image:url(chrome://global/skin/hout-active.png);
 	color:white}

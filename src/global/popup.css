@@ -46,6 +46,8 @@ panel[type="arrow"]{
 	background:none!important;
 	border-width:0!important}
 
+panel[type="arrow"]:not([animate="false"]){transition-duration:100ms}
+
 panel[type="arrow"][side="top"],
 panel[type="arrow"][side="bottom"]{
 	margin:0 -16px}
@@ -71,6 +73,6 @@ panel[type="arrow"][side="right"]{
 	margin:5px -3px 5px -9px;
 	list-style-image:url(chrome://global/skin/small.png);
 	-moz-image-region:rect(72px 24px 96px 0)}
-.panel-arrow[side="top"]{-moz-transform:rotate(270deg);margin:-4px 5px -9px 5px}
-.panel-arrow[side="bottom"]{-moz-transform:rotate(90deg);margin:-9px 5px -4px 5px}
+.panel-arrow[side="top"]{-moz-image-region:rect(600px,24px,624px,0);margin:-4px 5px -9px 5px}
+.panel-arrow[side="bottom"]{-moz-image-region:rect(600px,48px,624px,24px);margin:-9px 5px -4px 5px}
 .panel-arrow[side="left"]{-moz-image-region:rect(48px 24px 72px 0);margin:5px -9px 5px -4px}

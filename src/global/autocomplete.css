@@ -1,8 +1,6 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @namespace html url(http://www.w3.org/1999/xhtml);
 
-textbox{cursor:default}
-	
 .autocomplete-history-dropmarker{
 	border:1px solid transparent;
 	padding:1px;
@@ -11,66 +9,133 @@ textbox{cursor:default}
 	list-style-image:url(chrome://global/skin/widgets.png);
 	-moz-image-region:rect(10px 60px 20px 50px)}
 .autocomplete-history-dropmarker:hover:not([disabled="true"]){
-	border-color:#EED4A2 #893B00 #893B00 #EED4A2;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
 	background-image:url(chrome://global/skin/hout-hover.png)}
 .autocomplete-history-dropmarker[open="true"]{
+	background-image:url(chrome://global/skin/hout-active.png)!important;
 	-moz-image-region:rect(0 60px 10px 50px)}
 .autocomplete-history-dropmarker[disabled="true"]{
 	-moz-image-region:rect(10px 70px 20px 60px)}
 
+html|*.autocomplete-textbox{padding:0 2px}
+
 panel[type="autocomplete"],
 panel[type="autocomplete-richlistbox"],
 .autocomplete-history-popup{
-	max-height:25em}
+	max-height:300px}
 
 .autocomplete-treecol{
 	margin:0!important;
 	border:0!important;
 	padding:0!important}
 
-.autocomplete-treebody::-moz-tree-cell-text{padding-left:3px}
+.autocomplete-treebody::-moz-tree-cell-text{-moz-padding-start:3px}
 .autocomplete-treebody::-moz-tree-row{border-bottom:1px solid transparent}
 .autocomplete-treebody::-moz-tree-row(selected){background-image:url(chrome://global/skin/hout-active.png)!important}
 .autocomplete-treebody::-moz-tree-cell-text(selected){color:white!important}
-
-.autocomplete-dropmarker-bkgnd-box{display:none}
+.autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment){color:#893B00}
+.autocomplete-treebody::-moz-tree-cell-text(suggesthint,treecolAutoCompleteComment),
+.autocomplete-treebody::-moz-tree-cell-text(suggestfirst,treecolAutoCompleteComment){font-size:90%}
 
 .autocomplete-tree,
 .autocomplete-richlistbox{
-	margin:0;
+	margin:0!important;
 	border:0!important;
 	padding:0!important;
-	background-image:url(chrome://global/skin/hout.png)!important;
+	background-image:url(chrome://global/skin/backarea.png);
 	color:black}
 .autocomplete-richlistbox>scrollbox>.scrollbox-innerbox{
-	background:transparent url(chrome://global/skin/hout.png)!important}
+	background:url(chrome://global/skin/backarea.png)!important}
+.autocomplete-richlistbox{
+	max-height:270px!important;
+	height:auto!important}
 
 .autocomplete-richlistitem{
 	box-shadow:none;
 	-moz-box-orient:vertical;
-	margin:0!important;
-	padding:2px 0 2px 2px!important;
-	border:0!important;
-	border-radius:0!important;
-	background:transparent none!important}
+	margin:0;
+	border-radius:0;
+	transition-duration:0s!important;
+	padding:2px;
+	border-width:0;
+	background:none!important;
+	color:inherit!important}
 .autocomplete-richlistitem:not(:first-child){
-	border-top:1px solid #B26F00!important}
-
+	border-top:1px solid #B26F00}
 .autocomplete-richlistitem[selected="true"]{
 	background-image:url(chrome://global/skin/hout-active.png)!important;
 	color:white!important}
 
 .ac-normal-text{padding:0}
-
 .ac-type-icon,
 .ac-result-type-tag,
 .ac-site-icon{width:16px;height:16px;margin:0 1px}
-.ac-extra>.ac-comment{-moz-padding-end:4px}
-
+.ac-extra>.ac-comment{-moz-padding-end:4px;font-size:inherit}
 .ac-ellipsis-after{min-width:1em;padding:0}
-html|*.ac-emphasize-text{font-weight:bold}
+
+html|span.ac-emphasize-text,
+html|span.ac-emphasize-text-url,
+html|span.ac-emphasize-text-tag{
+	font-weight:600}
+
 .ac-title,.ac-url{overflow:hidden}
 
-.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue){max-width:16px;height:16px}
+.ac-url-text{
+	font-size:90%;
+	padding:0 2px;
+	color:darkblue}
+.ac-action{
+	padding:0 2px;
+	font-style:italic;
+	color:darkblue!important}
+.autocomplete-richlistitem[selected] .ac-url-text,
+.autocomplete-richlistitem[selected] .ac-action{
+	color:inherit!important}
 
-textbox[nomatch="true"][highlightnonmatches="true"]{color:red}
+.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue){max-width:16px;height:16px}
+textbox[nomatch="true"][highlightnonmatches="true"]{color:darkred}
+
+.autocomplete-dropmarker-bkgnd-box,
+.autocomplete-richlistitem[actiontype="keyword"] .ac-url-box,
+.autocomplete-richlistitem[actiontype="searchengine"] .ac-url-box,
+.autocomplete-richlistitem[actiontype="visiturl"] .ac-url-box,
+.autocomplete-richlistitem[type~="autofill"] .ac-url-box{
+	visibility:hidden}
+
+.autocomplete-richlistitem[actiontype="keyword"] .ac-title-box,
+.autocomplete-richlistitem[actiontype="searchengine"] .ac-title-box,
+.autocomplete-richlistitem[actiontype="visiturl"] .ac-title-box,
+.autocomplete-richlistitem[type~="autofill"] .ac-title-box{
+	transform:translateY(8px)}
+
+hbox[anonid="search-suggestions-notification"]{
+	border-bottom:2px solid!important;
+	-moz-border-bottom-colors:#EED4A2 #B26F00!important;
+	-moz-padding-start:32px!important;
+	background-image:url(chrome://global/skin/icons/question-24.png)!important;
+	background-clip:padding-box!important;
+	background-position:4px center!important;
+	background-repeat:no-repeat!important}
+hbox[anonid="search-suggestions-notification"]:-moz-locale-dir(rtl){
+	background-position:right 4px center!important}
+	
+/*FF48 and higer */
+#PopupAutoCompleteRichResult[flip]>richlistbox>.autocomplete-richlistitem{
+	-moz-box-orient:horizontal;
+	padding:3px;
+	padding-inline-start:45px;
+	border-width:0!important}
+
+.autocomplete-richlistitem>.ac-type-icon,
+.autocomplete-richlistitem>.ac-site-icon{
+	margin:0 3px}
+
+html|span.ac-tag{
+	border-radius:5px;
+	padding:0 3px;
+	background-image:url(chrome://global/skin/hout-active.png);
+	color:white}
+
+.ac-text-overflow-container{padding:0}
+.ac-separator{display:none}
+.ac-action[actiontype=searchengine]:not([selected]){display:-moz-box!important}

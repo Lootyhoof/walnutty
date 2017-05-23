@@ -2,17 +2,29 @@
 
 #BMB_subscribeToPageMenupopup{
 	-moz-binding:url(chrome://browser/content/urlbarBindings.xml#menuitem-iconic-tooltip)}
-
 #appmenu_fileAttachmentMenu,#appmenu_downloads,#appmenu_savePage,#menu_SaveCmd,#appmenu_fullScreen,
 #appmenu_newMessage>.splitmenu-menuitem,#appmenu_newTab>.splitmenu-menuitem,
 #appmenu_customize>.splitmenu-menuitem,#appmenu_help>.splitmenu-menuitem{
 	-moz-binding:url(chrome://global/content/bindings/menu.xml#menuitem-iconic)}
 
+#aboutName{list-style-image:url(chrome://branding/content/icon16.png)}
+
+#updateButton{
+	padding:1px!important;
+	list-style-image:url(chrome://mozapps/skin/extensions/extensions.png);
+	-moz-image-region:rect(0,16px,16px,0)}
+
+.tools{
+	list-style-image:url(chrome://global/skin/global.png)!important;
+	-moz-image-region:rect(80px,16px,96px,0)!important}
 #placesContext_open\:newwindow,#context-openlink,#mailContext-openNewWindow,
 #appmenu_newNavigator,#otherActionsOpenInNewWindow,#appmenu_newNavigator,
-menuitem[key="key_newNavigator"],menuitem[anonid="openTabInWindow"]{
+menuitem[key="key_newNavigator"],menuitem[anonid="openTabInWindow"],#context-openframeintab{
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(80px,32px,96px,16px)!important}
+
+#context_newTab,
+menuitem[oncommand="BrowserOpenTab();"],
 #placesContext_open\:newtab,#context-openlinkintab,#threadPaneContext-openNewTab,
 #appmenu_newTab,#appmenu_newTab_popup,#appmenu_newTab_sub,
 #otherActionsOpenInNewTab,menuitem[key="key_newNavigatorTab"]{
@@ -21,32 +33,39 @@ menuitem[key="key_newNavigator"],menuitem[anonid="openTabInWindow"]{
 #menuitem_openReferrer,
 #menu_openLocation,menuitem[command="Browser:OpenLocation"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(144px 16px 160px 0)!important}
-#menuitem_show,#context-openAttachment,#browsedir,#chooseFolder,
-#menu_openFile,menuitem[command="Browser:OpenFile"]{
+	-moz-image-region:rect(144px,16px,160px,0)!important}
+#downloadsPanel-blockedSubview-openButton,
+#menuitem_show,#context-openAttachment,#browsedir,#chooseFolder,#sp-toolbar-open,.backups,
+#menu_openFile,menuitem[command="Browser:OpenFile"],#utils-installFromFile,#installFileButton
+menuitem[command="cmd_installFromFile"]{
 	list-style-image:url(chrome://global/skin/widgets.png)!important;
-	-moz-image-region:rect(57px 53px 73px 37px)!important}
-#context-sendvideo,#context-sendaudio,#sendMailToItem,#appmenu_sendLink,
+	-moz-image-region:rect(57px,53px,73px,37px)!important}
+#context-sendvideo,#context-sendaudio,#sendMailToItem,#appmenu_sendLink,.qfn-menuitem-email,
 #context-sendlink,#context-sendpage,#context-sendimage,#menu_sendLink{
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(256px,32px,272px,16px)!important}
 
-#context-savevideo,#context-saveaudio,#saveAsMenuItem,#mailContext-saveAs,#appmenu_savePage,#PdfSaveButton,
+#context-savevideo,#context-saveaudio,#saveAsMenuItem,#mailContext-saveAs,#appmenu_savePage,#PdfSaveButton,#sp-toolbar-save,
 menuitem[key="key_savePage"],#menu_saveFrame,#context-savelink,#context-saveAttachment,#context-saveAllAttachments,
 #context-savepage,#context-saveimage,menuitem[command="cmd_save"],#menu-help-savecurr{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(368px 16px 384px 0)!important}
+	-moz-image-region:rect(368px,16px,384px,0)!important}
 
-#otherActionsPrint,#appmenu_print,menuitem[command="cmd_print"],#mailContext-print{
+.qfn-menuitem-print,#otherActionsPrint,#appmenu_print,menuitem[command="cmd_print"],#mailContext-print,#abResultsTreeContext-print,#printAddressBook{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(304px 16px 320px 0)!important}
+	-moz-image-region:rect(304px,16px,320px,0)!important}
 
 #menuitem_removeFromList,#orgClose,#menu_closeWindow,menuitem[command="cmd_close"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(224px 32px 240px 16px)!important}
-#menu_close,menuitem[label="Close Tab"],menuitem[anonid="closeTab"]{
-	list-style-image:url(chrome://global/skin/global.png);
-	-moz-image-region:rect(48px 32px 64px 16px)}
+	-moz-image-region:rect(224px,32px,240px,16px)!important}
+
+
+#menu_close,
+menuitem[oncommand*="removeTab"],
+menuitem[label="Close Tab"],
+menuitem[anonid="closeTab"]{
+	list-style-image:url(chrome://global/skin/global.png)!important;
+	-moz-image-region:rect(48px,32px,64px,16px)!important}
 
 #menu_FileQuitItem,menuitem[command^="cmd_quit"],#appmenu-quit{
 	list-style-image:url(chrome://global/skin/global.png)!important;
@@ -55,47 +74,56 @@ menuitem[key="key_savePage"],#menu_saveFrame,#context-savelink,#context-saveAtta
 menuitem[command^="cmd_quit"]:-moz-locale-dir(rtl)>.menu-iconic-icon,
 #appmenu-quit:-moz-locale-dir(rtl)>.menu-iconic-icon{-moz-transform:scaleX(-1)}
 
-#menu_undo,#context-undo,menuitem[command="cmd_undo"],#mailContext-undo,menuitem[cmd="cmd_undo"]{
+.qfn-menuitem-undo,#menu_undo,#context-undo,#customization-undo-reset-button,#mailContext-undo,#restoreDefaultSearchEngines,#historyRestoreLastSession,#appMenuRestoreLastSession,
+menuitem[command="cmd_undo"],menuitem[cmd="cmd_undo"]{
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(496px,32px,512px,16px)}
-#menu_redo,#context-redo,menuitem[command="cmd_redo"]{
+.qfn-menuitem-redo,#menu_redo,#context-redo,menuitem[cmd="cmd_redo"],menuitem[command="cmd_redo"]{
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(496px,16px,512px,0)}
-#appmenu-cut,#placesContext_cut,#menu_cut,#context-cut,menuitem[key="key_cut"],
-#mailContext-cut,menuitem[cmd="cmd_cut"]{
+.smart-cut,.qfn-menuitem-cut,#appmenu-cut,#placesContext_cut,#menu_cut,#context-cut,menuitem[key="key_cut"],#cMenu_cut,
+#mailContext-cut,menuitem[cmd="cmd_cut"],menuitem[command="cmd_cut"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(320px 16px 336px 0)!important}
-#appmenu-copy,#copy-style-info,
-#menuitem_copyLocation,#copyMenuItem,#mailContext-copy,
+	-moz-image-region:rect(320px,16px,336px,0)!important}
+
+.smart-copy,.qfn-menuitem-copy,#appmenu-copy,#copy-style-info,#placesContext_copy,#menu_copy,#context-copy,
+#menuitem_copyLocation,#copyMenuItem,#mailContext-copy,#cMenu_copy,
 #context-copyvideourl,#context-copyaudiourl,#copyEmailAddressItem,
-#placesContext_copy,#menu_copy,#context-copy,menuitem[key="key_copy"],menuitem[cmd="cmd_copy"]{
+menuitem[key="key_copy"],menuitem[cmd="cmd_copy"],menuitem[command="cmd_copy"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(336px 16px 352px 0)!important}
-#appmenu-paste,
-#placesContext_paste,#menu_paste,#context-paste,
-menuitem[key="key_paste"],#mailContext-paste,menuitem[cmd="cmd_paste"]{
+	-moz-image-region:rect(336px,16px,352px,0)!important}
+.qfn-menuitem-paste,#appmenu-paste,#placesContext_paste,#menu_paste,#context-paste,#mailContext-paste,
+menuitem[key="key_paste"],menuitem[cmd="cmd_paste"],menuitem[command="cmd_paste"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(352px 16px 368px 0)!important}
+	-moz-image-region:rect(352px,16px,368px,0)!important}
 
-button[anonid="delete"],menuitem[anonid="context-delete"],
-#placesContext_delete,#menu_delete,#appmenu_emptyTrash,
-#context-delete,menuitem[key="key_delete"],menuitem[cmd="cmd_delete"],
+#clearDownloads,#clear-reports{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(576px,32px,592px,16px)}
+
+#downloadsPanel-blockedSubview-deleteButton,
+.smart-delete,.qfn-menuitem-delete,.trash,#placesContext_delete,#menu_delete,#appmenu_emptyTrash,#cMenu_delete,#context-delete,#removeEngineButton,
+button[anonid="delete"],menuitem[anonid="context-delete"],menuitem[command="cmd_removeProject"],
+menuitem[key="key_delete"],menuitem[cmd="cmd_delete"],menuitem[command="cmd_delete"],menuitem[command="cmd-delete"],
 #mailContext-delete,#ltnDeleteSelectedCalendar,#context-deleteAttachment,#context-deleteAllAttachments,
-#task-context-menu-delete,#calendar-delete-task-button,#calendar-item-context-menu-delete-menuitem{
+#task-context-menu-delete,#calendar-delete-task-button,#calendar-item-context-menu-delete-menuitem,.trash{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(272px 16px 288px 0)!important}
+	-moz-image-region:rect(272px,16px,288px,0)!important}
 
-#menu_find,#context-searchselect,#appmenu_find,#findButton{
+#menu_find,#context-searchselect,#appmenu_find,#findButton,menuitem[key="find-key"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(224px 16px 240px 0)!important}
+	-moz-image-region:rect(224px,16px,240px,0)!important}
 
 #context-stop,menuitem[key="key_stop"],#mailContext-stop{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(16px 16px 32px 0)!important}
+	-moz-image-region:rect(16px,16px,32px,0)!important}
+
+menuitem[oncommand*="reloadTab"],
 #placesContext_reload,#placesContext_reloadMicrosummary,#menu_reload,#context-reload,
 menuitem[key="key_reload"],#mailContext-reload{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(128px 16px 144px 0)!important}
+	-moz-image-region:rect(128px,16px,144px,0)!important}
+
 #menu_textReduce,#zoom-out,menuitem[key="key_fullZoomReduce"]{
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(512px,16px,528px,0)}
@@ -105,23 +133,27 @@ menuitem[key="key_reload"],#mailContext-reload{
 
 #context-back,#historyMenuBack,menuitem[key="goBackKb"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(192px 16px 208px 0)!important}
+	-moz-image-region:rect(192px,16px,208px,0)!important}
 #context-forward,#historyMenuForward,menuitem[key="goForwardKb"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(208px 16px 224px 0)}
+	-moz-image-region:rect(208px,16px,224px,0)}
 menuitem[anonid="homepage"],
 #context-home,menuitem[key="goHome"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(288px 16px 304px 0)!important}
-#appmenu_history,#appmenu_HistoryItem,
+	-moz-image-region:rect(288px,16px,304px,0)!important}
+#appmenu_history,#appmenu_HistoryItem,#utils-viewUpdates,
 menuitem[key="showAllHistoryKb"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(32px,32px,48px,16px)!important}
 
-#appmenu_bookmarkThisPage,#BMB_bookmarkThisPage,
+menuitem[oncommand="BookmarkThisTab();"],
+#appmenu_bookmarkThisPage,#BMB_bookmarkThisPage,toolbarbutton[key="viewBookmarksSidebarKb"],
 #context-bookmarkpage,#context-bookmarklink,menuitem[key="addBookmarkAsKb"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(240px 32px 256px 16px)!important}
+	-moz-image-region:rect(240px,32px,256px,16px)!important}
+#context-bookmarkpage[starred="true"]{
+	-moz-image-region:rect(160px,16px,176px,0)!important}
+
 #appmenu_subscribeToPage,
 #appmenu_subscribeToPageMenu,
 #BMB_subscribeToPage,
@@ -131,112 +163,119 @@ menuitem[key="showAllHistoryKb"]{
 #subscribeToPageSubmenuMenupopup>menuitem,
 #feed-button>menupopup>menuitem{
 	list-style-image:url(chrome://global/skin/widgets.png)!important;
-	-moz-image-region:rect(41px 70px 57px 54px)!important}
+	-moz-image-region:rect(41px,70px,57px,54px)!important}
 
+#menu_bookmarksSidebar,
 #appmenu_bookmarks,#appmenu_unsortedBookmarks,#BMB_unsortedBookmarks,
 menuitem[key="manBookmarkKb"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(160px 16px 176px 0)!important}
+	-moz-image-region:rect(160px,16px,176px,0)!important}
+
+menuitem[command="Browser:BookmarkAllTabs"],
 #placesContext_openContainer\:tabs,#placesContext_openLinks\:tabs,
 menuitem[key="bookmarkAllTabsKb"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(480px 32px 496px 16px)!important}
+	-moz-image-region:rect(480px,32px,496px,16px)!important}
 
 menuitem[label^="Find in"],
 menuitem[key="key_search"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(64px 16px 80px 0)!important}
+	-moz-image-region:rect(64px,16px,80px,0)!important}
 #appmenu_downloads,
 menuitem[key="key_openDownloads"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(112px,16px,128px,0)!important}
-menuitem[command="Tools:Addons"],#menu_openAddons,#addonsManager,#appmenu_addons{
+menuitem[command="Tools:Addons"],#menu_openAddons,#addonsManager,#appmenu_addons,menuitem.addon,#getMoreDevtools{
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(400px,32px,416px,16px)!important}
 
-.social-addons-menuitem,.devtools-option-toolbarbutton,
-button[anonid="edit"],menuitem[anonid="context-edit"],button[id="myExtra2"],
+.tabmail-tab[type="preferencesTab"],
+#manage-share-providers,.social-addons-menuitem,.devtools-option-toolbarbutton,.translate-infobar-element[anonid="options"],.options,
+button[anonid="edit"],menuitem[anonid="context-edit"],button[id="myExtra2"],#alertSettings,
 #appmenu_customize,.open-engine-manager,#placesContext_show\:info,
 #menu_preferences,#context-customize,#appmenu_preferences,#menu-help-settings,
-menuitem[observes="printPages2Pdf-bc_preferences"],
+menuitem[observes="printPages2Pdf-bc_preferences"],menuitem[command="cmd_showPrefs"],
 #menu_properties,menuitem[label^="Customize"],menuitem[label="Properties"],#GlobalPropsButton{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(96px 16px 112px 0)!important}
-menuitem[key="key_errorConsole"],#appmenu_errorConsole,#javascriptConsole{
+	-moz-image-region:rect(96px,16px,112px,0)!important}
+
+[key="key_browserConsole"],[key="key_errorConsole"],#appmenu_errorConsole,#javascriptConsole,[oncommand="toJavaScriptConsole()"]{
 	list-style-image:url(chrome://global/skin/icons/warning-16.png)!important}
 #tb-chatzilla-open,
 #tb-chatzilla-appmenu,
 #tb-chatzilla-menu{
 	list-style-image:url(chrome://global/skin/widgets.png)!important;
 	-moz-image-region:rect(96px,101px,112px,85px)!important}
+#menu_pageSource,
 #appmenu_pageSource,
-menuitem[key="key_viewSource"],
+[key="key_viewSource"],
 menuitem[command="View:PageInfo"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(432px,32px,448px,16px)!important}
 
+#menu_domInspector,
 #appmenu_inspector,
 #menu_inspector{
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(464px,32px,480px,16px)!important}
 
-#appmenuitem_inspector,
-#appmenu_pageinspect,
-#developer-toolbar-inspector,
-#inspector-inspect-toolbutton{
+#command-button-pick,[key="key_inspectPage"],#appmenuitem_inspector,
+#appmenu_pageinspect,#developer-toolbar-inspector,#inspector-inspect-toolbutton{
 	list-style-image:url(chrome://inspector/skin/inspector.png);
 	-moz-image-region:rect(0,16px,16px,0)}
 #inspector-treepanel-toolbutton{
 	list-style-image:url(chrome://inspector/skin/inspector.png);
 	-moz-image-region:rect(0,64px,16px,48px)}
-menuitem[key="key_styleeditor"],
-#appmenu_styleeditor,
-#inspector-style-button{
+#menuitem_styleeditor,[key="key_styleeditor"],#appmenu_styleeditor,#inspector-style-button{
 	list-style-image:url(chrome://inspector/skin/inspector.png);
 	-moz-image-region:rect(0,80px,16px,64px)}
 
 #menu_openHelp,#menu_HelpPopup,menuitem[label^="Help"],#appmenu_openHelp,#appmenu_help,.helpmenuitem,
-menuitem[oncommand="SocialUI.showLearnMore();"]{
+toolbarbutton[oncommand="openHelpLink('firefox-help')"],.support,
+menuitem[oncommand="SocialUI.showLearnMore();"],#identity-popup-help-icon{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(32px 16px 48px 0)!important}
+	-moz-image-region:rect(32px,16px,48px,0)!important}
 
 menuitem[oncommand^="PlacesUIUtils.openContainerNodeInTabs"]{
 	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(480px 16px 496px 0)!important}
+	-moz-image-region:rect(480px,16px,496px,0)!important}
 
-#menuitem_open{
+#menuitem_open,menuitem[command="cmd_play"]{
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(0,16px,16px,0)}
 
+#context-video-fullscreen,
 #appmenu_fullScreen{
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(0,32px,16px,16px)}
 
 menuitem[anonid="context-disable"]{
 	list-style-image:url(chrome://global/skin/global.png);
-	-moz-image-region:rect(16px 16px 32px 0)}
+	-moz-image-region:rect(16px,16px,32px,0)}
 
 menuitem[anonid="context-enable"]{
 	list-style-image:url(chrome://global/skin/global.png);
-	-moz-image-region:rect(0 16px 16px 0)}
+	-moz-image-region:rect(0,16px,16px,0)}
 
 #update-all,menuitem[anonid="find-update"]{
 	list-style-image:url(chrome://global/skin/global.png);
-	-moz-image-region:rect(128px 16px 144px 0)}
+	-moz-image-region:rect(128px,16px,144px,0)}
 
 #context-media-play,#mailContext-media-play{
 	list-style-image:url(chrome://global/skin/media/video.png);
-	-moz-image-region:rect(0 16px 16px 0)}
+	-moz-image-region:rect(0,16px,16px,0)}
 #context-media-pause,#mailContext-media-pause{
 	list-style-image:url(chrome://global/skin/media/video.png);
-	-moz-image-region:rect(0 32px 16px 16px)}
+	-moz-image-region:rect(0,32px,16px,16px)}
 #context-media-mute,#mailContext-media-mute{
 	list-style-image:url(chrome://global/skin/media/video.png);
-	-moz-image-region:rect(16px 32px 32px 16px)}
+	-moz-image-region:rect(16px,32px,32px,16px)}
 #context-media-unmute,#mailContext-media-unmute{
 	list-style-image:url(chrome://global/skin/media/video.png);
-	-moz-image-region:rect(16px 16px 32px 0)}
+	-moz-image-region:rect(16px,16px,32px,0)}
 
+#menu_newPrivateWindow,
+#placesContext_open\:newprivatewindow,
 #appmenu_privateBrowsing,
 #appmenu_newPrivateWindow,
 #privateBrowsingItem{
@@ -245,78 +284,90 @@ menuitem[anonid="context-enable"]{
 menuitem[label="Sage"]{
 	list-style-image:url(chrome://sage/skin/sage_leaf_16.png)}
 
+toolbarbutton[key="key_readingListSidebar"],
+menu_readingListSidebar,
+#menu_readingList,
+#BMB_readingList{
+	list-style-image:url(chrome://global/skin/ReaderMode.png);
+	-moz-image-region:rect(0,72px,24px,48px)}
+toolbarbutton[key="key_gotoHistory"],
+#menu_historySidebar{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(32px,32px,48px,16px)}
+
+
 #toggle-breakpoints{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,64px,16px,48px)}
 #menu_scratchpad,
 #appmenu_scratchpad,
 #command-button-scratchpad{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,144px,16px,128px)}
 #menu_tilt,
 #command-button-tilt{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,160px,16px,144px)}
 #menu_responsiveUI,
 #appmenu_responsiveUI,
 #command-button-responsive{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,176px,16px,160px)}
 #toolbox-dock-side{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,192px,16px,176px)}
 #toolbox-dock-bottom,
 #toolbox-dock-bottom-minimize.minimized{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,208px,16px,192px)}
 #black-box{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,224px,16px,208px)}
 #command-button-splitconsole{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,272px,16px,256px)}
 #command-button-frames{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,304px,16px,288px)}
 #command-button-rulers{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,320px,16px,304px)}
 #command-button-noautohide{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,400px,16px,384px)}
 #menuitem_dom{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(0,432px,16px,416px)}
 
 #menuitem_webconsole{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,16px,32px,0)}
 #menuitem_jsdebugger{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,32px,32px,16px)}
 #menuitem_inspector{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,64px,32px,48px)}
 #menuitem_performance{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,96px,32px,80px)}
 #menuitem_netmonitor{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,112px,32px,96px)}
 #pretty-print{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,201px,32px,185px)}
 toolbarbutton[oncommand="openEyedropper();"],
 #menu_eyedropper,
 #command-button-eyedropper{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,220px,32px,204px)}
 #menuitem_storage,
 toolbarbutton[key="key_storage"]{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,304px,32px,288px)}
 #command-button-measure{
-	list-style-image:url(chrome://global/skin/devtools/debugger.png);
+	list-style-image:url(chrome://browser/skin/devtools/debugger.png);
 	-moz-image-region:rect(16px,368px,32px,352px)}
 
 menuitem[oncommand="gDevToolsBrowser.openAppManager(gBrowser);"]{

@@ -38,13 +38,13 @@ grippy{
 	border:1px solid transparent;
 	width:6px;
 	height:113px;
-	background:transparent url(chrome://global/skin/grippy-h.png) no-repeat;
+	background:url(chrome://global/skin/grippy-h.png) no-repeat;
 	cursor:pointer}
 grippy:hover{
-	background-image:url(chrome://global/skin/hout-hover.png);
+	background-image:url(chrome://global/skin/grippy-h.png),url(chrome://global/skin/hout-hover.png);
 	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00}
 grippy:hover:active{
-	background-image:url(chrome://global/skin/hout-active.png);
+	background-image:url(chrome://global/skin/grippy-h.png),url(chrome://global/skin/hout-active.png);
 	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2}
 
 splitter[collapse="before"]>grippy,
@@ -60,9 +60,13 @@ splitter[collapse="after"][state="collapsed"]>grippy:-moz-locale-dir(rtl){
 	background-position:0 center}
 
 splitter[orient="vertical"]>grippy{
-	background:transparent url(chrome://global/skin/grippy-v.png) no-repeat;
+	background:url(chrome://global/skin/grippy-v.png) no-repeat;
 	width:113px;
 	height:6px}
+splitter[orient="vertical"]>grippy:hover{
+	background-image:url(chrome://global/skin/grippy-v.png),url(chrome://global/skin/hout-hover.png)}
+splitter[orient="vertical"]>grippy:hover:active{
+	background-image:url(chrome://global/skin/grippy-v.png),url(chrome://global/skin/hout-active.png)}
 
 splitter[orient="vertical"][collapse="before"]>grippy,
 splitter[orient="vertical"][state="collapsed"][collapse="after"]>grippy{
@@ -73,10 +77,9 @@ splitter[orient="vertical"][state="collapsed"][collapse="before"]>grippy{
 
 .toolbar-splitter,
 splitter.chromeclass-toolbar-additional{
-	width:5px;
+	width:4px;
 	height:12px;
-	margin-left:1px;
-	margin-right:1px;
+	margin:5px 1px;
 	border-radius:8px;
 	box-shadow:inset 1px 1px 1px #B26F00;
 	border:1px solid;

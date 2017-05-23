@@ -18,7 +18,7 @@ pre{
 	padding:1px}
 hr{visibility:hidden}
 td,pre{
-	font-family:Consolas,Lucida Console,monospace;
+	font-family:Menlo,Consolas,Lucida Console,monospace;
 	border:1px solid #B26F00;
 	background-color:url(chrome://global/skin/backarea.png);
 	color:black}

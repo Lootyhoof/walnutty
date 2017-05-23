@@ -1,0 +1,250 @@
+﻿/*FF42*/
+#searchIcon,
+#newtab-search-logo,
+#newtab-search-icon{
+	position:absolute;
+	top:2px;
+	bottom:2px;
+	left:2px;
+	margin:0!important;
+	width:24px!important;
+	height:auto!important;
+	box-shadow:none;
+	border-radius:5px 0 0 5px!important;
+	background-repeat:no-repeat!important;
+	background-position:center!important;
+	background-size:auto!important}
+button#searchIcon:not(:hover){
+	border:1px solid transparent;
+	background:none}
+#searchIcon,
+#newtab-search-logo.magnifier,
+#newtab-search-icon{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),64,16,80,0)!important}
+
+#newtab-search-logo[hidden],
+#newtab-search-logo[type="logo"]{
+	width:75px!important;
+	height:26px!important;
+	background-size:65px 26px}
+#newtab-search-logo[hidden]{
+	display:-moz-box!important;
+	background-image:url(google.png)!important}
+
+#searchText,
+#newtab-search-text{
+	height:auto;
+	-moz-box-flex:1;
+	font:message-box!important;
+	font-size:120%!important;
+	margin:0;
+	padding:1px 3px;
+	-moz-padding-start:26px;
+	border-radius:7px!important;
+	box-shadow:none!important;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #893B00;
+	-moz-border-left-colors:#B26F00 #893B00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	background:url(chrome://global/skin/backarea.png);
+	color:black}
+:-moz-any(#newtab-search-logo[hidden],#newtab-search-logo[type="logo"],#newtab-search-logo[style="background"])+#newtab-search-text{
+	height:32px;
+	-moz-padding-start:80px}
+
+#searchText:focus,
+#newtab-search-text:focus,
+#newtab-search-text[autofocus]{
+	box-shadow:0 0 0 2px #B26F00!important}
+input::-moz-placeholder{
+	font-weight:normal!important;
+	font-style:italic;
+	color:#893B00;
+	opacity:1!important}
+
+#searchSubmit,
+#newtab-search-submit{
+	position:absolute;
+	width:24px!important;
+	top:2px;
+	right:2px;
+	bottom:2px;
+	margin:0!important;
+	height:auto!important;
+	border-radius:0 5px 5px 0;
+	box-shadow:none!important;
+	border:1px solid transparent!important;
+	background-color:transparent!important;
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0)!important;
+	background-repeat:no-repeat,repeat!important;
+	background-position:center,left top!important;
+	background-size:auto,contain!important;
+	color:transparent!important}
+#searchSubmit:hover,
+#newtab-search-submit:hover{
+	border:1px solid!important;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2!important;
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout-hover.png)!important;
+	color:transparent!important}
+#searchSubmit:hover:active,
+#newtab-search-submit:hover:active{
+	border-style:inset!important;
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout-active.png)!important;
+	color:transparent!important}
+#searchSubmit:hover:focus,
+#newtab-search-submit:focus{
+	box-shadow:inset 0 0 1px #B26F00!important}
+input[type="submit"]::-moz-focus-inner{
+	outline-width:0!important;
+	border-width:0!important}
+
+.contentSearchSuggestionTable{
+	left:2px;
+	font-size:100%!important;
+	box-shadow:1px 1px 4px #B26F00;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	background:url(chrome://global/skin/hout.png);
+	color:black}
+
+#contentSearchDefaultEngineHeader{
+	border-bottom:1px solid #B26F00}
+
+.contentSearchHeader{
+	border-bottom:0;
+	background:transparent;
+	color:inherit}
+
+.contentSearchSuggestionsList{
+	font-size:120%!important;
+	border-bottom:1px solid #B26F00;
+	background:url(chrome://global/skin/backarea.png);
+	color:black}
+
+.contentSearchHeader,
+.contentSearchSuggestionEntry{
+	padding:1px 2px!important;
+	font:inherit!important}
+
+.contentSearchHeaderRow>td>img,
+.contentSearchSuggestionRow>td>.historyIcon{
+	margin:-2px 3px 2px 3px!important;
+	vertical-align:middle;
+	height:16px;
+	width:16px}
+
+.contentSearchSuggestionTable .historyIcon{
+	display:inline-block;
+	background:-moz-image-rect(url(chrome://global/skin/global.png),32,32,48,16) center no-repeat!important;
+	background-size:12px 12px}
+
+.contentSearchOneOffsTable{
+	padding-bottom:2px;
+	border-bottom:2px solid!important;
+	-moz-border-bottom-colors:#EED4A2 #B26F00!important}
+
+.contentSearchOneOffItem,
+.contentSearchOneOffItem.selected,
+.contentSearchOneOffItem[active="true"]{
+	-moz-appearance:none;
+	min-width:48px!important;
+	height:32px!important;
+	margin:0;
+	padding:0;
+	border-radius:5px;
+	border:1px solid transparent!important;
+	box-shadow:none!important;
+	background:none!important}
+.contentSearchOneOffItem>img{
+	width:16px;
+	height:16px}
+
+#contentSearchSettingsButton,
+#contentSearchSettingsButton.selected,
+#contentSearchSettingsButton[active="true"]{
+	height:auto;
+	border-width:0!important;
+	border-radius:0!important;
+	box-shadow:none!important;
+	text-align:start;
+	padding-inline-start:22px!important;
+	background-color:transparent!important;
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),96,16,112,0),url(chrome://global/skin/hout.png)!important;
+	background-repeat:no-repeat,repeat!important;
+	background-position:3px center,left top!important;
+	color:black!important}
+.contentSearchSuggestionRow,
+#contentSearchSettingsButton.selected:not(:hover),
+.contentSearchSuggestionRow.selected{
+	background-color:transparent;
+	color:black}
+#contentSearchSettingsButton:hover,
+#contentSearchSettingsButton[active="true"]:hover{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),96,16,112,0),url(chrome://global/skin/hout-hover.png)!important;
+	color:var(--hover-color)!important}
+#contentSearchSettingsButton:hover:active,
+#contentSearchSettingsButton[active="true"]:hover:active{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),96,16,112,0),url(chrome://global/skin/hout-active.png)!important;
+	color:white!important}
+
+.contentSearchOneOffItem:hover,
+#contentSearchDefaultEngineHeader:hover,
+.contentSearchSuggestionRow:hover,
+.contentSearchSuggestionRow.selected:hover,
+#newtab-intro-what:hover,
+#newtab-intro-panel a:hover,
+.sponsored-explain a:hover,
+#newtab-search-manage:hover,
+.newtab-search-panel-engine:hover,
+.newtab-customize-panel-item:not([selected]):hover,
+.newtab-customize-panel-subitem:hover,
+.newtab-customize-complex-option>.newtab-customize-panel-subitem:hover,
+.newtab-customize-complex-option>.selectable:not([selected]):hover{
+	background:url(chrome://global/skin/hout-hover.png)!important;
+	color:var(--hover-color)!important}
+
+.contentSearchOneOffItem:hover:active,
+#contentSearchDefaultEngineHeader:hover:active,
+.contentSearchSuggestionRow:hover:active,
+.contentSearchSuggestionRow.selected:hover:active,
+#newtab-intro-what:hover:active,
+#newtab-intro-panel a:hover:active,
+#newtab-search-manage:hover:active,
+.newtab-search-panel-engine:hover:active,
+.newtab-customize-panel-item:not([selected]):hover:active,
+.newtab-customize-panel-subitem:hover:active,
+.newtab-customize-complex-option>.newtab-customize-panel-subitem:hover:active,
+.newtab-customize-complex-option>.selectable:not([selected]):hover:active{
+	background:url(chrome://global/skin/hout-active.png)!important;
+	color:white!important}
+
+.contentSearchOneOffItem:hover,
+.contentSearchOneOffItem.selected:hover,
+.contentSearchOneOffItem:hover[active="true"],
+#newtab-search-logo:hover,
+.newtab-sponsored:hover,
+#newtab-toggle:hover{
+	box-shadow:1px 1px 2.5px -.5px #B26F00!important;
+	border:1px solid!important;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2!important;
+	background-color:#B26F00!important;
+	color:var(--hover-color)!important}
+.contentSearchOneOffItem:hover:active,
+.contentSearchOneOffItem.selected:hover:active,
+.contentSearchOneOffItem:hover:active[active="true"],
+#newtab-search-logo:hover:active,
+.newtab-sponsored:active,
+.newtab-sponsored[active],
+#newtab-toggle:hover:active{
+	box-shadow:inset 1px 1px 1px #B26F00!important;
+	border:1px solid!important;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00!important;
+	background-color:#893B00!important;
+	color:white!important}
+
+#newtab-search-logo[active]:not(:hover){
+	background-color:transparent!important}

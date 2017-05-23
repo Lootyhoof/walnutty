@@ -11,8 +11,9 @@ treechildren::-moz-tree-image(FilenameColumn,directory){
 treechildren::-moz-tree-image(FilenameColumn,directory,open){
 	-moz-image-region:rect(57px 70px 73px 54px)}
 
-.up-button{list-style-image:url(chrome://global/skin/dirListing/up.png)}
-
+.up-button{
+	list-style-image:url(chrome://global/skin/global.png);
+	-moz-image-region:rect(208px,32px,224px,16px)}
 .home-button{
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(288px 16px 304px 0)}
