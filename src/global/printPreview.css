@@ -11,6 +11,8 @@ button[oncommand="PrintUtils.exitPrintPreview();"]{
 button[oncommand="PrintUtils.exitPrintPreview();"]:hover:active{
 	-moz-image-region:rect(112px 32px 128px 16px)}
 
+.tabbable{margin:2px 0;padding:0}
+
 #pageNumber,
 #scale{
 	border-radius:5px;

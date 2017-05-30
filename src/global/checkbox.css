@@ -2,7 +2,7 @@
 
 checkbox{
 	outline-width:0!important;
-	margin:1px 2px;
+	margin:2px;
 	padding:1px;
 	border:2px solid transparent;
 	border-radius:3px;
@@ -19,16 +19,15 @@ caption>checkbox{
 	-moz-box-align:center}
 .checkbox-icon{
 	list-style-image:inherit}
-.checkbox-icon[src]{
-	margin:0 2px}
 .checkbox-label{
-	margin:0 1px;
+	margin:0;
+	-moz-margin-start:2px;
 	padding:1px}
 checkbox:not([label])>.checkbox-label-box>.checkbox-label{
 	display:none}
 
 checkbox:focus{
-	box-shadow:0 0 1px 1px #893B00!important}
+	box-shadow:0 0 0 1px #B26F00!important}
 
 checkbox:hover:not([disabled="true"]){
 	box-shadow:1px 1px 2px #B26F00;
@@ -37,7 +36,7 @@ checkbox:hover:not([disabled="true"]){
 	-moz-border-right-colors:#893B00 #B26F00;
 	-moz-border-bottom-colors:#893B00 #B26F00;
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
+	color:black}
 checkbox:hover:active:not([disabled="true"]){
 	box-shadow:none;
 	-moz-border-top-colors:#893B00 #B26F00;
@@ -56,10 +55,9 @@ checkbox[disabled="true"]{
 	list-style-image:url(chrome://global/skin/checkbox.png);
 	width:14px;
 	height:14px;
-	margin:0 2px 2px 2px;
+	margin:0 0 2px 2px;
 	-moz-image-region:rect(14px 14px 28px 0)}
 .checkbox-check[disabled="true"]{
-	pointer-events:none;
 	-moz-image-region:rect(14px 28px 28px 14px)}
 .checkbox-check[checked="true"]{
 	-moz-image-region:rect(0 14px 14px 0)}

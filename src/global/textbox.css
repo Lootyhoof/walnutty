@@ -8,23 +8,26 @@ textbox{
 	-moz-border-left-colors:#B26F00 #893B00;
 	-moz-border-right-colors:#EED4A2 #B26F00;
 	-moz-border-bottom-colors:#EED4A2 #B26F00;
-	margin:1px 2px;
+	margin:2px;
 	padding:0;
+	cursor:text;
 	background-image:url(chrome://global/skin/backarea.png);
 	color:black}
 textbox[disabled="true"]{
 	cursor:default;
-	background:none!important;
-	color:#893B00!important;
+	background-image:none!important;
+	color:#893B00;
 	text-shadow:1px 1px 0 #EED4A2}
 .textbox-inline-edit{
 	border:1px solid #893B00!important;
 	margin:0!important}
 textbox[readonly="true"]{
-	background-image:none;
-	color:black}
+	background-image:none}
+
 textbox.plain{
-	border-width:0!important}
+	border-width:0!important;
+	background:transparent none;
+	color:inherit}
 textbox[empty="true"],
 textbox[isempty="true"]{
 	color:#893B00!important}
@@ -36,27 +39,47 @@ textbox[isempty="true"]{
 html|*.textbox-input,
 html|*.textbox-textarea{
 	-moz-appearance:none;
-	cursor:text;
-	outline-width:0;
+	border-radius:inherit;
+	outline-color:transparent;
+	outline-offset:-1px;
+	-moz-outline-radius:3px;
+	background:transparent none;
+	color:inherit;
+	border:0;
 	margin:0;
 	padding:1px;
 	font:inherit;
-	line-height:normal;
-	text-shadow:inherit;
-	border-radius:3px;
-	border-width:0;
-	background:none;
-	color:inherit}
+	text-shadow:inherit}
+textbox.plain html|*.textbox-input,
+#userAgent html|*.textbox-textarea{
+	outline-offset:0!important}
+
 html|*.textbox-input:focus,
 html|*.textbox-textarea:focus{
-	box-shadow:inset 0 0 0 1px #B26F00}
+	outline:1px solid #893B00}
+
+.searchbar-textbox,
+textbox[type="search"]{
+	border-radius:5px}
+.searchbar-textbox>hbox>.textbox-input-box,
+textbox[type="search"]>.textbox-input-box{
+	border-radius:3px}
+
+.searchbar-textbox html|*.textbox-input,
+textbox[type="search"] html|*.textbox-input{
+	-moz-outline-radius:3px 0 0 3px}
+.searchbar-textbox html|*.textbox-input:-moz-locale-dir(rtl),
+textbox[type="search"] html|*.textbox-input:-moz-locale-dir(rtl){
+	-moz-outline-radius:0 3px 3px 0}
 
 .textbox-search-icons{
-	cursor:auto;
-	padding:0 1px;
-	border-radius:0 3px 3px 0;
+	padding:1px 2px;
 	border:1px solid transparent;
-	-moz-border-start-color:#B26F00;
+	list-style-image:url(chrome://global/skin/global.png);
+	border-radius:0 3px 3px 0;
+	-moz-border-start:2px solid!important;
+	-moz-border-left-colors:#B26F00 #EED4A2!important;
+	-moz-border-right-colors:#B26F00 #EED4A2!important;
 	background-image:url(chrome://global/skin/hout.png)}
 .textbox-search-icons:-moz-locale-dir(rtl){
 	border-radius:3px 0 0 3px}
@@ -66,30 +89,27 @@ html|*.textbox-textarea:focus{
 .textbox-search-icons:hover:active{
 	border-color:#893B00 #EED4A2 #EED4A2 #893B00;
 	background-image:url(chrome://global/skin/hout-active.png)}
-.textbox-search-icon{
-	transform:scale(.8);
-	list-style-image:url(chrome://global/skin/global.png);
-	-moz-image-region:rect(64px 16px 80px 0)}
+.textbox-search-icon{-moz-image-region:rect(64px 16px 80px 0)}
 .textbox-search-icon[disabled="true"]{
-	filter:opacity(.7) grayscale(1)}
-.textbox-search-clear{
-	list-style-image:url(chrome://global/skin/global.png);
-	-moz-image-region:rect(177px 31px 191px 17px)}
-.textbox-search-icons:hover>.textbox-search-clear{
-	-moz-image-region:rect(224px 32px 240px 16px)}
-.textbox-search-icons:hover:active>.textbox-search-clear{
-	-moz-image-region:rect(113px 31px 127px 17px)}
+	opacity:.7;
+	filter:url(chrome://global/skin/greyscale.svg#greyscale)}
+.textbox-search-clear{-moz-image-region:rect(224px 32px 240px 16px)}
 
 .textbox-search-icon[searchbutton]:not([disabled="true"]){cursor:pointer}
 .textbox-search-clear:not([disabled="true"]){cursor:default}
 
-.tree-input,
+.tree-input{margin:0!important}
 .tree-input html|*.textbox-input{margin:0!important}
 
 .textbox-contextmenu{cursor:default}
 
+/* Before FF19 */
+html|*.textbox-input:-moz-placeholder,
+html|*.textbox-textarea:-moz-placeholder{
+	font-style:italic;
+	opacity:.6!important}
+/* FF19 and higher */
 html|*.textbox-input::-moz-placeholder,
 html|*.textbox-textarea::-moz-placeholder{
-	opacity:1;
 	font-style:italic;
-	color:#893B00!important}
+	opacity:.6!important}

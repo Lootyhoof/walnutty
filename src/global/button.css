@@ -1,7 +1,7 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
 button{
-	margin:1px 2px;
+	margin:2px;
 	padding:1px;
 	outline-width:0!important;
 	border-radius:4px;
@@ -12,43 +12,39 @@ button{
 	-moz-border-bottom-colors:#893B00 #B26F00;
 	background-image:url(chrome://global/skin/hout.png);
 	color:black}
-
-toolbar button{
-	border-radius:5px}
-toolbar button:not(:hover){
+toolbar>button,
+toolbar>*>button{
+	border-radius:5px;
 	-moz-border-top-colors:transparent;
 	-moz-border-left-colors:transparent;
 	-moz-border-right-colors:transparent;
 	-moz-border-bottom-colors:transparent;
 	background:none}
-toolbar[mode="icons"]>button>.button-text,
-toolbar[mode="text"]>button>.button-icon,
-toolbar[mode="icons"]>*>button>.button-text,
-toolbar[mode="text"]>*>button>.button-icon{
-	display:none}
-
-notification button{
+notification>button,
+notification>*>button{
 	margin:1px 2px;
-	padding:0 2px}
+	padding:0 2px;
+	border-radius:5px}
 
-.button-box{border-width:0!important}
+.button-box{
+	border-width:0!important}
 
-button:focus{box-shadow:0 0 1px 1px #893B00}
+button:focus{
+	box-shadow:0 0 0 1px #B26F00}
 
 .button-text{
 	margin:0 1px;
-	text-align:start;
+	text-align:left;
 	vertical-align:middle}
 button:not([label])>.button-box>.button-text,
 .button-text:not([value]),.button-text[value=""]{
 	display:none}
 
 button[checked="true"]{
-	box-shadow:inset 1px 1px 1px #B26F00!important;
-	-moz-border-top-colors:#B26F00!important;
-	-moz-border-left-colors:#B26F00!important;
-	-moz-border-right-colors:#EED4A2 #B26F00!important;
-	-moz-border-bottom-colors:#EED4A2 #B26F00!important;
+	-moz-border-top-colors:#B26F00;
+	-moz-border-left-colors:#B26F00;
+	-moz-border-right-colors:#893B00 #EED4A2;
+	-moz-border-bottom-colors:#893B00 #EED4A2;
 	background-image:url(chrome://global/skin/backarea.png)}
 
 button:hover:not([disabled="true"]){
@@ -58,7 +54,7 @@ button:hover:not([disabled="true"]){
 	-moz-border-right-colors:#893B00 #B26F00;
 	-moz-border-bottom-colors:#893B00 #B26F00;
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
+	color:black}
 
 button[default]:not([disabled="true"]){
 	font-weight:bold}
@@ -76,11 +72,11 @@ button:hover:not([disabled="true"]):not(:focus):not(:active){
 	box-shadow:1px 1px 2px #B26F00}
 
 button[disabled="true"]{
-	pointer-events:none;
 	-moz-border-top-colors:#B26F00 #EED4A2;
 	-moz-border-left-colors:#B26F00 #EED4A2;
 	-moz-border-right-colors:#B26F00 #B26F00;
 	-moz-border-bottom-colors:#B26F00 #B26F00;
+	background-image:url(chrome://global/skin/hout.png)!important;
 	color:#893B00!important;
 	text-shadow:1px 1px 0 #EED4A2}
 toolbar>button[disabled="true"],
@@ -89,32 +85,20 @@ toolbar>*>button[disabled="true"]{
 	-moz-border-left-colors:transparent!important;
 	-moz-border-right-colors:transparent!important;
 	-moz-border-bottom-colors:transparent!important;
-	background:none!important}
+	background:transparent none!important}
 button[disabled="true"]>.button-box>.button-icon{
-	filter:opacity(.6) grayscale(1)}
+	opacity:.7;
+	filter:url(chrome://global/skin/greyscale.svg#greyscale)}
 
 .busy{list-style-image:url(chrome://global/skin/loading.gif)}
 
-button[id*="accept"],
-button[anonid="search-suggestions-notification-enable"],
-#btnApplyChanges,#MacAcceptBtn,#ok,#closeButton,#donebutton,
-.translate-infobar-element[anonid="translate"],
-button[dlgtype="accept"],button[dlgtype="finish"],
-button[anonid="enable"],
-button[icon="accept"],
-button[label="OK"],button[label="Save"]{
+#MacAcceptBtn,#ok,#closeButton,#donebutton,
+button:-moz-any([dlgtype="accept"],[dlgtype="finish"],
+[anonid="enable"],[icon="accept"],[label="OK"],button[label="Save"]){
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(0 16px 16px 0)}
-
-button[id*="cancel"],
-button[anonid="search-suggestions-notification-disable"],
 #cancel,
-.translate-infobar-element[anonid="notNow"],
-button[label="Close"],
-button[anonid="disable"],
-button[dlgtype="cancel"],
-button[label="Cancel"],
-button[icon="close"]{
+button:-moz-any([label="Close"],[anonid="disable"],[dlgtype="cancel"],[label="Cancel"],[icon="close"]){
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(16px 16px 32px 0)}
 #help,#HelpButton,
@@ -165,7 +149,7 @@ button[type="menu-button"]{
 	background-image:url(chrome://global/skin/hout.png)}
 button:not([buttonover="true"]):hover>.button-menubutton-dropmarker{
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
+	color:black}
 button:not([buttonover="true"]):hover:active>.button-menubutton-dropmarker,
 button[open="true"]>.button-menubutton-dropmarker{
 	border-color:#B26F00!important;

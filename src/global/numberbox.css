@@ -2,5 +2,5 @@
 @namespace html url(http://www.w3.org/1999/xhtml);
 
 textbox[type="number"]{padding:0!important;cursor:default}
-html|*.numberbox-input{text-align:end}
+html|*.numberbox-input{text-align:right}
 .numberbox-input-box{-moz-box-align:center}

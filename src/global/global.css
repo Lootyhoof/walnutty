@@ -1,20 +1,12 @@
 @import url(chrome://global/locale/intl.css);
-@import url(chrome://global/skin/cutemenu.css);
-@import url(chrome://global/skin/htmlbutton.css);
 @import url(chrome://os/skin/global.css);
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
-:root{
-	--monospace-font-family:Menlo,Consolas,Lucida Console,monospace;
-	--toolbarbutton-vertical-inner-padding:0px;
-	--hover-color:black}
-
-/* Bindings must be in global to be applied */
-menulist>menupopup{-moz-binding:url(chrome://global/content/bindings/popup.xml#popup-scrollbars)}
+menulist>menupopup,
+.menulist-menupopup{-moz-binding:url(chrome://global/content/bindings/popup.xml#popup-scrollbars)}
+.menulist-compact{-moz-binding:url(chrome://global/content/bindings/menulist.xml#menulist-compact)}
 menuitem{-moz-binding:url(chrome://global/content/bindings/menu.xml#menuitem-iconic)}
 progressmeter[mode="undetermined"]{-moz-binding:url(chrome://global/content/bindings/progressmeter.xml#progressmeter-undetermined)}
-toolbox[labelalign="bottom"] toolbar[mode="full"] toolbarbutton[type="menu"]:not(#back-button):not(#forward-button){
-	-moz-binding:url(chrome://global/content/bindings/toolbarbutton.xml#menu-vertical)}
 
 #webdeveloper-toolbar{overflow:hidden}
 
@@ -23,11 +15,10 @@ window,wizard,page,dialog,prefwindow{
 	color:black;
 	font:message-box}
 
-#titlebar-min,#minimize-button,#titlebar-max,#titlebar-close,
+#titlebar-min,#titlebar-max,#titlebar-close,
 #minimize-button,#restore-button,#close-button{
 	margin:2px 1px;
 	padding:0 1px;
-	border-radius:5px;
 	list-style-image:url(chrome://global/skin/global.png)!important}
 #titlebar-min,#minimize-button{-moz-image-region:rect(128px,32px,144px,16px)!important}
 #titlebar-max{-moz-image-region:rect(16px,32px,32px,16px)!important}
@@ -37,13 +28,17 @@ window[sizemode="maximized"] #restore-button{-moz-image-region:rect(96px,32px,11
 #titlebar-close,#close-button{-moz-image-region:rect(144px,32px,160px,16px)!important}
 #titlebar-close:-moz-locale-dir(rtl)>.toolbarbutton-icon{-moz-transform:scaleX(-1)}
 
-.message-icon,.alert-icon,.error-icon,.question-icon,.security-icon{width:48px;height:48px}
-.error-icon{list-style-image:url(chrome://global/skin/icons/error-large.png)}
-.alert-dialog #info\.icon,
-.alert-icon{list-style-image:url(chrome://global/skin/icons/warning-large.png)}
-.question-icon{list-style-image:url(chrome://global/skin/icons/question-large.png)}
-.message-icon{list-style-image:url(chrome://global/skin/icons/notification-large.png)}
-.security-icon{list-style-image:url(chrome://global/skin/icons/sslWarning.png)}
+/* Bindings must be in global to be applied */
+toolbar[mode="full"][iconsize="large"] toolbarbutton[type="menu"]:not(#back-button):not(#forward-button){
+	-moz-binding:url(chrome://global/content/bindings/toolbarbutton.xml#menu-vertical)}
+
+.message-icon,.alert-icon,.error-icon,.question-icon,.security-icon{
+	list-style-image:url(chrome://global/skin/alerts48.png);
+	-moz-image-region:rect(0 48px 48px 0)}
+.alert-icon{-moz-image-region:rect(0 98px 48px 50px)}
+.question-icon{-moz-image-region:rect(0 148px 48px 100px)}
+.message-icon{-moz-image-region:rect(0 198px 48px 150px)}
+.security-icon{-moz-image-region:rect(0 248px 48px 200px)}
 
 .warning{margin-top:2px;margin-bottom:2px}
 
@@ -67,7 +62,6 @@ statusbarpanel{
 	-moz-box-pack:end;
 	margin:0!important;
 	padding:0!important}
-#quotaPanel,
 statusbarpanel[onclick],
 statusbarpanel[onmouseup],
 statusbarpanel[oncommand],
@@ -81,7 +75,6 @@ statusbarpanel[oncommand],
 	-moz-box-align:center;
 	border-radius:5px;
 	border:1px solid transparent}
-#quotaPanel:hover,
 statusbarpanel[onclick]:hover,
 statusbarpanel[onmouseup]:hover,
 statusbarpanel[oncommand]:hover,
@@ -93,8 +86,7 @@ statusbarpanel[oncommand]:hover,
 	border:1px solid !important; 
 	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2!important;
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:var(--hover-color)!important}
-#quotaPanel:hover:active,
+	color:black!important}
 statusbarpanel[onclick]:hover:active,
 statusbarpanel[onmouseup]:hover:active,
 statusbarpanel[oncommand]:hover:active,
@@ -158,44 +150,36 @@ statusbarpanel[oncommand]:hover:active,
 	-moz-image-region:rect(240px 32px 256px 16px)}
 
 .toolbar-focustarget{-moz-user-focus:ignore!important}
-.monospace{font-family:Menlo,Consolas,Lucida Console,monospace}
-separator{height:0}
-separator[orient="vertical"]{width:0}
+.monospace{font-family:Consolas,Lucida Console,monospace}
+separator{height:4px}
+separator[orient="vertical"]{width:4px}
+.plain{margin:0!important;padding:0;border-radius:0}
 .tooltip-label{margin:0!important}
 label{padding:0 1px}
 description{padding:0 2px}
-label[disabled="true"],
-text[disabled="true"]{
+label[disabled="true"],text[disabled="true"]{
 	color:#893B00;
 	text-shadow:1px 1px 0 #EED4A2}
-label[value=""],
-description[value=""]{
-	padding:0!important}
+label[value=""],description[value=""]{padding:0!important}
 .header{font-weight:bold}
-.indent{-moz-margin-start:20px}
-
-.text-link,
-.inline-link{
-	cursor:pointer;
+.indent{margin-left:20px}
+.text-link{
+	color:darkblue;
 	text-decoration:underline;
-	outline-width:0;
-	margin:0 2px!important;
 	padding:0 2px!important;
-	border-radius:3px;
-	color:darkblue}
-.text-link:hover:not([disabled="true"]),
-.inline-link:hover:not([disabled="true"]){
-	box-shadow:1px 1px 2.5px -.5px #893B00;
+	border-radius:5px;
+	-moz-outline-radius:7px;
+	cursor:pointer}
+.text-link:hover{
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
-.text-link:active:not([disabled="true"]),
-.inline-link:active:not([disabled="true"]){
-	box-shadow:inset 1px 1px 1px #893B00; 
+	color:black}
+.text-link:active{
 	background-image:url(chrome://global/skin/hout-active.png)!important;
 	color:white!important}
-.text-link:focus,
-.inline-link:focus{
-	box-shadow:0 0 1px 1px #B26F00}
+.text-link:focus{
+	-moz-outline-radius:3px;
+	outline:1px solid #B26F00;
+	outline-offset:-1px}
 
 .spaced{margin:2px}
 #commonDialog{padding:2px;min-height:4em!important}
@@ -205,15 +189,19 @@ description[value=""]{
 
 #navigator-throbber{
 	-moz-user-focus:ignore!important;
-	border:1px solid transparent;
+	border:1px solid;
+	-moz-border-top-colors:transparent;
+	-moz-border-left-colors:transparent;
+	-moz-border-right-colors:transparent;
+	-moz-border-bottom-colors:transparent;
+	background:transparent none!important;
+	margin:0!important;
+	padding:0!important;
 	list-style-image:url(chrome://global/skin/brand/throbber-single.png)}
 #navigator-throbber[busy="true"]{
 	list-style-image:url(chrome://global/skin/brand/throbber-anim.gif)}
 
-.update-throbber,
-#loader-throbber,
-#checkForUpdates[loading="true"]{
-	list-style-image:url(chrome://global/skin/loading.gif)!important}
+#checkForUpdates[loading="true"]{list-style-image:url(chrome://global/skin/loading.gif)}
 
 #navigator-throbber[mousethrough="always"],
 #navigator-throbber[disabled="true"],
@@ -225,7 +213,7 @@ description[value=""]{
 	border:1px solid;
 	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
+	color:black}
 .statusbarpanel-iconic:hover:active,
 #navigator-throbber:hover:active{
 	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
@@ -234,31 +222,31 @@ description[value=""]{
 
 #clientBox{
 	margin:0;
-	border-bottom:1px solid #EED4A2;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
 	box-shadow:inset 1px 1px 2px #B26F00;
 	background:url(chrome://global/skin/backarea.png) repeat!important;
 	color:black!important}
-
-#aboutDialog:-moz-any([title*="Beta"],[title*="Aurora"],[title*="Developer Edition"],[title*="Nightly"])>#aboutDialogContainer{
-	background:none!important}
-#aboutDialog:-moz-any([title*="Beta"],[title*="Aurora"],[title*="Developer Edition"],[title*="Nightly"])>#aboutDialogContainer>#clientBox{
-	box-shadow:none;
-	background:rgb(10,17,37) url(chrome://branding/content/about-background.png) no-repeat!important;
-	color:white!important}
 #bottomBox{
 	padding:8px 10px 0!important;
 	background:url(chrome://global/skin/hout.png)!important;
 	color:black!important}
+#trademark{
+	color:#893B00!important;
+	margin:8px 10px 0!important}
+
+#aboutDialog:-moz-any([title*="Beta"],[title*="Aurora"],[title*="Nightly"])>#aboutDialogContainer{
+	background:none!important}
+#aboutDialog:-moz-any([title*="Beta"],[title*="Aurora"],[title*="Nightly"])>#aboutDialogContainer>#clientBox{
+	box-shadow:none;
+	background:black url(chrome://branding/content/about-background.png) no-repeat!important;
+	color:white!important}
 	
 #aboutDialog[title*="Waterfox"]>#aboutDialogContainer>#clientBox,
 #aboutDialog[title*="Waterfox"]>#aboutDialogContainer>#bottomBox{
 	background:none!important;
 	border:0!important;
 	box-shadow:none!important}
-
-#updateDeck>hbox>label:not([class="text-link"]){
-	color:inherit!important;
-	font-weight:600}
 
 .bottom-link[href],
 .bottom-link[href]:focus,
@@ -267,18 +255,13 @@ description[value=""]{
 	padding:0 4px;
 	border-radius:7px;
 	-moz-outline-radius:7px;
-	color:#893B00!important}
+	color:black!important}
 .bottom-link:hover{
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:var(--hover-color)!important}
+	color:black!important}
 .bottom-link:hover:active{
 	background-image:url(chrome://global/skin/hout-active.png)!important;
 	color:white!important}
-#trademark{
-	margin-top:8px;
-	margin-bottom:0!important;
-	color:inherit!important;
-	font-size:x-small}
 
 #stumble{height:auto!important}
 
@@ -287,6 +270,10 @@ description[value=""]{
 	margin:0!important}
 .su-referral-menuitem label{
 	font:inherit!important}
+checkbox[anonid="checkbox"]{
+	margin:0!important;
+	border-width:1px!important;
+	padding:1px!important}
 vbox[anonid="imagebox"]{
 	width:auto!important}
 .su-iconic-referral>.menu-iconic-left,
@@ -301,14 +288,12 @@ vbox[anonid="imagebox"]{
 	-moz-border-right-colors:#893B00 #B26F00;
 	-moz-border-bottom-colors:#893B00 #B26F00}
 
-#su_splitter_first,
-#su_splitter_first_flexbox{display:none}
 #stumbleglobals_searchbox{margin:0 3px!important}
 
 #googlepreview-status{-moz-image-region:rect(2px 15px 17px 0)!important}
 
 /* Fixes for Forecastfox */
-.ff-spacer{border-width:0!important}
+.ff-spacer{border:0!important}
 .ff-progress{margin:2px 0!important}
 .ff-panel,ffpanel{
 	-moz-appearance:none!important;
@@ -320,31 +305,39 @@ vbox[anonid="imagebox"]{
 .ff-panel:hover,ffpanel:hover{
 	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2!important;
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:var(--hover-color)!important}
+	color:black!important}
 .ff-panel:hover:active,ffpanel:hover:active{
 	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00!important;
 	background-image:url(chrome://global/skin/hout-active.png)!important;
 	color:white!important}
+#ff-radar-panel{min-width:30px}
+
+/* Skyfox button icon fix */
+#skyfoxButton{list-style-image:url(chrome://global/skin/skyfox16.png)!important}
 
 .dialog-button-box{margin:2px}
 
 #aboutDialog[windowtype="Shell:SetDesktopBackground"]>.dialog-content-box{border:0!important}
 #aboutDialog>.dialog-content-box stack{
-	width:186px;
-	height:170px;
+	width:186px;height:170px;
 	background-image:url(chrome://browser/skin/monitor.png)!important}
 #aboutDialog>.dialog-content-box stack>image{display:none}
 
 #autoscroller,.autoscroller{
 	height:28px;
 	width:28px;
+	border:none;
 	margin:-14px;
-	border-width:0;
 	padding:0;
-	background:url(chrome://global/skin/icons/autoscroll.png) left top;
-	-moz-appearance:none}
+	background:transparent url(chrome://global/skin/icons/autoscroll.png);
+	-moz-appearance:none;
+	-moz-window-shadow:none}
 #autoscroller[scrolldir="NS"],.autoscroller[scrolldir="NS"]{background-position:left center}
 #autoscroller[scrolldir="EW"],.autoscroller[scrolldir="EW"]{background-position:left bottom}
+
+#autoscroller[translucent],.autoscroller[translucent]{background-position:right top}
+#autoscroller[translucent][scrolldir="NS"],.autoscroller[translucent][scrolldir="NS"]{background-position:right center}
+#autoscroller[translucent][scrolldir="EW"],.autoscroller[translucent][scrolldir="EW"]{background-position:right bottom}
 
 #commonDialog{line-height:13px}
 #commonDialog #infoContainer{max-width:33em!important}
@@ -379,38 +372,17 @@ vbox[anonid="imagebox"]{
 #main-window[aiosFxV] #browser{border-top-width:0!important}
 #aiostbx-left-toolbox>toolbar,#aiostbx-sidebarright-toolbox>toolbar,#aios-toggle-toolbar,
 #bmHi-toolbar,#sidebar{border-width:0!important}
+#extensionsView[flex],#bookmarks-view[flex],#historyTree[flex]{
+	border-width:2px!important}
 
-:root[aios-appVendor] #ToolbarMode{padding:0!important}
-:root[aios-appVendor] #ToolbarMode toolbarbutton[id]{padding:0!important}
-:root[aios-appVendor] .console-row[type]{padding:0!important}
-:root[aios-appVendor] .console-row-content>*{margin-bottom:0!important}
-:root[aios-appVendor] .console-row-icon>image{-moz-margin-end:0!important}
-#generalPanel #titletext{padding:0!important}
-#permPanel #permList>vbox hbox{-moz-box-orient:horizontal!important}
-
-#aios-toggle-toolbar{-moz-box-align:stretch;background-image:none}
+#aios-toggle-toolbar{background-image:none;-moz-box-align:stretch}
 #paneltab-button[label],#sidebar-close-button[label]{padding:1px!important}
-window#config,#commandBar{border-width:0!important}
 
-#console-button{list-style-image:url(chrome://global/skin/icons/question-24.png)}
-#addons-button{
-	list-style-image:url(chrome://mozapps/skin/extensions/addons.png)!important;
-	-moz-image-region:rect(0 32px 32px 0)!important}
-#aios-toolbar[iconsize="small"]:not(#nav-bar)>#addons-button{
-	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(400px,32px,416px,16px)!important}
-#pageinfo-button{
-	list-style-image:url(chrome://browser/skin/page-info.png)!important;
-	-moz-image-region:rect(0 24px 24px 0)!important}
-#aios-toolbar[iconsize="small"]:not(#nav-bar)>#pageinfo-button{
-	list-style-image:url(chrome://global/skin/global.png)!important;
-	-moz-image-region:rect(432px,32px,448px,16px)!important}
-#aios-toolbar[iconsize="small"]:not(#nav-bar)>.toolbarbutton-1>.toolbarbutton-icon{
-	width:16px!important;
-	height:16px!important}
+window#config,
+#commandBar{border:0!important}
 
 #sbh-paneltab-button,
-#aios-toolbar[iconsize="small"]:not(#nav-bar) #sbh-autohide-button{padding:0!important}
+toolbar[iconsize="small"] #sbh-autohide-button{padding:0!important}
 sidebarheader #aios-sbhtoolbar[mode="icons"] .tabs-closebutton{padding:2px!important}
 sidebarheader[mode="icons"] #sidebars-titlebutton{padding:1px!important}
 
@@ -418,20 +390,13 @@ toolbox[vertical=true]>toolbar toolbarseparator,
 toolbox[vertical=true]>toolbar>toolbarpaletteitem[place=toolbar] toolbarseparator{border:0!important}
 #loader-throbber{list-style-image:url(chrome://global/skin/loading.gif)}
 
-#aios-toggle-button[onclick]:hover,
-#aios-sidebarGrippy[onclick]:hover{
-	background-color:#B26F00!important}
-#aios-toggle-button[onclick]:hover:active,
-#aios-sidebarGrippy[onclick]:hover:active{
-	background-color:#893B00!important}
-
+#aios-sidebarGrippy:hover,
+#aios-toggle-button:hover,
 #aios-toggle-toolbar:hover,
 #sidebar-splitter:hover,
 #extensionsView[staticHint]>richlistitem[selected="true"][name]{
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
 	color:black!important}
-#aios-toggle-button[onclick]:hover:active,
-#aios-sidebarGrippy[onclick]:hover:active,
 #sidebars-titlebutton>menupopup>menuitem:hover:active,
 #sidebars-titlebutton menuitem:hover:active,
 #extensionsView[staticHint]:focus>richlistitem[current="true"][name]{
@@ -459,19 +424,20 @@ tabpanels#tabpanId tabbox[flex]{padding:0!important}
 	color:black!important}
 #pref-tabmix #TMBox #TM_ButtonBox button:hover{
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:var(--hover-color)!important;
+	color:black!important;
 	box-shadow:-1px -1px #893B00 inset,1px 1px #EED4A2 inset}
 #pref-tabmix #TMBox #TM_ButtonBox button[checked="true"]{
 	background-image:url(chrome://global/skin/backarea.png)!important;
 	color:black!important;
 	box-shadow:1px 1px 2px #B26F00 inset, 1px 1px #893B00 inset, -1px -1px #EED4A2 inset}
 
+
+
 /*Scrapbook+*/
 #sbTrabeLog{
 	background:white url(chrome://global/skin/backarea.png);
 	color:black}
 
-page[aios-inSidebar] :-moz-any(#extensionsView[flex],#bookmarks-view[flex],#historyTree[flex]),
 #sbTrabeLog,
 #webpanels-window:not([chromehidden])>browser,
 #viewSource:not([chromehidden])>vbox>browser{
@@ -486,11 +452,11 @@ page[aios-inSidebar] :-moz-any(#extensionsView[flex],#bookmarks-view[flex],#hist
 	-moz-box-pack:start!important}
 
 #gtbOptionsAutoFillTabbox,
-.gtbTabPanels{border-width:0!important}
+.gtbTabPanels{border:0!important}
 
 #fbTB-Toolbar{
 	border:0!important;
-	background:none!important;
+	background:transparent none!important;
 	color:black!important}
 #fbTB-StatusScroll,
 #fbTB-ImageScroll{min-height:33px!important}
@@ -501,10 +467,150 @@ page[aios-inSidebar] :-moz-any(#extensionsView[flex],#bookmarks-view[flex],#hist
 #useTemp+hbox{-moz-box-align:center}
 textbox#temp{padding:0!important}
 
+/*Evony Toolbar*/
+#evony .toolbarbutton-text[style^="font"]{font:inherit!important}
+
+/*minimap*/
+#minimap-maps-topbar-toolbar{
+	padding:0!important;
+	height:auto!important}
+#sbminimap>vbox,
+#minimap-maps-topbar-toolbar{
+	background:transparent none!important;
+	color:black!important}
+#maps_instructions{
+	font-size:120%!important;
+	border-width:0!important;
+	color:#893B00!important}
+#maps_instructions+vbox>vbox[style]{
+	-moz-border-end:0!important}
+#maps_instructions+vbox>vbox:first-child{
+	border-top-width:0!important}
+#maps_instructions+vbox>vbox,
+#minimap-maps-minibrowser,
+#minimap-deck>vbox{
+	border-radius:0!important;
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #893B00!important;
+	-moz-border-left-colors:#B26F00 #893B00!important;
+	-moz-border-right-colors:#EED4A2 #B26F00!important;
+	-moz-border-bottom-colors:#EED4A2 #B26F00!important}
+#sbminimap>hbox,
+#minimap-deck>vbox{
+	background-image:url(chrome://global/skin/hout.png)!important;
+	color:black!important}
+#address_list{
+	margin-top:0!important;
+	-moz-border-start:0!important;
+	background-image:url(chrome://global/skin/backarea.png)!important;
+	color:black!important}
+.minimapTabs[type]{border-radius:5px!important}
+.minimapTabs[type],
+.geobutb,
+.geobut{
+	box-shadow:none!important;
+	margin:0!important;
+	padding:2px!important;
+	border:1px solid!important;
+	-moz-border-bottom-colors:transparent!important; 
+	-moz-border-right-colors:transparent!important;
+	-moz-border-left-colors:transparent!important;
+	-moz-border-top-colors:transparent!important}
+.minimapTabs[type]:not(:hover),
+.geobut:not(:hover),
+.geobutb:not(:hover),
+#minimap-deck+hbox>tabs{
+	background:none!important}
+.minimapTabs[type]:hover,
+.geobut:hover,
+.geobutb:hover{
+	border:1px solid!important;
+	-moz-border-top-colors:#EED4A2!important;
+	-moz-border-left-colors:#EED4A2!important;
+	-moz-border-right-colors:#893B00!important;
+	-moz-border-bottom-colors:#893B00!important; 
+	background-image:url(chrome://global/skin/hout-hover.png)!important;
+	color:black!important}
+.minimapTabs[type][selected="true"],
+.minimapTabs[type]:hover:active,
+.geobut:hover:active,
+.geobutb:hover:active{
+	border:1px solid!important;
+	-moz-border-top-colors:#B26F00!important;
+	-moz-border-left-colors:#B26F00!important;
+	-moz-border-right-colors:#EED4A2!important;
+	-moz-border-bottom-colors:#EED4A2!important;
+	background-image:url(chrome://global/skin/hout-active.png)!important;
+	color:white!important}
+#address_list>treechildren::-moz-tree-row(makeItClear){
+	background-color:transparent!important}
+#address_list>treechildren::-moz-tree-row(selected){
+	background-image:url(chrome://global/skin/hout-active.png)!important;
+	color:white!important}
+#address_list>treechildren::-moz-tree-cell-text(selected){
+	color:white!important}
+#address_list>treechildren::-moz-tree-checkbox(checked){
+	list-style-image:url(chrome://global/skin/checkbox.png)!important;
+	-moz-image-region:rect(0,14px,14px,0)!important}
+#kml-list{border:0!important}
+#kml-list+spacer+description[style*="color: #fff"],
+vbox>label[style*="color: #fff"]{color:inherit!important}
+#maps-deck>vbox[style^="padding"]{padding:0!important}
+#minimap-maps-minibrowser{-moz-border-start:0!important;border-bottom-width:0!important}
+
+/*PDF Download*/
+#CompanyPane>spacer{display:none}
+
+#fbWindowButtons>toolbarbutton{box-shadow:none}
+
 /*Yoono*/
 #yoono-spliiter,
 #yoono-sidebar{
 	background-image:url(chrome://global/skin/hout.png)!important}
+
+/*Facebook*/
+#facebook-photoupload,#editPanel,#editImageContainer{padding:0!important}
+#editImageFrame,
+#overviewPanelContainer{
+  	padding:0!important;
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #893B00!important;
+	-moz-border-left-colors:#B26F00 #893B00!important;
+	-moz-border-right-colors:#EED4A2 #B26F00!important;
+	-moz-border-bottom-colors:#EED4A2 #B26F00!important;
+	background-image:url(chrome://global/skin/backarea.png)!important;
+	box-shadow:none!important}
+#editPanel{-moz-margin-start:4px}
+#editPanel>spacer{display:none}
+#editCaptionField{margin:0}
+
+#addPhotosButton{font-size:100%!important}
+#help-message{color:#893B00!important}
+.photobox{
+	background-image:url(chrome://global/skin/backarea.png)!important;
+	border-color:#EED4A2!important;
+	box-shadow:5px 5px 5px #893B00!important}
+.photobox[selected="true"]{
+	border-color:#893B00!important;
+	box-shadow:5px 5px 5px #893B00!important}
+
+/*Googlebar*/
+window[gtbPlatform="linux"] #gtbToolbar,
+window[gtbPlatform="win"] #gtbToolbar,
+window[gtbPlatform="mac"] #gtbToolbar{height:auto!important}
+toolbarbutton.gtb-custombutton>dropmarker,
+#gtbSearchButton>dropmarker{padding:1px!important}
+
+window[gtbPlatform="mac"] #gtbGoogleSearchBox,
+window[gtbPlatform="win"] #gtbGoogleSearchBox,
+window[gtbPlatform="linux"] #gtbGoogleSearchBox{
+	margin:0 2px!important;
+	border:2px solid!important;
+	border-radius:7px!important;
+	-moz-border-top-colors:#B26F00 #893B00!important;
+	-moz-border-left-colors:#B26F00 #893B00!important;
+	-moz-border-right-colors:#EED4A2 #B26F00!important;
+	-moz-border-bottom-colors:#EED4A2 #B26F00!important}
 
 #asktb-searchbox-border-container{
 	border:0!important}
@@ -512,9 +618,39 @@ textbox#temp{padding:0!important}
 	padding:0!important;
 	height:auto!important}
 #asktb-btn-service-provider>.toolbarbutton-icon{
-	margin:2px 3px 2px 0!important}
+	margin:2px 3px 2px 0px!important}
 #asktb-searchbtn>.toolbarbutton-icon{
 	margin:0!important}
+
+/*QuickFox Notes*/
+#editor-tabbox-tabpanels,
+#quickfox-notes-browser,
+#editor-tabbox{
+	border-width:0!important;
+	padding:0}
+.notepad{
+	margin:0!important;
+	border-radius:0!important;
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #893B00!important;
+	-moz-border-left-colors:#B26F00 #893B00!important;
+	-moz-border-right-colors:#EED4A2 #B26F00!important;
+	-moz-border-bottom-colors:#EED4A2 #B26F00!important}
+tabs#editor-tabbox-tabs>tab{
+	text-align:start}
+#quickfox-notes-contentsplitter{
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2}
+#editor-tabbox>hbox:not(:first-child){
+	background-image:url(chrome://global/skin/hout.png)}
+#editor-tabbox-toolbar-searchbox{
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #893B00!important;
+	-moz-border-left-colors:#B26F00 #893B00!important;
+	-moz-border-right-colors:#EED4A2 #B26F00!important;
+	-moz-border-bottom-colors:#EED4A2 #B26F00!important;
+	background-image:url(chrome://global/skin/backarea.png)!important;
+	color:black!important}
 
 prefpane>tabbox{border-width:0}
 #filterTable{border-width:0 0 2px 0}
@@ -611,6 +747,26 @@ browser#shortcuts-browser{
 	background-image:url(chrome://global/skin/backarea.png);
 	color:black}
 
+toolbar button:not([disabled="true"]):hover,
+toolbar checkbox:not([disabled="true"]):hover,
+.tabbable:hover,
+toolbarbutton.tabs-newbutton:hover,
+.tabs-alltabs-button:hover,
+.tabs-newtab-button:hover,
+.tabbrowser-tab:hover,
+.tabs-closebutton:hover,
+.findbar-closebutton:hover,
+.findbar-container>checkbox:not([disabled="true"]):hover{
+	box-shadow:0 0 1px #893B00}
+
+toolbar checkbox,
+toolbar button{
+	box-shadow:0 0 1px transparent;
+	outline-offset:-2px}
+
+#su_splitter_first,
+#su_splitter_first_flexbox{display:none}
+
 #Console\:clear,
 #ToolbarMode>#viewGroup{margin:2px}
 
@@ -636,6 +792,84 @@ browser#shortcuts-browser{
 
 #palette-box .searchbar-textbox{width:auto!important;min-width:1em!important}
 
+
+/* Pencil */
+#main-window[windowtype="PencilMainWindow"],
+pcollectionpane vbox[aid="filterPanel"]{
+	border-width:0!important;
+	background-image:url(chrome://global/skin/hout.png)!important}
+#main-window[windowtype="PencilMainWindow"]>#mainBox{background-color:transparent!important}
+#pencilAboutDialog textbox[readonly="true"] hbox,
+#pencilAboutDialog>vbox>hbox,dialog .dialog-button-box,
+#mainView,#sideBox,#mainBox,#pencil-menu{padding:0!important;margin:0!important}
+#mainBox>spacer[style^="min-width"]{display:none}
+#sideBoxTabPanels,#mainViewPanel,#sideBoxTabs{padding:0;border:0}
+#sideBoxTabPanels,#mainViewHeader{margin-bottom:-1px;-moz-box-flex:1}
+vbox[aid="contentBox"],
+#aboutBox{border:0!important;border-radius:0!important}
+#pencil-settings .paneSelector[orient]{background:none!important}
+#pencil-settings radio[pane][label]{color:black!important;min-width:100px!important}
+#pencil-settings radio[pane][label]:hover{
+	background-image:url(chrome://global/skin/hout-hover.png)!important;
+	color:black!important}
+#pencil-settings radio[pane][label][selected="true"],
+#pencil-settings radio[pane][label][selected="true"]:hover{
+	background-image:url(chrome://global/skin/hout-active.png)!important;
+	color:white!important}
+
+:-moz-any(#sideBoxTabs,#mainViewHeader)>tab{
+	border-radius:9px 9px 0 0!important;
+	border:1px solid!important;
+	border-color:#EED4A2 #B26F00 #EED4A2 #EED4A2!important;
+	margin:5px 0 0 0!important;
+	padding:2px 3px 0 3px!important;
+	background-image:url(chrome://global/skin/hout.png)!important;
+	color:black!important}
+
+:-moz-any(#sideBoxTabs,#mainViewHeader)>tab:hover:not([selected="true"]):not([disabled="true"]){
+	margin-top:3px!important;
+	padding-bottom:2px!important;
+	background-image:url(chrome://global/skin/hout-hover.png)!important;
+	color:black!important}
+
+:-moz-any(#sideBoxTabs,#mainViewHeader)>tab[selected="true"]{
+	margin-top:2px!important;
+	padding:1px 2px 3px 2px!important;
+	font-weight:bold!important;
+	border-radius:7px 7px 0 0!important;
+	border:2px solid!important;
+	-moz-border-top-colors:#B26F00 #EED4A2!important;
+	-moz-border-left-colors:#B26F00 #EED4A2!important;
+	-moz-border-right-colors:#893B00 #B26F00!important;
+	border-bottom:1px solid transparent!important}
+
+.PanelContent>hbox{
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00}
+#miniToolbar{
+	padding:2px;
+	border-radius:5px;
+	box-shadow:1px 1px 3px #893B00;
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2}
+#miniToolbar,
+panel>hbox.PanelContent,
+.Collection>hbox:first-child,
+#mainViewPanel>tabpanel,
+#pencilAboutDialog textbox[readonly="true"] hbox{
+	background-image:url(chrome://global/skin/hout.png)!important;
+	color:black!important}
+.Collection>div,
+.PanelContent>hbox{
+	background-image:url(chrome://global/skin/backarea.png)!important;
+	color:black!important}
+.Collection label{
+	color:black!important}
+#mainViewPanel>tabpanel,
+toolbarbutton.AttachedAction{
+	color:black!important;
+	font-size:inherit!important}
+
 #grabanddrag-button{
 	-moz-image-region:rect(24px,24px,48px,0);
 	list-style-image:url(chrome://grabanddrag/skin/grabanddragtb.png)}
@@ -644,13 +878,13 @@ browser#shortcuts-browser{
 #grabanddrag-button[gadOn="QT"]{-moz-image-region:rect(0,96px,24px,72px)}
 #grabanddrag-button[gadOn="BL"]{-moz-image-region:rect(0,24px,24px,0)}
 
-toolbar[iconsize="small"]:not(#nav-bar)>#grabanddrag-button{
+toolbar[iconsize="small"]>#grabanddrag-button{
 	-moz-image-region:rect(1px,17px,17px,1px)!important;
 	list-style-image:url(chrome://grabanddrag/skin/grabanddragtbsmall18.png)!important}
-toolbar[iconsize="small"]:not(#nav-bar)>#grabanddrag-button[gadOn="false"]{-moz-image-region:rect(1px,35px,17px,19px)!important}
-toolbar[iconsize="small"]:not(#nav-bar)>#grabanddrag-button[gadOn="true"]{-moz-image-region:rect(1px,53px,17px,37px)!important}
-toolbar[iconsize="small"]:not(#nav-bar)>#grabanddrag-button[gadOn="QT"]{-moz-image-region:rect(1px,71px,17px,55px)!important}
-toolbar[iconsize="small"]:not(#nav-bar)>#grabanddrag-button[gadOn="BL"]{-moz-image-region:rect(1px,17px,17px,1px)!important}
+toolbar[iconsize="small"]>#grabanddrag-button[gadOn="false"]{-moz-image-region:rect(1px,35px,17px,19px)!important}
+toolbar[iconsize="small"]>#grabanddrag-button[gadOn="true"]{-moz-image-region:rect(1px,53px,17px,37px)!important}
+toolbar[iconsize="small"]>#grabanddrag-button[gadOn="QT"]{-moz-image-region:rect(1px,71px,17px,55px)!important}
+toolbar[iconsize="small"]>#grabanddrag-button[gadOn="BL"]{-moz-image-region:rect(1px,17px,17px,1px)!important}
 
 #pilot-notification-popup{background-image:none}
 
@@ -704,24 +938,3 @@ toolbar[iconsize="small"]:not(#nav-bar)>#grabanddrag-button[gadOn="BL"]{-moz-ima
 
 panel[titlebar]>iframe[type="content"]{
 	border-bottom:1px solid #B26F00}
-
-#downloadbar-options>vbox{padding:0!important}
-#downloadbar-options>vbox>tabbox{border-width:0!important}
-#downloadbar-options>vbox>tabbox>tabs{border-radius:0}
-
-.options-vertical-pane{
-	min-width:280px!important;
-	padding:4px;
-	border-radius:9px;
-	box-shadow:1px 1px #EED4A2,.5px .5px 2px 1px #B26F00 inset,1px 1px 1px #B26F00 inset;
-	background-image:url(chrome://global/skin/backarea.png)}
-.options-vertical-pane>label:not(.options-citation-label){
-	padding:2px 5px!important;
-	font-size:inherit!important;
-	font-weight:bold}
-
-.options-citation-label{font-style:italic;color:#893B00;font-size:inherit!important;padding:0!important}
-.options-groupbox{padding:0!important}
-.options-groupbox>.hidden-labels-box>checkbox,
-.options-groupbox>*{padding:0!important;margin:0!important}
-.options-vertical-pane:not([id])>label:first-child,#theme-options,#devtools-theme-box{display:none}

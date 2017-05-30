@@ -7,17 +7,14 @@ tabbox{
 	-moz-border-top-colors:#B26F00 #893B00;
 	-moz-border-left-colors:#B26F00 #893B00;
 	-moz-border-right-colors:#EED4A2 #893B00;
-	-moz-border-bottom-colors:#EED4A2 #893B00}
-
-tabs{
-	border-radius:inherit;
+	-moz-border-bottom-colors:#EED4A2 #893B00;
 	background:url(chrome://global/skin/hout-hover.png)}
 
 .tabs-left,.tabs-right{
-	min-width:5px;
+	min-width:3px;
 	border-bottom:1px solid #EED4A2}
 .tabs-bottom>.tabs-left,.tabs-bottom>.tabs-right{
-	border-bottom-width:0;
+	border-bottom:0;
 	border-top:1px solid #B26F00}
 
 tabpanels{
@@ -35,29 +32,26 @@ tab{
 	border:1px solid;
 	border-color:#EED4A2 #B26F00 #EED4A2 #EED4A2;
 	margin:5px 0 0 0;
-	box-shadow:0 -1px 1px #B26F00;
 	padding:2px 3px 0 3px;
 	background-image:url(chrome://global/skin/hout.png);
 	color:black}
+
 tab:hover:not([selected="true"]):not([disabled="true"]){
 	margin-top:3px;
 	padding-bottom:2px;
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
+	color:black}
+
 tab[selected="true"]{
 	margin-top:2px;
 	padding:1px 2px 3px 2px;
-	box-shadow:0 0 3px #B26F00,inset 1px 1px #EED4A2;
+	font-weight:bold;
 	border-radius:7px 7px 0 0;
 	border:2px solid;
 	-moz-border-top-colors:#B26F00 #EED4A2;
 	-moz-border-left-colors:#B26F00 #EED4A2;
 	-moz-border-right-colors:#893B00 #B26F00;
 	border-bottom:1px solid transparent}
-
-tab[disabled="true"]{
-	color:#893B00;
-	text-shadow:1px 1px 1px #EED4A2}
 
 .tab-bottom{
 	border-radius:0 0 9px 9px;
@@ -90,10 +84,9 @@ tabpanels#tabpanId tabbox[value]{
 	-moz-border-right-colors:#EED4A2 #893B00!important;
 	-moz-border-bottom-colors:#EED4A2 #893B00!important}
 
-dialog>tabbox,
 prefpane>tabbox{
 	border-radius:0!important;
-	border-width:0!important;
-	padding:0!important}
-dialog>tabbox>tabpanels{
 	border-width:0!important}
+prefpane>tabbox>tabpanels{
+	-moz-border-end:1px solid #B26F00!important;
+	border-bottom:1px solid #B26F00!important}

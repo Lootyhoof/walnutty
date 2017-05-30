@@ -25,16 +25,14 @@
 	border-right:0!important}
 
 .view-button{
+	min-width:15ex;
+	text-align:start!important;
 	list-style-image:url(chrome://global/skin/leds.png);
 	-moz-image-region:rect(0,32px,16px,16px)}
 .view-button[state="activity"]{-moz-image-region:rect(0,64px,16px,48px)}
 .view-button[state="attention"]{color:darkred;-moz-image-region:rect(0,16px,16px,0)}
 .view-button[state="superfluous"]{color:darkblue;-moz-image-region:rect(0,48px,16px,32px)}
-
 #status-progress-bar{margin:0 2px}
-
 #view-tabs{margin-top:-2px}
-#views-tbar-inner>.tabs-right{-moz-box-ordinal-group:10000}
-#views-tbar-spacer{display:none}
 
 #pref-object-deck{border-width:0;background:none}

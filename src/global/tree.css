@@ -34,7 +34,7 @@ treechildren::-moz-tree-cell-text{
 treechildren::-moz-tree-cell-text(selected),
 tree[seltype="cell"]>treechildren::-moz-tree-cell-text(active,selected),
 tree[seltype="text"]>treechildren::-moz-tree-cell-text(active,selected){
-	color:var(--hover-color)}
+	color:black}
 treechildren::-moz-tree-cell-text(selected,focus),
 tree[seltype="cell"]>treechildren::-moz-tree-cell-text(active,selected,focus),
 tree[seltype="text"]>treechildren::-moz-tree-cell-text(active,selected,focus){
@@ -98,7 +98,7 @@ treecolpicker{
 	color:black}
 treecol:hover,treecolpicker:hover{
 	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
+	color:black}
 treecol:hover:active{
 	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
 	background-image:url(chrome://global/skin/hout-active.png);

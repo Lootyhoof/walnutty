@@ -35,7 +35,7 @@ h1 .info{
 	white-space:pre-wrap}
 
 .property-name{
-	text-align:end;
+	text-align:right;
 	white-space:nowrap;
 	vertical-align:top;
 	font-weight:bold;

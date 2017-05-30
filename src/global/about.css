@@ -1,13 +1,30 @@
-@import url(chrome://global/skin/netError.css);
+html{
+	margin:0;
+	font:message-box;
+	background-image:url(chrome://global/skin/gecko.png),url(chrome://global/skin/hout.png);
+	background-repeat:no-repeat,repeat;
+	background-position:right 90%,left top;
+	background-attachment:fixed,fixed;
+	color:black}
+@media print{html{background:none}}
 
 body{
-	max-width:none!important;
-	margin:2em 4em!important;
-	-moz-padding-start:56px!important;
-	background-image:url(chrome://branding/content/icon32.png),url(chrome://global/skin/backarea.png)}
-@media(max-width:600px){
-body{-moz-padding-start:46px!important}
-}
+	width:614px;
+	margin:4em auto;
+	padding:24px;
+	text-align:left;
+	border-radius:18px;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	box-shadow:5px 5px 5px #893B00;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+body.verbose,
+.aboutPageWideContainer{width:80%}
+@-moz-document domain(mozilla.org),url(about:credits){body{width:80%}}
 
 .entries{
 	max-height:500px;
@@ -16,36 +33,35 @@ body.verbose>.entries{
 	overflow-x:auto}
 
 #aboutLogoContainer{
-	width:300px;
-	min-height:230px;
+	width:300px;min-height:230px;
 	text-align:center;
-	position:absolute;
-	left:16px;
-	top:16px;
-	padding:0!important;
+	float:left;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
 	box-shadow:1px 1px 4px #893B00;
 	background-color:white;
 	color:black}
-#vendorURL{
-	display:block;
-	position:relative;
-	cursor:pointer;
-	padding:0!important}
-#vendorURL>img{
-	display:block}
-#vendorURL:hover>#version{
-	background-image:url(chrome://global/skin/hout.png);
-	color:black}
-#vendorURL:hover:active>#version{
-	background-image:url(chrome://global/skin/hout-hover.png);
-	color:white}
-
+img{border:0}
 #aboutPageList{
-	min-height:250px;
-	-moz-margin-start:330px;
-	font-size:110%}
-h1:first-child{margin-top:4px!important;text-align:start}
+	width:265px;min-height:222px;
+	margin:0;-moz-margin-start:320px;
+	padding:4px;-moz-padding-start:25px;
+  padding-bottom: 52px;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	box-shadow: 1px 1px 4px #893B00 inset;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+h1:first-child{
+	text-align:start;
+	padding:0 30px;
+	margin-top:0!important;
+	box-shadow:1px 1px 3px #893B00 inset,1px 1px 1px #EED4A2;
+	border-radius:12px;
+	text-shadow:2px 2px 5px rgba(178,111,0,.4);
+	background:url(chrome://global/skin/icons/information-large.png) no-repeat 4px center}
 ul{list-style:square}
+ul>li{margin-top:8px}
 a:link{color:darkblue;padding:0 2px;border-radius:3px}
 a:hover{
 	background-image:url(chrome://global/skin/hout-hover.png);
@@ -54,11 +70,16 @@ a:active{
 	background-image:url(chrome://global/skin/hout-active.png)!important;
 	color:white!important}
 a:focus{
-	box-shadow:0 0 0 1px #893B00}
+	-moz-outline-radius:4px;
+	outline:1px solid #B26F00;
+	outline-offset:0}
+
+hr{border-style:solid;border-color:#B26F00 #EED4A2 #EED4A2 #B26F00}
 
 .columns{-moz-column-width:20em;-moz-column-gap:3em}
 
 h2{font-size:120%;margin-bottom:4px}
+h1,h2>a[name]{text-shadow:1px 1px 4px #B26F00}
 h2>a[name]{
 	clear:both;
 	float:left;
@@ -75,15 +96,3 @@ p{margin:4px 0}
 .sectionHeader{
 	padding-left:0!important;
 	background-color:transparent!important}
-
-*|*:-moz-any-link:-moz-focusring{
-	box-shadow:0 0 0 1px #893B00;
-	outline-width:0!important}
-
-#links,
-#features{
-	position: absolute;
-	top:85px;
-	left:30vw}
-#links{left:55vw}
-td{word-break:break-all}
