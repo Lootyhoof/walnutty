@@ -276,7 +276,7 @@ menuitem[anonid="context-enable"]{
 	-moz-image-region:rect(16px,16px,32px,0)}
 
 #appmenu_permissions,#menu_openPermissions{
-  list-style-image:url(chrome://browser/skin/preferences/permission.png)!important}
+  list-style-image:url(chrome://browser/skin/preferences/permissions.svg)!important}
 
 #menu_newPrivateWindow,
 #placesContext_open\:newprivatewindow,
