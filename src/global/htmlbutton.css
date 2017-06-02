@@ -1,52 +1,14 @@
-@namespace url(http://www.w3.org/1999/xhtml);
+@namespace html url(http://www.w3.org/1999/xhtml);
 
-input,select{font:inherit}
-
-select{
-	margin:2px;
-	padding:1px;
-	border:2px solid;
-	-moz-border-top-colors:#B26F00 #EED4A2;
-	-moz-border-left-colors:#B26F00 #EED4A2;
-	-moz-border-right-colors:#893B00 #B26F00;
-	-moz-border-bottom-colors:#893B00 #B26F00;
-	background-image:url(chrome://global/skin/hout.png);
-	background-position:top left;
-	background-repeat:repeat;
-	color:black}
-select>option,
-select>optgroup,
-select>optgroup>option{
-	padding:0 2px;
-	background-image:url(chrome://global/skin/hout.png);
-	color:black}
-select>optgroup>option{
-	-moz-padding-start:20px}
-select>option[value]:hover,
-select>option[value]:checked,
-select:focus>option[value]:checked,
-select:focus>optgroup>option[value]:checked{
-	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:var(--hover-color)!important}
-
-label#enableTrackingProtection,
-label#disableTrackingProtection,
-#showWeakCryptoAdvancedPanel,
-#showCertificateErrorReportingPanel,
-toolbarbutton.devtools-button,
-input[type="submit"],
-input[type="button"],
-input[type="color"]:-moz-system-metric(color-picker-available),
-button{
+html|input[type="submit"],
+html|button{
 	-moz-appearance:none!important;
-	font:inherit;
-	text-decoration:none;
-	cursor:default;
+	font:message-box;
 	margin:2px;
-	min-width:1px!important;
 	padding:1px;
 	outline-color:transparent;
 	border-radius:5px;
+	background-clip:padding-box;
 	-moz-outline-radius:7px;
 	border:2px solid;
 	-moz-border-top-colors:#B26F00 #EED4A2;
@@ -54,325 +16,96 @@ button{
 	-moz-border-right-colors:#893B00 #B26F00;
 	-moz-border-bottom-colors:#893B00 #B26F00;
 	background-image:url(chrome://global/skin/hout.png);
-	background-clip:padding-box;
 	color:black}
 
-input[type="color"]:-moz-system-metric(color-picker-available){
-	width:20px;
-	height:20px}
-input[type="color"]:-moz-system-metric(color-picker-available)::-moz-color-swatch{
-	border:1px solid;
-	border-color:#b26F00 #EED4A2 #EED4A2 #B26F00}
+html|input[type="submit"]:hover:not([disabled="true"]),
+html|button:hover:not([disabled="true"]){
+	box-shadow:1px 1px 2px #B26F00;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #EED4A2;
+	-moz-border-left-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #B26F00;
+	-moz-border-bottom-colors:#893B00 #B26F00;
+	box-shadow:1px 1px 2px #B26F00;
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:black}
 
-select:focus,
-label#enableTrackingProtection:focus,
-label#disableTrackingProtection:focus,
-#showWeakCryptoAdvancedPanel:focus,
-#showCertificateErrorReportingPanel:focus,
-input[type="submit"]:focus,
-input[type="button"]:focus,
-input[type="color"]:-moz-system-metric(color-picker-available):focus,
-toolbarbutton.devtools-button:focus,
-button:focus{
-	outline-width:0!important;
-	box-shadow:0 0 1px 1px #893B00!important}
+html|input[type="submit"]:focus,
+html|button:focus{
+	box-shadow:0 0 0 1px #893B00!important}
 
-input[type="submit"][checked="true"],
-input[type="button"][checked="true"],
-input[type="button"][active="true"],
-toolbarbutton.devtools-button[checked],
-button.selected,
-button.selected:hover,
-button.selected:hover:active,
-button[active="true"],
-button[checked="true"]{
+html|input[type="submit"][default],
+html|button[default]{
+	font-weight:bold}
+
+html|input[type="submit"]:hover:active:not([disabled="true"]),
+html|button:hover:active:not([disabled="true"]){
+	box-shadow:inset 1px 1px 1px #B26F00;
+	-moz-border-top-colors:#893B00 #B26F00;
+	-moz-border-left-colors:#893B00 #B26F00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	background-image:url(chrome://global/skin/hout-active.png);
+	color:white}
+
+html|input[type="submit"][checked="true"],
+html|button[checked="true"]{
 	box-shadow:inset 1px 1px 1px #B26F00;
 	-moz-border-top-colors:#B26F00;
 	-moz-border-left-colors:#B26F00;
-	-moz-border-right-colors:#B26F00 #EED4A2;
-	-moz-border-bottom-colors:#B26F00 #EED4A2;
+	-moz-border-right-colors:#893B00 #EED4A2;
+	-moz-border-bottom-colors:#893B00 #EED4A2;
 	background-image:url(chrome://global/skin/backarea.png)}
 
-select:hover:not([open="true"]),
-label#enableTrackingProtection:hover,
-label#disableTrackingProtection:hover,
-#showWeakCryptoAdvancedPanel:hover,
-#showCertificateErrorReportingPanel:hover,
-toolbarbutton.devtools-button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-input[type="color"]:hover:-moz-system-metric(color-picker-available),
-button:hover{
-	border:2px solid;
-	-moz-border-top-colors:#B26F00 #EED4A2;
-	-moz-border-left-colors:#B26F00 #EED4A2;
-	-moz-border-right-colors:#893B00 #B26F00;
-	-moz-border-bottom-colors:#893B00 #B26F00;
-	box-shadow:1px 1px 2px #B26F00;
-	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
-
-input[type="submit"][default],
-input[type="button"][default],
-input[type="color"][default]:-moz-system-metric(color-picker-available),
-button[default]{
-	font-weight:bold}
-
-select[open],
-select:active,
-label#enableTrackingProtection:hover:active,
-label#disableTrackingProtection:hover:active,
-#showWeakCryptoAdvancedPanel:hover:active,
-#showCertificateErrorReportingPanel:hover:active,
-toolbarbutton.devtools-button:hover:active:not(select),
-select[open="true"]:not([disabled="true"]),
-input[type="select"].select:not([disabled="true"]):not(:disabled),
-input[type="submit"]:hover:active,
-input[type="button"]:hover:active,
-button[active="true"]:not([disabled="true"]):not(:disabled),
-input[type="color"]:hover:active:-moz-system-metric(color-picker-available),
-button:hover:active{
-	box-shadow:inset 1px 1px 1px #B26F00;
-	-moz-border-top-colors:#893B00 #B26F00;
-	-moz-border-left-colors:#893B00 #B26F00;
-	-moz-border-right-colors:#EED4A2 #B26F00;
-	-moz-border-bottom-colors:#EED4A2 #B26F00;
-	background-image:url(chrome://global/skin/hout-active.png);
-	color:white}
-
-select:disabled,select[disabled="true"],
-input:disabled,input[disabled="true"],
-button:disabled,button[disabled="true"]{
-	pointer-events:none}
-
-input[type="color"]:disabled:-moz-system-metric(color-picker-available),
-input[type="color"][disabled="true"]:-moz-system-metric(color-picker-available),
-input[type="submit"]:disabled,input[type="submit"][disabled="true"],
-input[type="button"]:disabled,input[type="button"][disabled="true"],
-button:disabled,button[disabled="true"]{
+html|input[type="submit"][checked="true"],
+html|button[disabled="true"]{
 	-moz-border-top-colors:#B26F00 #EED4A2!important;
 	-moz-border-left-colors:#B26F00 #EED4A2!important;
-	-moz-border-right-colors:#B26F00 transparent!important;
-	-moz-border-bottom-colors:#B26F00 transparent!important;
-	background:none!important;
-	color:#893B00!important;
-	text-shadow:1px 1px 0 #EED4A2!important}
-
-#controls>a#close,#closeButton,#btnCloseSidebar,#allow-button,button#close-button,#accept,#cancel,#confpref,
-#reportCertificateError,#reportCertificateErrorRetry,#advancedButton,
-input[type="submit"][value="OK"],
-input[type="button"][value="OK"],
-input[type="submit"][value="Cancel"],#getMeOutOfHereButton,
-input[type="button"][value="Cancel"],
-#restoreTab,#closeTab,
-#errorCancel,#btnTryAgain,#errorTryAgain,#restart-button,#tryAgain,#refreshButton,#refresh-tabs,#refresh-devices,
-#clear-reports,#returnButton{
-	box-sizing:border-box;
-	min-height:24px;
-	-moz-padding-start:20px!important;
-	background-repeat:no-repeat,repeat!important;
-	background-position:2px center,left top!important}
-button:-moz-locale-dir(rtl),
-input[type="submit"]:-moz-locale-dir(rtl),
-input[type="button"]:-moz-locale-dir(rtl){
-	background-position:right center,right top}
-
-#closeButton,#btnCloseSidebar,#allow-button,button#close-button,#accept,#reportCertificateError,#confpref,
-input[type="submit"][value="OK"],input[type="button"][value="OK"]{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout.png)}
-#closeButton:hover,#btnCloseSidebar:hover,#allow-button:hover,button#close-button:hover,#accept:hover,#reportCertificateError:hover,#confpref:hover,
-input[type="submit"][value="OK"]:hover,input[type="button"][value="OK"]:hover{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout-hover.png)}
-#closeButton:hover:active,#btnCloseSidebar:hover:active,#allow-button:hover:active,button#close-button:hover:active,#accept:hover:active,#reportCertificateError:hover:active,#confpref:hover:active,
-input[type="submit"][value="OK"]:hover:active,input[type="button"][value="OK"]:hover:active{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout-active.png)}
-
-#closeTab,#controls>a#close,input[type="submit"][value="Cancel"],input[type="button"][value="Cancel"],#errorCancel,#cancel,#getMeOutOfHereButton{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),16,16,32,0),url(chrome://global/skin/hout.png)}
-#closeTab:hover,#controls>a#close:hover,input[type="submit"][value="Cancel"]:hover,input[type="button"][value="Cancel"]:hover,#errorCancel:hover,#cancel:hover,#getMeOutOfHereButton:hover{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),16,16,32,0),url(chrome://global/skin/hout-hover.png)}
-#closeTab:hover:active,#controls>a#close:hover:active,input[type="submit"][value="Cancel"]:hover:active,input[type="button"][value="Cancel"]:hover:active,#errorCancel:hover:active,#cancel:hover:active,#getMeOutOfHereButton:hover:active{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),16,16,32,0),url(chrome://global/skin/hout-active.png)}
-
-#restoreTab,#errorTryAgain,#btnTryAgain,#restart-button,#tryAgain,#refreshButton,#refresh-tabs,#reportCertificateErrorRetry,#refresh-devices{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout.png)}
-#restoreTab:hover,#errorTryAgain:hover,#btnTryAgain:hover,#restart-button:hover,#tryAgain:hover,#refreshButton:hover,#refresh-tabs:hover,#reportCertificateErrorRetry:hover,#refresh-devices:hover{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout-hover.png)}
-#restoreTab:hover:active,#errorTryAgain:hover:active,#btnTryAgain:hover:active,#restart-button:hover:active,#tryAgain:hover:active,#refreshButton:hover:active,#refresh-tabs:hover:active,#reportCertificateErrorRetry:hover:active,#refresh-devices:hover:active{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout-active.png)}
-
-#errorTryAgain[onclick="learnMoreSSLV3()"],#advancedButton{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),32,16,48,0),url(chrome://global/skin/hout.png)}
-#errorTryAgain[onclick="learnMoreSSLV3()"]:hover,#advancedButton:hover{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),32,16,48,0),url(chrome://global/skin/hout-hover.png)}
-#errorTryAgain[onclick="learnMoreSSLV3()"]:hover:active,#advancedButton:hover:active{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),32,16,48,0),url(chrome://global/skin/hout-active.png)}
-
-#clear-reports{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),576,32,592,16),url(chrome://global/skin/hout.png)}
-#clear-reports:hover{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),576,32,592,16),url(chrome://global/skin/hout-hover.png)}
-#clear-reports:hover:active{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),576,32,592,16),url(chrome://global/skin/hout-active.png)}
-
-#returnButton{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),192,16,208,0),url(chrome://global/skin/hout.png)}
-#returnButton:hover{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),192,16,208,0),url(chrome://global/skin/hout-hover.png)}
-#returnButton:active{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),192,16,208,0),url(chrome://global/skin/hout-active.png)}
-
-#returnButton:-moz-locale-dir(rtl){
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),204,16,224,0),url(chrome://global/skin/hout.png)}
-#returnButton:-moz-locale-dir(rtl):hover{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),204,16,224,0),url(chrome://global/skin/hout-hover.png)}
-#returnButton:-moz-locale-dir(rtl):active{
-	background-image:-moz-image-rect(url(chrome://global/skin/global.png),204,16,224,0),url(chrome://global/skin/hout-active.png)}
-
-input[type="checkbox"],
-input[type="radio"]{
-	-moz-appearance:none}
-
-button::-moz-focus-inner,
-input[type="color"]::-moz-focus-inner,
-input[type="button"]::-moz-focus-inner{
-	padding:0!important;
-	border-width:0!important}
-
-input[type="radio"],
-input[type="checkbox"]{
-	opacity:0;
-	position:absolute}
-
-input[type="radio"]+span:before,
-input[type="checkbox"]+span:before,
-input[type="radio"]+label:before,
-input[type="checkbox"]+label:before{
-	display:inline-block;
-	content:"";
-	vertical-align:top;
-	width:14px;
-	height:14px;
-	margin:1px 2px;
-	background:-moz-image-rect(url(chrome://global/skin/checkbox.png),14,14,28,0) no-repeat center}
-input[type="checkbox"]:disabled+span:before,
-input[type="checkbox"]:disabled+label:before{
-	background-image:-moz-image-rect(url(chrome://global/skin/checkbox.png),14,28,28,14)}
-input[type="checkbox"]:checked+span:before,
-input[type="checkbox"]:checked+label:before{
-	background-image:-moz-image-rect(url(chrome://global/skin/checkbox.png),0,14,14,0)}
-input[type="checkbox"]:checked:disabled+span:before,
-input[type="checkbox"]:checked:disabled+label:before{
-	background-image:-moz-image-rect(url(chrome://global/skin/checkbox.png),0,28,14,14)}
-input[type="radio"]+span:before,
-input[type="radio"]+label:before{
-	background-image:-moz-image-rect(url(chrome://global/skin/widgets.png),12,24,24,12)}
-input[type="radio"]:disabled+span:before,
-input[type="radio"]:disabled+label:before{
-	background-image:-moz-image-rect(url(chrome://global/skin/widgets.png),24,24,36,12)}
-input[type="radio"]:checked+span:before,
-input[type="radio"]:checked+label:before{
-	background-image:-moz-image-rect(url(chrome://global/skin/widgets.png),12,12,24,0)}
-input[type="radio"]:checked:disabled+span:before,
-input[type="radio"]:checked:disabled+label:before{
-	background-image:-moz-image-rect(url(chrome://global/skin/widgets.png),24,12,36,0)}
-
-input[type="radio"]+span,
-input[type="checkbox"]+span,
-input[type="radio"]+label,
-input[type="checkbox"]+label{
-	-moz-user-select:none;
-	display:block;
-	outline-width:0!important;
-	margin:1px 2px;
-	padding:1px 2px;
-	border:2px solid transparent}
-input[type="radio"]+span:focus,
-input[type="checkbox"]+span:focus,
-input[type="radio"]+label:focus,
-input[type="checkbox"]+label:focus{
-	box-shadow:0 0 1px 1px #B26F00!important}
-input[type="radio"]+span:hover,
-input[type="checkbox"]+span:hover,
-input[type="radio"]+label:hover,
-input[type="checkbox"]+label:hover{
-	box-shadow:1px 1px 2px #B26F00;
-	-moz-border-top-colors:#B26F00 #EED4A2;
-	-moz-border-left-colors:#B26F00 #EED4A2;
-	-moz-border-right-colors:#893B00 #B26F00;
-	-moz-border-bottom-colors:#893B00 #B26F00;
-	background-image:url(chrome://global/skin/hout-hover.png);
-	color:var(--hover-color)}
-input[type="radio"]+span:hover:active,
-input[type="checkbox"]+span:hover:active,
-input[type="radio"]+label:hover:active,
-input[type="checkbox"]+label:hover:active{
-	box-shadow:none;
-	-moz-border-top-colors:#893B00 #B26F00;
-	-moz-border-left-colors:#893B00 #B26F00;
-	-moz-border-right-colors:#EED4A2 #B26F00;
-	-moz-border-bottom-colors:#EED4A2 #B26F00;
-	background-image:url(chrome://global/skin/hout-active.png);
-	color:white}
-input[type="radio"]+span:disabled,
-input[type="checkbox"]+span:disabled,
-input[type="radio"]+label:disabled,
-input[type="checkbox"]+label:disabled{
-	pointer-events:none;
-	border:2px solid transparent!important;
-	color:#893B00!important;
-	text-shadow:1px 1px 0 #EED4A2!important}
-
-input:not([type]):not(.textbox-input):not(.menulist-editable-input),
-input[type="text"]:not(.textbox-input),
-input[type="search"]:not(.textbox-input),
-input[type="number"]:not(.textbox-input){
-	-moz-appearance:none;
-	border:2px solid;
-	-moz-border-top-colors:#B26F00 #893B00;
-	-moz-border-left-colors:#B26F00 #893B00;
-	-moz-border-right-colors:#EED4A2 #B26F00;
-	-moz-border-bottom-colors:#EED4A2 #B26F00;
-	margin:1px 2px;
-	padding:0 1px;
-	background-image:url(chrome://global/skin/backarea.png);
-	background-position:top left;
-	background-repeat:repeat;
-	color:black}
-input:not([type]):disabled:not(.textbox-input),
-input[type="text"]:disabled:not(.textbox-input),
-input[type="search"]:disabled:not(.textbox-input),
-input[type="number"]:disabled:not(.textbox-input){
-	cursor:default;
-	background:none!important;
+	-moz-border-right-colors:#B26F00 #B26F00!important;
+	-moz-border-bottom-colors:#B26F00 #B26F00!important;
+	background-image:url(chrome://global/skin/hout.png)!important;
 	color:#893B00!important;
 	text-shadow:1px 1px 0 #EED4A2}
-input:not([type])[readonly]:not(.textbox-input),
-input[type="text"][readonly]:not(.textbox-input),
-input[type="search"][readonly]:not(.textbox-input),
-input[type="number"][readonly]:not(.textbox-input){
-	background-image:url(chrome://global/skin/hout.png);
-	color:black}
-input:not([type])::-moz-placeholder,
-input[type="number"]::-moz-placeholder,
-input[type="search"]::-moz-placeholder,
-input[type="text"]::-moz-placeholder{
-	opacity:1;
-	font-style:italic;
-	color:#893B00!important}
 
-select:-moz-focusring,
-label#enableTrackingProtection:-moz-focusring,
-label#disableTrackingProtection:-moz-focusring,
-#showWeakCryptoAdvancedPanel:-moz-focusring,
-#showCertificateErrorReportingPanel:-moz-focusring,
-input[type="submit"]:-moz-focusring,
-input[type="button"]:-moz-focusring,
-input[type="color"]:-moz-system-metric(color-picker-available):-moz-focusring,
-toolbarbutton.devtools-button:-moz-focusring,
-button:-moz-focusring,
-input[type="radio"]+span:-moz-focusring,
-input[type="checkbox"]+span:-moz-focusring,
-input[type="radio"]+label:-moz-focusring,
-input[type="checkbox"]+label:-moz-focusring{
-	outline-width:0}
+#closeButton,#btnCloseSidebar,#allow-button,
+html|input[type="submit"][value="OK"],
+html|input[type="submit"][value="Cancel"],#errorCancel,
+#btnTryAgain,#errorTryAgain,#restart-button{
+	-moz-padding-start:18px;
+	background-repeat:no-repeat,repeat!important;
+	background-position:2px center,left top!important}
+#closeButton:-moz-locale-dir(rtl),#btnCloseSidebar:-moz-locale-dir(rtl),#allow-button:-moz-locale-dir(rtl),
+html|input[type="submit"][value="OK"]:-moz-locale-dir(rtl),
+html|input[type="submit"][value="Cancel"]:-moz-locale-dir(rtl),#errorCancel:-moz-locale-dir(rtl),
+#btnTryAgain:-moz-locale-dir(rtl),#errorTryAgain:-moz-locale-dir(rtl){
+	background-position:right center,right top}
+
+#closeButton,#btnCloseSidebar,#allow-button,
+html|input[type="submit"][value="OK"]{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout.png)}
+html|input[type="submit"][value="Cancel"],#errorCancel{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),16,16,32,0),url(chrome://global/skin/hout.png)}
+#errorTryAgain{/*needs to be separate*/
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout.png)}
+#btnTryAgain,#restart-button{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout.png)}
+
+#closeButton:hover,#btnCloseSidebar:hover,#allow-button:hover,
+html|input[type="submit"][value="OK"]:hover{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout-hover.png)}
+html|input[type="submit"][value="Cancel"]:hover,#errorCancel:hover{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),16,16,32,0),url(chrome://global/skin/hout-hover.png)}
+#errorTryAgain:hover{/*needs to be separate*/
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout-hover.png)}
+#btnTryAgain:hover,#restart-button:hover{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout-hover.png)}
+
+#closeButton:hover:active,#btnCloseSidebar:hover:active,#allow-button:hover:active,
+html|input[type="submit"][value="OK"]:hover:active{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),0,16,16,0),url(chrome://global/skin/hout-active.png)}
+html|input[type="submit"][value="Cancel"]:hover:active,#errorCancel:hover:active{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),16,16,32,0),url(chrome://global/skin/hout-active.png)}
+#errorTryAgain:hover:active{/*needs to be separate*/
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout-active.png)}
+#btnTryAgain:hover:active,#restart-button:hover:active{
+	background-image:-moz-image-rect(url(chrome://global/skin/global.png),128,16,144,0),url(chrome://global/skin/hout-active.png)}
