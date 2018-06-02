@@ -1,0 +1,73 @@
+#body{
+	height:calc(100vh - 7em);
+	position:relative;
+	flex:1 1 0%;
+	display:flex!important;
+	flex-direction:column;
+	margin:2em 4em!important;
+	max-width:none!important}
+
+.page-subtitle{margin-bottom:1em;width:calc(100% - 220px)}
+
+#action-box{
+	position:absolute;
+	width:200px;
+	right:16px;
+	top:16px;
+	padding:4px;
+	text-align:center;
+	border-radius:12px;
+	border:1px solid;
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+#action-box:-moz-dir(rtl){
+	left:16px
+	right:auto}
+#action-box h3{margin:0}
+#action-box button{width:-moz-available}
+
+hr{display:none}
+
+#profiles{
+	flex:1;
+	overflow:auto;
+	border:2px solid;
+	-moz-border-top-colors:#B26F00 #893B00;
+	-moz-border-left-colors:#B26F00 #893B00;
+	-moz-border-right-colors:#EED4A2 #B26F00;
+	-moz-border-bottom-colors:#EED4A2 #B26F00;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+#profiles>div{
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+
+#profiles h2,
+#profiles h3{
+	margin:4px}
+
+table{
+	width:calc(100% - 8px);
+	margin:4px;
+	border:1px solid #B26F00;
+	font:message-box;
+	text-align:start;
+	border:1px solid #B26F00;
+	border-spacing:0;
+	border-collapse:collapse;
+	background-image:url(chrome://global/skin/backarea.png);
+	color:black}
+
+th,td{
+	text-align:start;
+	border:1px solid #B26F00;
+	padding:0 2px}
+th{
+	background-image:url(chrome://global/skin/hout.png);
+	color:black}
+th.column{
+	white-space:nowrap;
+	width:0}

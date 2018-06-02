@@ -1,0 +1,110 @@
+#layout-wrapper{padding:2px 4px}
+#layout-expander{margin:1px}
+#layout-header{margin:0}
+#layout-element-size{flex:1}
+
+#layout-main{
+	position:relative;
+	box-sizing:border-box;
+	margin:0 auto;
+	max-width:400px;
+	min-width:300px;
+	background-color:-moz-field;
+	color:-moz-fieldtext}
+
+.layout-legend{
+	position:absolute;
+	margin:2px 6px;
+	z-index:1;
+	font-weight:600;
+	color:black}
+
+#layout-margins{
+	padding:23px 35px;
+	box-shadow:2px 2px 4px #B26F00;
+	border:1px solid #893B00}
+
+#layout-borders{
+	padding:23px 35px;
+	border:1px solid #893B00;
+	box-shadow:2px 2px 4px 1px #893B00;
+	background:#B26F00}
+
+.layout-border,
+.layout-legend[data-box="border"]{
+	color:#EED4A2}
+
+#layout-padding{
+	padding:23px 35px;
+	border:1px solid #893B00;
+	background:#EED4A2}
+
+#layout-content{
+	height:24px;
+	border:1px solid #893B00;
+	box-shadow:1px 1px 2px #893B00 inset;
+	background-color:white}
+
+#layout-main>p{
+	position:absolute;
+	pointer-events:none;
+	margin:0;
+	text-align:center}
+
+#layout-main>p>span,
+#layout-main>p>input{
+	vertical-align:middle;
+	pointer-events:auto}
+
+.layout-size,.layout-top,.layout-bottom{width:100%}
+
+.layout-margin.layout-top{top:2px}
+.layout-margin.layout-bottom{bottom:3px}
+.layout-border.layout-top{top:26px}
+.layout-border.layout-bottom{bottom:28px}
+.layout-padding.layout-top{top:50px}
+.layout-padding.layout-bottom{bottom:52px}
+
+.layout-size,
+.layout-margin.layout-left,
+.layout-margin.layout-right,
+.layout-border.layout-left,
+.layout-border.layout-right,
+.layout-padding.layout-left,
+.layout-padding.layout-right{
+	top:75px;
+	line-height:inherit}
+
+.layout-margin.layout-right,
+.layout-margin.layout-left,
+.layout-border.layout-left,
+.layout-border.layout-right,
+.layout-padding.layout-right,
+.layout-padding.layout-left{width:35px}
+.layout-padding.layout-left{left:73px}
+.layout-padding.layout-right{right:73px}
+.layout-border.layout-left{left:37px}
+.layout-border.layout-right{right:37px}
+.layout-margin.layout-right{right:1px}
+.layout-margin.layout-left{left:1px}
+
+.layout-styleinspector-propertyeditor,
+.layout-editable{
+	padding:0 2px!important;
+	text-align:center}
+.layout-editable:hover{
+	background-image:url(chrome://global/skin/hout-hover.png);
+	color:black}
+.layout-styleinspector-propertyeditor{
+	border:1px solid #893B00;
+	box-shadow:1px 1px 2px #893B00}
+.layout-size>span{cursor:default}
+
+#layout-geometry-editor,
+.inactive>#layout-header>#layout-element-position,
+.inactive>#layout-header>#layout-element-size,
+.inactive>#layout-main>p{
+	visibility:hidden}
+	
+#layout-geometry-editor::before{
+	background:-moz-image-rect(url(debugger.png),0,416,16,400) no-repeat center}

@@ -19,9 +19,15 @@ skin	adblockplus	walnutty	adblockplus/
 skin	os		walnutty	os-linux/
 skin	os		walnutty	os-darwin/	os=Darwin
 skin	os		walnutty	os-winnt/	os=WINNT
-skin    graphical-timeline walnutty	gt/
-skin    imagetoolbar	walnutty	imagetoolbar/
-skin    abouthome	walnutty	abouthome/
-skin    jsterm		walnutty	jsterm/
-skin    printedit	walnutty	printedit/
-skin    speeddial	walnutty	speeddial/
+skin	graphical-timeline walnutty	gt/
+skin	imagetoolbar	walnutty	imagetoolbar/
+skin	abouthome	walnutty	abouthome/
+skin	jsterm		walnutty	jsterm/
+skin	printedit	walnutty	printedit/
+skin	speeddial	walnutty	speeddial/
+skin	appver walnutty	appver/27/ appversion<28.0.0a1
+skin	appver walnutty	appver/28/ appversion>=28.0.0a1
+skin	devtools	walnutty	devtools/
+
+override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
+override chrome://browser/skin/permissions/aboutPermissions.css chrome://browser/skin/preferences/aboutPermissions.css
