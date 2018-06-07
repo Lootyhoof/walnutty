@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.2.0
+- add initial Pale Moon 28 support
+- sync statusbar styling with default
+
 ### 1.1.0
 - sync about:support styling with default
 - sync about:permissions styling with default
