@@ -25,8 +25,8 @@ skin	abouthome	walnutty	abouthome/
 skin	jsterm		walnutty	jsterm/
 skin	printedit	walnutty	printedit/
 skin	speeddial	walnutty	speeddial/
-skin	appver walnutty	appver/27/ appversion<28.0.0a1
-skin	appver walnutty	appver/28/ appversion>=28.0.0a1
+skin	appver walnutty	appver/27/ appversion<28.0.0b1
+skin	appver walnutty	appver/28/ appversion>=28.0.0b1
 skin	devtools	walnutty	devtools/
 
 override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
