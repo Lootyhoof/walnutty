@@ -56,6 +56,13 @@ window[aiosOrient="right"][aiosMode="ltr"] #aios-toolbox-left:not([hidden="true"
 window[aiosOrient="right"][aiosMode="ltr"] #sidebar-splitter:not([hidden="true"]) ~ #appcontent,
 window[aiosOrient="right"][aiosMode="ltr"] #sidebar-box:not([collapsed="true"]) ~ #appcontent{
 	border-right-width:2px}
+  
+.browserContainer > findbar{
+  background-image:url(chrome://global/skin/hout.png);
+  color:black;
+  border-top:2px solid;
+  -moz-border-top-colors:#B26F00 #EED4A2;
+  text-shadow:none}
 
 #main-window:-moz-any(
 [title^="Permissions Manager - "],
