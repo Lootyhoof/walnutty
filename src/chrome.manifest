@@ -1,31 +1,30 @@
-skin	communicator	walnutty	communicator/
-skin	global		walnutty	global/
-skin	browser		walnutty	browser/
-skin	inspector	walnutty	inspector/
-skin	mozapps		walnutty	mozapps/
-skin	help		walnutty	help/
-skin	downbar		walnutty	downbar/
-skin	reporter	walnutty	reporter/
-skin	offline		walnutty	offline/
-skin	quicknote	walnutty	quicknote/
-skin	tabprefs	walnutty	tabprefs/
-skin	dataman		walnutty	dataman/
-skin	dlman		walnutty	dlman/
-skin	desktop		walnutty	desktop/
-skin	locationbar2	walnutty	locationbar2/
-skin	downloadmgr	walnutty	downloadmgr/
-skin	favres		walnutty	favres/
-skin	adblockplus	walnutty	adblockplus/
-skin	os		walnutty	os-linux/
-skin	os		walnutty	os-darwin/	os=Darwin
-skin	os		walnutty	os-winnt/	os=WINNT
-skin	graphical-timeline walnutty	gt/
-skin	imagetoolbar	walnutty	imagetoolbar/
-skin	abouthome	walnutty	abouthome/
-skin	jsterm		walnutty	jsterm/
-skin	printedit	walnutty	printedit/
-skin	speeddial	walnutty	speeddial/
-skin	devtools	walnutty	devtools/
+skin	browser		walnutty	chrome/browser/
+skin	communicator	walnutty	chrome/communicator/
+skin	devtools	walnutty	chrome/devtools/
+skin	global		walnutty	chrome/global/
+skin	mozapps		walnutty	chrome/mozapps/
+
+skin	os		walnutty	chrome/os/linux/
+skin	os		walnutty	chrome/os/darwin/	os=Darwin
+skin	os		walnutty	chrome/os/winnt/	os=WINNT
 
 override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
-override chrome://browser/skin/permissions/aboutPermissions.css chrome://browser/skin/preferences/aboutPermissions.css
+
+# Add-on styles
+
+skin	abouthome	walnutty	chrome/addon/abouthome/
+skin	printedit	walnutty	chrome/addon/printedit/
+skin	speeddial	walnutty	chrome/addon/speeddial/
+skin	graphical-timeline walnutty	chrome/addon/gt/
+skin	imagetoolbar	walnutty	chrome/addon/imagetoolbar/
+skin	downbar		walnutty	chrome/addon/downbar/
+skin	offline		walnutty	chrome/addon/offline/
+skin	quicknote	walnutty	chrome/addon/quicknote/
+skin	tabprefs	walnutty	chrome/addon/tabprefs/
+skin	dataman		littlemoon	chrome/dataman/
+skin	dlman		walnutty	chrome/addon/dlman/
+skin	desktop		walnutty	chrome/addon/desktop/
+skin	locationbar2	walnutty	chrome/addon/locationbar2/
+skin	downloadmgr	walnutty	chrome/addon/downloadmgr/
+skin	favres		walnutty	chrome/addon/favres/
+skin	inspector	walnutty	chrome/addon/inspector/
