@@ -20,7 +20,7 @@ richlistitem{
 .actionsMenu{margin:0}
 .actionIcon{margin:3px}
 .actionIcon+label{margin:2px 0}
-.actionsMenu .menulist-icon{margin:1px;padding:0;width:16px;height:16px;-moz-margin-end:3px}
+.actionsMenu .menulist-icon{margin:1px;padding:0;width:16px;height:16px;margin-inline-end:3px}
 
 menuitem[oncommand^=gApplic]{
 	list-style-image:url(chrome://global/skin/icons/applications.png);

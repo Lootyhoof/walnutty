@@ -25,7 +25,7 @@
 }
 @media (max-width:550px){
 .splitview-controller{max-height:20em!important}
-.splitview-nav{-moz-border-end-width:0}
+.splitview-nav{border-inline-end-width:0}
 .stylesheet-details-container{-moz-box-orient:vertical}
 .splitview-nav>li,
 .stylesheet-info,

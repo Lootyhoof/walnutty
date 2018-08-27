@@ -44,8 +44,8 @@ body.verbose>.entries{
 img{border:0}
 #aboutPageList{
 	width:265px;min-height:222px;
-	margin:0;-moz-margin-start:320px;
-	padding:4px;-moz-padding-start:25px;
+	margin:0;margin-inline-start:320px;
+	padding:4px;padding-inline-start:25px;
   padding-bottom: 52px;
 	border:1px solid;
 	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;

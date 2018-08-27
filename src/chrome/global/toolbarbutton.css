@@ -42,27 +42,27 @@ toolbarbutton[type="menu-button"]{
 .toolbarbutton-menubutton-button{
 	margin:0;
 	border-width:0;
-	-moz-border-end:1px solid transparent}
+	border-inline-end:1px solid transparent}
 toolbarbutton:hover>.toolbarbutton-menubutton-button,
 toolbarbutton[open="true"]>.toolbarbutton-menubutton-button,
 .toolbarbutton-menubutton-button:hover:active:-moz-locale-dir(rtl){
-	-moz-border-end-color:#B26F00}
+	border-inline-end-color:#B26F00}
 .toolbarbutton-menubutton-button:hover:active,
 toolbarbutton:hover>.toolbarbutton-menubutton-button:-moz-locale-dir(rtl),
 toolbarbutton[open="true"]>.toolbarbutton-menubutton-button:-moz-locale-dir(rtl){
-	-moz-border-end-color:#EED4A2}
+	border-inline-end-color:#EED4A2}
 
 .toolbarbutton-menubutton-dropmarker{
 	border-width:0;
-	-moz-border-start:1px solid transparent}
+	border-inline-start:1px solid transparent}
 toolbarbutton:hover:not([open="true"]):not([checked="true"])>.toolbarbutton-menubutton-dropmarker,
 toolbarbutton[open="true"]>.toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl),
 .toolbarbutton-menubutton-dropmarker:hover:active:-moz-locale-dir(rtl){
-	-moz-border-start-color:#EED4A2}
+	border-inline-start-color:#EED4A2}
 toolbarbutton[open="true"]>.toolbarbutton-menubutton-dropmarker,
 .toolbarbutton-menubutton-dropmarker:hover:active,
 toolbarbutton:hover:not([open="true"]):not([checked="true"])>.toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl){
-	-moz-border-start-color:#B26F00}
+	border-inline-start-color:#B26F00}
 
 .toolbarbutton-menubutton-button:-moz-locale-dir(ltr),
 .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl){
@@ -139,8 +139,8 @@ toolbarbutton[type="radio"]:not([autoCheck]):not(.share-provider-button){
 	margin:2px 0;
 	border-radius:0;
 	-moz-outline-radius:0;
-	-moz-padding-start:1px;
-	-moz-padding-end:3px;
+	padding-inline-start:1px;
+	padding-inline-end:3px;
 	border-width:2px!important;
 	-moz-border-top-colors:#B26F00 #EED4A2;
 	-moz-border-left-colors:#B26F00 #EED4A2;

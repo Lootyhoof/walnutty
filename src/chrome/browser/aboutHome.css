@@ -53,7 +53,7 @@ a:hover{text-decoration:underline}
 	text-align:end}
 
 #searchEngineLogo{
-	-moz-margin-end:8px;
+	margin-inline-end:8px;
 	vertical-align:middle}
 
 #searchInputContainer{
@@ -82,7 +82,7 @@ body[dir=rtl] #searchText{
 #searchButtons{
 	display:table-cell;
 	width:31%;
-	-moz-padding-start:13px;
+	padding-inline-start:13px;
 	vertical-align:top}
 
 @media all and (max-width:470px){
@@ -174,7 +174,7 @@ body[dir=rtl] #searchSubmit{
 #restorePreviousSession::before{
 	display:inline-block;
 	content:url(chrome://browser/content/aboutHome-restore-icon.png);
-	-moz-margin-end:10px;
+	margin-inline-end:10px;
 	vertical-align:middle;
 	height:66px}
 

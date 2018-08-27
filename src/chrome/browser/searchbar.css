@@ -18,7 +18,7 @@ searchbar{
 
 .search-go-container{
 	-moz-box-align:center;
-	-moz-border-start:2px solid;
+	border-inline-start:2px solid;
 	-moz-border-left-colors:#B26F00 #EED4A2;
 	-moz-border-right-colors:#B26F00 #EED4A2;
 	background-image:url(chrome://global/skin/hout.png)}
@@ -36,7 +36,7 @@ searchbar{
 	-moz-image-region:rect(64px 32px 80px 16px)}
 
 .searchbar-engine-button{
-	-moz-border-end:1px solid #B26F00;
+	border-inline-end:1px solid #B26F00;
 	background-image:url(chrome://global/skin/hout.png)}
 .searchbar-engine-button[addengines="true"]{
 	background:#00CC00 none}

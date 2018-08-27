@@ -36,8 +36,8 @@ toolbox:-moz-window-inactive{
 
 :root[chromemargin] #TabsToolbar[tabsontop="true"]:not([inFullscreen="true"]),
 :root[chromemargin][chromehidden~="toolbar"][tabsontop="true"] #navigator-toolbox{
-	-moz-padding-start:100px;
-	-moz-padding-end:72px}
+	padding-inline-start:100px;
+	padding-inline-end:72px}
 
 :root[chromemargin] #TabsToolbar[collapsed="true"][tabsontop="true"]{
 	visibility:visible}
@@ -58,8 +58,8 @@ toolbox:-moz-window-inactive{
 /* Try to move menubar in window frame */
 #navigator-toolbox[tabsontop="false"]:not([inFullscreen="true"])>#toolbar-menubar[autohide="true"]:not([inactive="true"]){
 	margin-top:-22px;
-	-moz-padding-start:90px!important;
-	-moz-padding-end:72px!important;
+	padding-inline-start:90px!important;
+	padding-inline-end:72px!important;
 	background-image:none}
 
 /* For classic or Windows 8 */
@@ -69,8 +69,8 @@ toolbox:-moz-window-inactive{
 
 /* For compositor */
 #navigator-toolbox[tabsontop="false"]:not([inFullscreen="true"])>#toolbar-menubar[autohide="true"]:not([inactive="true"]):-moz-system-metric(windows-compositor){
-	-moz-border-end-width:0!important;
-	-moz-padding-end:120px!important}
+	border-inline-end-width:0!important;
+	padding-inline-end:120px!important}
 }
 
 /* ::::: titlebar ::::: */
@@ -117,7 +117,7 @@ toolbox:-moz-window-inactive{
 
 @media not all and (-moz-windows-classic) {
   #titlebar-min {
-    -moz-margin-end: 2px;
+    margin-inline-end: 2px;
   }
 }
 
@@ -169,7 +169,7 @@ toolbox:-moz-window-inactive{
   }
     
   #main-window[sizemode="maximized"] #titlebar-buttonbox {
-    -moz-margin-end: 3px;
+    margin-inline-end: 3px;
   }
 }
 
@@ -289,15 +289,15 @@ toolbox:-moz-window-inactive{
   (-moz-os-version: windows-win8) {
 	:root[chromemargin] #TabsToolbar[tabsontop="true"]:not([inFullscreen="true"]){
 		border-width:0!important;
-		-moz-padding-start:100px!important;
-		-moz-padding-end:120px!important}
+		padding-inline-start:100px!important;
+		padding-inline-end:120px!important}
 
 	:root[chromemargin][sizemode="normal"] #navigator-toolbox>toolbar,
 	:root[chromemargin][sizemode="normal"] #appcontent{
-		-moz-border-start:1px inset #B26F00;
-		-moz-border-end:1px inset #B26F00}
+		border-inline-start:1px inset #B26F00;
+		border-inline-end:1px inset #B26F00}
 	:root[chromemargin][sizemode="normal"] #sidebar-box{
-		-moz-border-start:1px inset #B26F00}
+		border-inline-start:1px inset #B26F00}
 }
 
 #tab-view-deck{margin-bottom:1px}

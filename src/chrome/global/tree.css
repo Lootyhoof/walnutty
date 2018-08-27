@@ -78,7 +78,7 @@ treechildren::-moz-tree-drop-feedback{
 	color:white;
 	width:50px;
 	height:2px;
-	-moz-margin-start:5px}
+	margin-inline-start:5px}
 
 treechildren::-moz-tree-progressmeter{
 	border:1px solid;
@@ -120,7 +120,7 @@ treechildren::-moz-tree-column(insertbefore){border-left:1px solid red}
 treechildren::-moz-tree-column(insertafter){border-right:1px solid red}
 
 .treecol-sortdirection[sortDirection]:not([hidden]){
-	-moz-margin-end:1px;
+	margin-inline-end:1px;
 	-moz-transform:scale(.75);
 	list-style-image:url(chrome://global/skin/widgets.png);
 	-moz-image-region:rect(0,49px,12px,37px)}
@@ -135,7 +135,7 @@ treechildren::-moz-tree-column(insertafter){border-right:1px solid red}
 
 treechildren::-moz-tree-twisty{
 	border-width:0;
-	-moz-margin-end:1px;
+	margin-inline-end:1px;
 	list-style-image:url(chrome://global/skin/widgets.png);
 	-moz-image-region:rect(0,12px,12px,0)}
 treechildren::-moz-tree-twisty(open){-moz-image-region:rect(0,25px,12px,13px)}
@@ -165,7 +165,7 @@ treechildren::-moz-tree-separator{
 	border:1px solid;
 	border-color:#EED4A2 #B26F00  #B26F00 #EED4A2;
 	border-radius:8px;
-	-moz-margin-end:14px;
+	margin-inline-end:14px;
 	background-image:url(chrome://global/skin/hout.png)}
 
 treechildren::-moz-tree-twisty(separator),

@@ -50,8 +50,8 @@ button:not(:hover){
 
 .volumeBackgroundBar{
 	margin:0 4px;
-	-moz-border-start:1px solid #B26F00;
-	-moz-border-end:1px solid #EED4A2;
+	border-inline-start:1px solid #B26F00;
+	border-inline-end:1px solid #EED4A2;
 	background:none}
 
 .volumeBackground,

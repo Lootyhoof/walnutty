@@ -13,7 +13,7 @@
 #sites-box{
 	width:25em;
 	padding:4px;
-	-moz-margin-end:2px}
+	margin-inline-end:2px}
 #sites-filter{margin:0 0 4px 0}
 #all-sites-item>.site-container>.site-favicon{list-style-image:none}
 #permissions-box{
@@ -45,7 +45,7 @@
 	background-image:url(chrome://global/skin/backarea.png);
 	color:black}
 #defaults-description,
-#site-description,#site-visit-count{font-size:120%;-moz-margin-start:6px}
+#site-description,#site-visit-count{font-size:120%;margin-inline-start:6px}
 #defaults-description{font-weight:bold}
 #site-label{font-weight:bold;padding:0 4px}
 .site-domain{max-width:200px}
@@ -53,7 +53,7 @@
 .site-favicon{
 	height:16px;
 	width:16px;
-	-moz-margin-end:2px;
+	margin-inline-end:2px;
 	list-style-image:url(chrome://global/skin/global.png);
 	-moz-image-region:rect(144px 16px 160px 0)}
 

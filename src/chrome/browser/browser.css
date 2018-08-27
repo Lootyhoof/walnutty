@@ -97,8 +97,8 @@ toolbarbutton.bookmark-item:not([container]):-moz-locale-dir(rtl){
 
 .bookmark-item>.toolbarbutton-text{
 	display:-moz-box!important;
-	-moz-margin-start:0!important;
-	-moz-margin-end:2px!important}
+	margin-inline-start:0!important;
+	margin-inline-end:2px!important}
 .bookmarks-toolbar-customize{display:none;max-width:15em!important}
 
 toolbarpaletteitem[place="toolbar"] .bookmarks-toolbar-customize{display:-moz-box}
@@ -307,10 +307,10 @@ toolbar[iconsize="small"]>#webrtc-status-button{
 #notification-popup-box,
 #identity-box,
 #urlbar-display-box{
-	-moz-border-end:1px solid #B26F00}
+	border-inline-end:1px solid #B26F00}
 #urlbar-icons{
 	-moz-box-align:stretch;
-	-moz-border-start:2px solid;
+	border-inline-start:2px solid;
 	-moz-border-left-colors:#B26F00 #EED4A2;
 	-moz-border-right-colors:#B26F00 #EED4A2}
 
@@ -489,7 +489,7 @@ toolbar:not([iconsize="small"])>#tb-chatzilla-open{
 
 sidebarheader{
 	min-height:22px!important;
-	-moz-padding-start:2px!important}
+	padding-inline-start:2px!important}
 
 #clientBox,#creditsBox,#creditsIframe{
 	border-radius:5px}
@@ -613,7 +613,7 @@ toolbar[iconsize="small"]>toolbaritem#go-button{-moz-box-orient:horizontal!impor
 	cursor:-moz-grab;
 	padding:0}
 #identity-icon-labels{
-	-moz-margin-end:2px}
+	margin-inline-end:2px}
 #urlbar-display{
 	margin:0 2px;
 	font-style:italic}
@@ -747,7 +747,7 @@ toolbar[iconsize="small"]>toolbaritem#go-button{-moz-box-orient:horizontal!impor
 @keyframes pluginBlockedNotification{from{opacity:0}to{opacity:1}}
 
 .popup-notification-icon{
-	-moz-margin-end:10px}
+	margin-inline-end:10px}
 .popup-notification-icon[popupid="geolocation"]{
 	list-style-image:url(chrome://browser/skin/geo_64.png)}
 .popup-notification-icon[popupid="password-save"],
@@ -897,13 +897,13 @@ toolbar[iconsize="small"]>toolbaritem#go-button{-moz-box-orient:horizontal!impor
 .menupopup-drop-indicator{
 	list-style-image:none;
 	height:2px;
-	-moz-margin-end:-4em;
+	margin-inline-end:-4em;
 	background-color:Highlight}
 
 #unified-back-forward-button>#back-button{
 	border-radius:9px 0 0 9px;
-	-moz-padding-end:0!important;
-	-moz-margin-end:0!important}
+	padding-inline-end:0!important;
+	margin-inline-end:0!important}
 #unified-back-forward-button #back-forward-dropmarker{
 	border-radius:0;
 	padding:0!important;
@@ -911,8 +911,8 @@ toolbar[iconsize="small"]>toolbaritem#go-button{-moz-box-orient:horizontal!impor
 #unified-back-forward-button>#forward-button{
 	border-radius:0 9px 9px 0;
 	-moz-box-ordinal-group:2;
-	-moz-padding-start:0!important;
-	-moz-margin-start:0!important}
+	padding-inline-start:0!important;
+	margin-inline-start:0!important}
 #unified-back-forward-button #back-button>.toolbarbutton-menu-dropmarker,
 #unified-back-forward-button #forward-button>.toolbarbutton-menu-dropmarker{
 	display:none!important}
@@ -1057,7 +1057,7 @@ toolbar[iconsize="small"]>#inspector-button>.toolbarbutton-icon{
 
 .fb-tabs-alltabs-button[type]{
 	background-image:none!important;
-	-moz-padding-start:1px!important;
+	padding-inline-start:1px!important;
 	border:1px solid!important;
 	border-radius:5px!important;
 	-moz-border-top-colors:transparent!important;
@@ -1379,7 +1379,7 @@ toolbar[iconsize="small"]>#grabanddrag-button[gadOn="BL"]{-moz-image-region:rect
 .panel-promo-icon{
 	list-style-image:url(chrome://browser/skin/preferences/preferences.png);
 	-moz-image-region:rect(216px,24px,240px,0px);
-	-moz-margin-end:10px;
+	margin-inline-end:10px;
 	vertical-align:middle}
 
 .panel-promo-closebutton{
@@ -1428,18 +1428,18 @@ toolbar[iconsize="small"]>#grabanddrag-button[gadOn="BL"]{-moz-image-region:rect
 
 .highlighter-nodeinfobar-inspectbutton,
 #highlighter-nodeinfobar-inspectbutton{
-	-moz-margin-end:6px;
+	margin-inline-end:6px;
 	list-style-image:url(chrome://inspector/skin/inspector.png);
 	-moz-image-region:rect(0 16px 16px 0)}
 
 .highlighter-nodeinfobar-menu,
 #highlighter-nodeinfobar-menu{
-	-moz-margin-start:6px}
+	margin-inline-start:6px}
 
 .highlighter-nodeinfobar-arrow{
 	width:14px;
 	height:14px;
-	-moz-margin-start:calc(50% - 7px);
+	margin-inline-start:calc(50% - 7px);
 	-moz-transform:rotate(-45deg);
 	border:1px solid transparent;
 	background-clip:padding-box;
@@ -1459,13 +1459,13 @@ toolbar[iconsize="small"]>#grabanddrag-button[gadOn="BL"]{-moz-image-region:rect
 #highlighter-nodeinfobar-container[hide-arrow]>#highlighter-nodeinfobar{
 	margin:7px 0}
 	
-html|*.highlighter-nodeinfobar-tagname{color:purple;-moz-padding-start:4px}
+html|*.highlighter-nodeinfobar-tagname{color:purple;padding-inline-start:4px}
 html|*.highlighter-nodeinfobar-id{color:darkgreen}
 html|*.highlighter-nodeinfobar-classes,
 html|*.highlighter-nodeinfobar-pseudo-classes{color:darkblue}
 html|*.highlighter-nodeinfobar-dimensions{
-	-moz-margin-start:4px;
-	-moz-border-start:1px solid #893B00;
+	margin-inline-start:4px;
+	border-inline-start:1px solid #893B00;
 	padding:0 4px}
 
 #inspector-tree-box{min-height:100px}
@@ -1665,7 +1665,7 @@ stack[anonid=browserStack][responsivemode]{
 	overflow:hidden;
 	margin-top:-285px;
 	margin-bottom:-2px;
-	-moz-margin-end:20px}
+	margin-inline-end:20px}
 
 chatbox{
 	height:285px;
@@ -1686,7 +1686,7 @@ chatbox[minimized="true"]{
 	border-bottom-width:0}
 
 .chat-titlebar{
-	-moz-padding-start:2px;
+	padding-inline-start:2px;
 	background-image:url(chrome://global/skin/hout.png);
 	border-radius:5px 5px 0 0;
 	border-bottom:1px solid #B26F00;

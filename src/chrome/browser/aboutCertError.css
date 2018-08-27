@@ -29,10 +29,10 @@ h1{
 
 #errorTitle,
 #errorLongContent,
-#errorTryAgain{-moz-margin-start:80px}
+#errorTryAgain{margin-inline-start:80px}
 
 .expander>button{
-	-moz-padding-start:16px;
+	padding-inline-start:16px;
 	background-image:url(chrome://global/skin/hout.png),-moz-image-rect(url(chrome://global/skin/widgets.png),0,25,12,13);
 	background-position:top left,3px center;
 	background-repeat:repeat,no-repeat}

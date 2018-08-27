@@ -65,7 +65,7 @@ body{background:transparent!important}
 	background-image:url(chrome://global/skin/backarea.png);
 	border-radius:12px}
 .newtab-cell:empty{outline:1px solid #B26F00;outline-offset:-1px}
-.newtab-cell:not(:last-child){-moz-margin-end:20px}
+.newtab-cell:not(:last-child){margin-inline-end:20px}
 
 .newtab-site{
 	text-decoration:none;

@@ -141,7 +141,7 @@ input.name{
 input.name:-moz-placeholder{
 	font-style:italic!important;
 	background:-moz-image-rect(url(chrome://browser/skin/tabview/panorama.png),0,96,16,80) no-repeat;
-	-moz-padding-start:20px}
+	padding-inline-start:20px}
 input.name::-moz-placeholder{
 	opacity:0!important;
 	font-style:italic!important}
@@ -253,7 +253,7 @@ input.name:-moz-locale-dir(rtl){
 .appTabTrayContainer{
 	top:34px;
 	right:1px;
-	-moz-border-start:1px solid #B26F00;
+	border-inline-start:1px solid #B26F00;
 	padding:0 2px;
 	overflow:-moz-hidden-unscrollable;
 	text-align:center;
@@ -329,8 +329,8 @@ input.name:-moz-locale-dir(rtl){
 	line-height:25px;
 	padding:2px;
 	box-shadow:0 0 2px #893B00;
-	-moz-padding-start:20px;
-	-moz-padding-end:30px;
+	padding-inline-start:20px;
+	padding-inline-end:30px;
 	background-image:-moz-image-rect(url(chrome://global/skin/global.png),496,32,512,16),url(chrome://global/skin/hout.png);
 	background-position:2px center;
 	background-repeat:no-repeat,repeat}

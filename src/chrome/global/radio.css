@@ -13,7 +13,7 @@ radio{
 .radio-icon{list-style-image:inherit}
 .radio-label{
 	margin:0;
-	-moz-margin-start:2px;
+	margin-inline-start:2px;
 	padding:1px}
 
 radio[focused="true"]{
@@ -42,7 +42,7 @@ radio[disabled="true"]{
 
 .radio-check{
 	margin:2px;
-	-moz-margin-end:1px;
+	margin-inline-end:1px;
 	list-style-image:url(chrome://global/skin/widgets.png);
 	-moz-image-region:rect(12px 24px 24px 12px)}
 .radio-check[selected="true"]{-moz-image-region:rect(12px 12px 24px 0)}
@@ -93,7 +93,7 @@ radiogroup[orient="horizontal"]{margin:2px}
 
 radiogroup[orient="horizontal"]:not(#viewGroup)>radio:not([pane]){
 	border-radius:0;
-	-moz-padding-end:3px;
+	padding-inline-end:3px;
 	border-width:2px!important;
 	-moz-border-top-colors:#B26F00 #EED4A2;
 	-moz-border-left-colors:#B26F00 #EED4A2;
