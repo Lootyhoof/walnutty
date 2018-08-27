@@ -1,58 +1,66 @@
+@import url(chrome://os/skin/scrollbars.css);
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @namespace html url(http://www.w3.org/1999/xhtml);
 
 scrollbar{
 	-moz-binding:url(chrome://global/content/bindings/scrollbar.xml#scrollbar);
+	background:white url(chrome://global/skin/hout.png);
 	cursor:default}
 scrollbar[orient="horizontal"]{
-	background-image:url(chrome://global/skin/hout.png);
 	min-height:14px}
 scrollbar[orient="vertical"]{
-	background:white url(chrome://global/skin/hout-vert.png);
+	background-image:url(chrome://global/skin/hout-vert.png);
 	min-width:14px}
 
 slider{background-color:rgba(255,255,255,.5)}
 
-thumb,
-scrollbarbutton{
+thumb{
 	background:white url(chrome://global/skin/hout-vert.png);
 	border:1px solid;
 	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
 	min-width:12px;
 	min-height:12px}
-thumb[orient="horizontal"],
-scrollbarbutton[sborient="horizontal"]{
+thumb[orient="horizontal"]{
 	background-image:url(chrome://global/skin/hout.png)}
+thumb:hover{background-image:url(chrome://global/skin/hout-hover.png)}
+thumb[sborient="vertical"]:hover{background-image:url(chrome://global/skin/hout-vert-hover.png)}
+thumb:active{background-image:url(chrome://global/skin/hout-active.png)}
+thumb[sborient="vertical"]:active{background-image:url(chrome://global/skin/hout-vert-active.png)}
 
 scrollbarbutton{
-	-moz-binding:url(chrome://global/skin/scrollbars.xml#scrollbarbutton);
-	list-style-image:url(chrome://global/skin/scrollbuttons.png)}
+	width:14px;
+	height:14px;
+	border:1px solid;
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	background:white url(chrome://global/skin/scrollbuttons.png) no-repeat top left;
+	background-clip:content-box;
+	background-origin:content-box}
+scrollbarbutton[type="increment"]{background-position:0 -12px}
+scrollbarbutton[type="decrement"][sborient="vertical"]{background-position:-12px 0}
+scrollbarbutton[type="increment"][sborient="vertical"]{background-position:-12px -12px}
+scrollbarbutton[type="decrement"]:hover{background-position:0 -24px}
+scrollbarbutton[type="increment"]:hover{background-position:0 -36px}
+scrollbarbutton[type="decrement"][sborient="vertical"]:hover{background-position:-12px -24px}
+scrollbarbutton[type="increment"][sborient="vertical"]:hover{background-position:-12px -36px}
+scrollbarbutton[type="decrement"]:hover:active{background-position:0 -48px}
+scrollbarbutton[type="increment"]:hover:active{background-position:0 -60px}
+scrollbarbutton[type="decrement"][sborient="vertical"]:hover:active{background-position:-12px -48px}
+scrollbarbutton[type="increment"][sborient="vertical"]:hover:active{background-position:-12px -60px}
 
-thumb:hover,
-scrollbarbutton:hover{
-	background-image:url(chrome://global/skin/hout-hover.png)}
-thumb[sborient="vertical"]:hover,
-scrollbarbutton[sborient="vertical"]:hover{
-	background-image:url(chrome://global/skin/hout-vert-hover.png)}
 thumb:active,
 scrollbarbutton:hover:active,
 scrollbarbutton[active="true"]{
 	border:1px solid;
-	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
-	background-image:url(chrome://global/skin/hout-active.png)}
-thumb[sborient="vertical"]:active,
-scrollbarbutton[sborient="vertical"]:active{
-	background-image:url(chrome://global/skin/hout-vert-active.png)}
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00}
+
+thumb[disabled="true"],
 scrollbarbutton[disabled="true"]{
-	background-image:url(chrome://global/skin/hout.png)!important;
-	border:1px solid!important;
-	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2!important}
+	pointer-events:none;
+	opacity:.5}
 
-scrollbarbutton[type="decrement"]{-moz-image-region:rect(0 12px 12px 0)}
-scrollbarbutton[type="increment"]{-moz-image-region:rect(12px 12px 24px 0)}
-
-scrollbarbutton[type="decrement"][sborient="vertical"]{-moz-image-region:rect(0 24px 12px 12px)}
-scrollbarbutton[type="increment"][sborient="vertical"]{-moz-image-region:rect(12px 24px 24px 12px)}
+thumb:focus,
+scrollbarbutton:focus{
+	border:1px solid #893B00!important}
 
 scrollcorner{
 	background:white url(chrome://global/skin/hout.png);

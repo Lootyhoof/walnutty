@@ -187,3 +187,24 @@ toolbarbutton[type="radio"][checked="true"]:not([autoCheck]):not(.share-provider
 	-moz-border-right-colors:#B26F00 #B26F00!important;
 	-moz-border-left-colors:#EED4A2 #EED4A2!important;
 	box-shadow:-1px 1px 2px threedface inset,-1px 1px 1px #B26F00 inset}
+
+.toolbarbutton-multiline-text,
+toolbarbutton[wrap="true"]>.toolbarbutton-text{
+	display:none}
+toolbarbutton[wrap="true"]>.toolbarbutton-multiline-text{
+	display:-moz-box}
+	
+.toolbarbutton-badge{
+	-moz-stack-sizing:ignore;
+	font-size:10px;
+	font-weight:bold;
+	margin:-3px 0 0!important;
+	margin-inline-end:-4px!important;
+	min-width:14px;
+	max-width:34px;
+	line-height:10px;
+	text-align:center;
+	border-radius:3px;
+	box-shadow:1px 1px 1px #B26F00, 1px 1px 1px white inset;
+	background-color:darkred;
+	color:white}

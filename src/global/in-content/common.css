@@ -283,7 +283,7 @@ button{min-width:20px!important;padding:1px!important;margin:1px!important}
 	font-weight:600!important}
 .addon-target-container:hover .target-name{
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:var(--hover-color)!important;
+	color:black!important;
 	box-shadow:1px 1px 2px #B26F00,-1px -1px 1px #EED4A2}
 
 .addon-target-actions{border-top:none!important}
@@ -299,7 +299,7 @@ button{min-width:20px!important;padding:1px!important;margin:1px!important}
 	color:black!important}
 .addon-target-button:hover{
 	background-image:url(chrome://global/skin/hout-hover.png)!important;
-	color:var(--hover-color)!important;
+	color:black!important;
 	text-decoration:none!important}
 .addon-target-button:enabled:hover:active{
 	background-image:url(chrome://global/skin/hout-active.png)!important;

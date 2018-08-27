@@ -1,8 +1,10 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @namespace html url(http://www.w3.org/1999/xhtml);
 
+scrollbar,slider{background:none!important;border-width:0!important;z-index:2147483647!important}
 slider{padding:2px!important}
 thumb{
+	z-index:2147483647!important;
 	min-width:6px!important;
 	min-height:6px!important;
 	border-radius:10px!important;
@@ -13,3 +15,9 @@ thumb:hover{
 slider:active>thumb,
 thumb:active{
 	background-image:url(chrome://global/skin/hout-hover.png)!important}
+
+@media all and (-moz-overlay-scrollbars){
+scrollbar:not([active="true"]),
+scrollbar[disabled="true"]{
+	visibility:hidden}
+}
