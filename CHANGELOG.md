@@ -1,5 +1,15 @@
 # Changelog
 
+### 1.4.0
+- sync global stylings with Pale Moon 28
+- remove v27 devtools styling
+- mark as compatible with Pale Moon 28 only
+- cleanup internal files
+- use non-prefixed -inline syntax
+- update media controls
+- fix progress bar when used in "Location4evar"
+- improve OS X titlebar appearance
+
 ### 1.3.0
 - add PM28 newtab styling
 - add tabbrowser findbar styling
