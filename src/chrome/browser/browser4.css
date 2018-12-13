@@ -90,6 +90,55 @@ tabpanels.plain,.tabbrowser-tabbox{border-width:0;border-radius:0;padding:0}
 	list-style-image:url(chrome://global/skin/global.png)!important;
 	-moz-image-region:rect(368px 16px 384px 0)!important}
 
+.tab-icon-overlay{
+	display:none;
+	position:relative;
+	opacity:.9999;
+	width:12px;
+	height:12px;
+	margin-top:6px;
+	margin-inline-start:-12px;
+	margin-bottom:-2px;
+	margin-inline-end:-0}
+.tab-icon-overlay[crashed]{
+	display:-moz-box!important;
+	list-style-image:url(chrome://global/skin/icons/error-16.png)!important}
+
+.tab-icon-sound{
+	display:none;
+	width:18px;
+	height:18px;
+	border-radius:5px;
+	border:1px solid transparent}
+.alltabs-endimage[soundplaying],
+.tab-icon-sound[soundplaying]:not([pinned]),
+.tab-icon-overlay[soundplaying][pinned]{
+	display:-moz-box;
+	list-style-image:url(chrome://global/skin/media/video.png);
+	-moz-image-region:rect(16px,16px,32px,0)}
+.alltabs-endimage[muted],
+.tab-icon-sound[muted]:not([pinned]),
+.tab-icon-overlay[muted][pinned]{
+	display:-moz-box;
+	list-style-image:url(chrome://global/skin/media/video.png);
+	-moz-image-region:rect(16px,32px,32px,16px)}
+
+.tab-icon-sound[soundplaying-scheduledremoval]:not([muted]):not(:hover),
+.tab-icon-overlay[soundplaying-scheduledremoval]:not([muted]):not(:hover){
+	transition:opacity 300ms linear var(--soundplaying-removal-delay);
+	opacity:0}
+
+.tab-icon-sound:hover,
+.tab-icon-overlay:not([crashed]):hover{
+	background-image:url(chrome://global/skin/hout-hover.png);
+	border-color:#EED4A2 #B26F00 #B26F00 #EED4A2;
+	box-shadow:0 0 1px #B26F00}
+.tab-icon-sound:hover:active,
+.tab-icon-overlay:not([crashed]):hover:active{
+	background-image:url(chrome://global/skin/hout-active.png);
+	border-color:#B26F00 #EED4A2 #EED4A2 #B26F00;
+	box-shadow:none}
+
 #TabsToolbar toolbarbutton:not(.tab-close-button):not(.tabs-newtab-button){
 	padding:0 2px!important;
 	margin:1px!important}
