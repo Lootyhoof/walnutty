@@ -345,3 +345,7 @@ prefwindow[type="child"]>.paneDeckContainer{
 	border-right-width:0!important}
 } /* Aero End */
 
+/*DownThemAll*/
+#DownThemAll>#titlebar{
+	-moz-appearance:none!important;
+	margin-bottom:0!important}
