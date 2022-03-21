@@ -9,22 +9,35 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>walnutty@lootyhoof-pm</em:id>
-    <em:version>1.6.1</em:version>
+    <em:version>1.7.0</em:version>
     <em:name>Walnutty</em:name>
     <em:description>Walnutty, based on icons from art.gnome.org. A nice, wooden/nutty theme for Pale Moon. Fork of "Walnut for Firefox" by Alfred Kayser</em:description>
     <em:creator>Lootyhoof</em:creator>
     <em:type>4</em:type>
     <em:internalName>walnutty</em:internalName>
+    <em:updateURL>https://raw.githubusercontent.com/Lootyhoof/walnutty/master/update.xml</em:updateURL>
 
     <em:contributor>Alfred Kayser</em:contributor>
     <em:contributor>art.gnome.org</em:contributor>
 
     <em:targetApplication>
+      <!-- Pale Moon -->
       <Description>
-        <!-- Pale Moon -->
         <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
         <em:minVersion>28.6.0</em:minVersion>
-        <em:maxVersion>29.*</em:maxVersion>
+        <em:maxVersion>30.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <em:targetApplication>
+      <!-- Applications using Firefox GUID -->
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <!--
+            Pale Moon 30 and above will stop using its own GUID to
+            "further improve extension compatibility"
+          -->
+        <em:minVersion>30.0.0a1</em:minVersion>
+        <em:maxVersion>30.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
