@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.7.0
+- add mixed-mode SSL styling
+- support Pale Moon 30
+
 ### 1.6.1
 - small version bump for Pale Moon 29.0 compatibility (no code changes)
 
